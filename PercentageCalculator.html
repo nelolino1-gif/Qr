@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>% Reducer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        *{
+        padding:0;
+        margin:0;
+        box-sizing:border-box;
+    }
+        body { font-family:san-serif; 
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            padding: 50px; 
+            background:;
+            font-size:1vw;
+        }
+        .container{
+            border:;
+            display:flex;
+            flex-direction:column;
+            background:;
+            text-align:center;
+            align-items: center;
+        } 
+        label{
+            font-size:6vw;
+        }
+    
+         .input-container{
+             display:flex;
+             flex-direction:column;
+             align-items:center;
+             gap:10px;
+             
+         
+         }
+         input { 
+            width:90%;
+             margin:0px;
+            font-size:1em;
+            padding: 1vw; 
+            border: .5vw solid #ccc;
+            text-align:center;
+            font-weight:bold;
+            border-radius:2vw;
+            focus:none;
+        }
+    
+         input:focus {
+          outline: .5vw solid green;
+            }
+    
+        .result-container{
+             margin-top:5vw;
+             width:100%;
+             display:flex;
+             flex-direction:column;
+             align-items:center;
+             gap:2vw;
+             background:;
+             
+         
+         }
+    
+         
+        .result { 
+            font-weight: bold;
+            color: #2c3e50; 
+            padding:0px ; 
+            background:;
+            
+        }
+    
+    
+      @media (max-width: 1024px) {
+  .container { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width: 90vw;font-size:7vw;}
+}
+  
+  @media (max-width: 768px) {
+  .container { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width: 90vw;font-size:7vw;}    
+              
+         
+              
+              
+              
+  }
+
+  
+  @media (max-width: 480px) {
+  .container { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width: 90vw;font-size:7vw;}
+              
+            
+   
+              
+              
+  }
+    
+    
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="input-container">
+        <div class="input-label">
+        <label for="amount">Enter Amount:</label>                
+        <input type="number" id="amount" placeholder="0.00" oninput="calculate()">     
+        </div>  
+        <div class="input-label">
+        <label  for="percent">Enter Percentage:</label>        
+        <input type="number" id="percent" placeholder="0.00" oninput="calculate()">
+        </div> 
+        </div>    
+        
+        <div class="result-container">
+        <div class="result">
+            Change %: <span id="output">0</span>
+               </div>
+         <div class="result">
+              Final Value -% : <span id="finalsub">0</span>
+         </div>  
+        <div class="result">
+              Final Value +% : <span id="finaladd">0</span>
+         </div>  
+        </div>
+        <div style="width:100%">             
+       <i style="color:purple ;font-size:4vw; ">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple ;font-size:4vw"></i>    
+      </div>        
+     </div>
+    <script>
+        function calculate() {
+            const val = document.getElementById('amount').value;
+            const percent = document.getElementById('percent').value;
+           
+            const output = document.getElementById('output');
+            const finalsub = document.getElementById('finalsub');
+            const finaladd = document.getElementById('finaladd');
+            
+            if (val) {
+                // The formula: Result = Value * 0.98
+               // const multiply = ;
+                const result = val / 100 * percent ;
+                output.innerText = result.toLocaleString();
+                
+                const sub = val - result
+                finalsub.innerText = sub.toLocaleString();
+                
+                var str = result;
+               var num = parseInt(str); 
+                var str2 = val;
+               var num2 = parseInt(str2); 
+                // o parseFloat(str) para sa decimal na numero
+               //console.log(num); // output: 123
+                const add = num + num2
+                finaladd.innerText = add.toLocaleString();
+        
+            } else {
+                output.innerText = "0";
+                finalsub.innerText = "0";
+                finaladd.innerText = "0";
+            }
+        }
+    </script>
+
+</body>
+</html>
