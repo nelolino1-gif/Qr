@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>% Reducer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        *{
+        padding:0;
+        margin:0;
+        box-sizing:border-box;
+    }
+        body { font-family: sans-serif; 
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            padding: 50px; 
+            background:;
+            font-size:16px;
+        }
+        .container{
+            border:;
+            width:320px;
+            display:flex;
+            flex-direction:column;
+            background:;
+            text-align:center;
+            align-items: center;
+        } 
+    
+         .input-container{
+             display:flex;
+             flex-direction:column;
+             align-items:center;
+             gap:10px;
+         
+         }
+         input { 
+            width:90%;
+            font-size:1em;
+            padding: 2%; 
+            border: 1px solid #ccc;
+            border-radius: 4px; 
+            text-align:center;
+            font-weight:bold;
+        }
+        .result { 
+            margin-top:15px;
+            font-weight: bold;
+            color: #2c3e50; 
+            padding: ; 
+            border:;
+            border-radius: 4px; 
+        }
+    
+    
+      @media (max-width: 1024px) {
+  .container { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width: 90%;font-size:5em;}
+}
+  
+  @media (max-width: 768px) {
+  .container { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width: 400px;font-size:2em;}    
+              
+         
+              
+              
+              
+  }
+
+  
+  @media (max-width: 480px) {
+  .container { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width: 300px;font-size:1.5em;}
+              
+            
+   
+              
+              
+  }
+    
+    
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <label for="amount">Enter Amount:</label>
+        <div class="input-container">
+        <input type="number" id="amount" placeholder="0.00" oninput="calculate()">
+        <label for="amount">Enter Percentage:</label>        
+        <input type="number" id="percent" placeholder="0.00" oninput="calculate()">
+        </div>        
+        <div class="result">
+            Result (%): <span id="output">0</span>
+               </div>
+         <div class="result">
+              Result : <span id="final">Final</span>
+         </div>   
+        <div style="width:100%">             
+       <i style="color:purple ;font-size:.5em; ">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple ;font-size:.5em"></i>    
+      </div>        
+     </div>
+    <script>
+        function calculate() {
+            const val = document.getElementById('amount').value;
+            const percent = document.getElementById('percent').value;
+           
+            const output = document.getElementById('output');
+            const final = document.getElementById('final');
+            
+            if (val) {
+                // The formula: Result = Value * 0.98
+               // const multiply = ;
+                const result = val / 100 * percent ;
+                output.innerText = result.toLocaleString();
+                const multi = val - result
+                final.innerText = multi.toLocaleString();
+        
+            } else {
+                output.innerText = "0";
+                final.innerText = "0";
+            }
+        }
+    </script>
+
+</body>
+</html>
