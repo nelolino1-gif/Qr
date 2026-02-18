@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J QR Code Generator</title>
+    <script src="assets/js/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+    *{
+        padding:0;
+        margin:0;
+        box-sizing:border-box;
+    }
+        body { font-family: sans-serif; 
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            padding: 50px; 
+            background:;
+            touch-action:none;
+        }
+        .container{
+            border:;
+            width:450px;
+            display:flex;
+            flex-direction:column;
+            background:;
+            text-align:center;
+            align-items: center;
+        }
+        h2{
+            margin:0px;
+            background:;
+        }
+    
+        input {
+            padding: 10px; 
+            width:310px;
+            margin-bottom: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px;
+            text-align:center;
+            font-weight:bold;
+          }
+    
+    input:focus{
+        outline:2px solid green;
+        border:none;
+    }
+    
+    .wrapper{
+        padding:20px;
+        background:#fff;
+        margin-top:10px;
+    }
+        #qrcode {
+            
+            width:200px;
+            height:200px;
+           }
+        .btn{
+            padding:7px 7px;
+            
+        }
+    
+       select:required {
+       border: 1px solid purple;
+       background:red;
+       color:#000;           
+       }
+
+       select:required:valid {
+       border: 1px dotted teal;
+       background:#ccc;   
+        }
+
+           
+       .btn-select{
+            padding:7px 5px;            
+        }
+       .btn-select:focus{
+            outline:none;           
+        }
+       
+       .btn-theme{
+            border: 1px solid tomato;
+            border-radius:7px;
+       }
+       .btn-theme:hover{
+            border: 1px dotted teal;
+            background:#ccc;
+            color:teal;
+            
+        }
+    
+      .result-container{
+          display:flex;
+          background:;
+          text-align:center;
+          flex-direction:column;
+          align-content:center;
+          align-items:center;
+          width:250px;
+          
+      }
+    #result-text{
+        text-align:center;
+        margin: 10px 0px 10px 0px;
+        color:green;
+        font-family: 'Courier New', monospace;
+    }
+    
+    #result-text2{
+        text-align:center;
+        margin: 10px 0px 10px 0px;
+        color:blue;
+        font-family: 'Courier New', monospace;
+    }
+    .btn-container{
+        display:flex;
+        flex-direction:colunm;
+        justify-content:center;
+        column-gap:2px;
+        background:;
+        width:300px;
+    }
+    
+    @media (max-width: 1024px) {
+  .container { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width: 90%;font-size:16px}
+}
+  
+  @media (max-width: 768px) {
+  .container { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width: 400px;font-size:16px}    
+  }
+
+  
+  @media (max-width: 480px) {
+  .container { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width: 340px;font-size:16px}
+}
+    
+    
+    </style>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<body>
+    <div class="container">
+    <h2>J QR Code Generator</h2> 
+    <div id="result-text">Time and Date Appear Here...</div>
+   
+  </h1>    
+    <input type="text" id="text-input" placeholder="Vaucher Code" oninput="">   
+    <div class="btn-container">
+    <select class="btn-select btn-theme"id="select1" onchange="" required>
+        <option value="">N/A</option>       
+        <option value="4h">5 Pesos</option>
+        <option value="7h">10 Pesos</option>
+        <option value="15d">150 Pesos</option>
+    </select>    
+        <button class="btn btn-theme" onclick="generateQR()">submit</button> 
+        <button class="btn btn-theme" onclick="generateRandom()">random</button>      
+        <button class="btn btn-theme" onclick="clearQr()">Clear</button>      
+
+    </div>
+    <div class="wrapper">
+        <div id="qrcode"></div>
+    </div>
+    
+    
+    <div class="result-container"> 
+    <div id="result-text2">Expire and Amount Appear Here...</div>
+    
+    </div>
+  
+    <div class="btn-container" style="justify-content:space-evenly">
+         <button class="btn btn-theme" id="copy-btn">Copy to Clipboard</button>        
+         <button class="btn btn-theme" id="copy-btn2">Copy to Terminal</button>
+        <button class="btn btn-theme" id="copy-btnprint">Print</button>
+    </div>   
+    <br>
+    <div class="footer">         
+    <i style="color:purple">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple"></i>
+    </div>
+    
+   </div>
+<script>   
+//input
+            var myInput = document.getElementById("text-input");
+            var myValue = myInput.value;
+//random Qr
+            function generateRandom() {                
+            var date = new Date();
+            var month = (date.getMonth() + 1).toString().padStart(2, '0');
+            var day = date.getDate().toString().padStart(2, '0');
+            var formattedDate = month + '' + day;
+//  const today = new Date().toISOString().split('T')[0];
+            const newtoday = formattedDate.replace(/-/g, '');             
+            const randomNum = Math.floor(Math.random() * 1000) + 1;       
+            myValue = `C${newtoday}${randomNum}`;
+            myInput.value = myValue;
+            }       
+//Initialize the QR instance
+        let qrcode = new QRCode(document.getElementById("qrcode"), {
+            width: 200,
+            height: 200
+        });
+//Qr function start
+           function generateQR() {    
+            
+            const formattedDate = new Date().toISOString().split('T')[0];
+    
+           const vcode=  document.getElementById("text-input").value;
+          // let vcresult= "http://10.0.0.1/login?="+vcode+"&password=";
+          let vcresult=`http://10.0.0.1/login?username=${vcode}&password=`
+          let resultElement = document.getElementById('result-text')                                        
+          const copyBtn = document.getElementById('copy-btn');
+          const copyBtn2 = document.getElementById('copy-btn2');  
+          const statusMsg = document.getElementById('status');
+          resultElement.innerText= `${new Date().toLocaleDateString()} | ${new Date().toLocaleTimeString()}`;                                                                                                
+          const data =vcresult;
+// if condition Qr        
+            if (data) {
+                qrcode.makeCode(data);                
+                if (vcode) {
+                qrcode.makeCode(data);
+                } else {
+                qrcode.clear(); // Clears the QR if input is empty
+               // resultElement.innerHTML=""
+                       }                                                               
+               } 
+               else {
+                qrcode.clear(); // Clears the QR if input is empty
+               }                         
+// 2. Clipboard Logic
+        copyBtn.addEventListener('click', () => {
+           const text = vcresult;
+            if (text && text !== "Time and Date appear Here...") {
+                navigator.clipboard.writeText(text).then(() => {
+             //       statusMsg.style.display = 'block';
+             //       setTimeout(() => statusMsg.style.display = 'none', 2000);
+                });
+            }
+        }); 
+//select logic               
+        var selectValue = String(document.getElementById("select1").value);
+        let Generation=`/ip hotspot user add name="${vcode}" password="" profile="default" comment="Qrandom" limit-uptime="${selectValue}"`              
+               
+      switch (selectValue) {
+       case "":
+        document.querySelector('#result-text2').innerHTML=  'Plese Select Amount'  
+       break;
+      case "4h":
+        document.querySelector('#result-text2').innerHTML=  'Expire:4h | Amount ₱ 5'  
+       break;
+      case "7h":
+        document.querySelector('#result-text2').innerHTML=  'Expire:7h | Amount ₱ 10'     
+      break;        
+      case "15d":
+         document.querySelector('#result-text2').innerHTML=  'Expire:15d | Amount ₱ 150'
+      break;
+      default:
+   // alert("Option 3 ang napili");
+}
+                              
+                                           
+        copyBtn2.addEventListener('click', () => {
+        const text2 = Generation;
+            if (text2 && text2 !== "Scanned text will appear here...") {
+                navigator.clipboard.writeText(text2).then(() => {
+       //             statusMsg.style.display = 'block';
+       //             setTimeout(() => statusMsg.style.display = 'none', 2000);
+               });
+            }
+        });                                                               
+  }
+
+function clearQr(){
+    qrcode.clear()
+  //  resultElement.innerHTML=""
+    document.getElementById("text-input").value="";
+    document.querySelector('#result-text2').textContent='Please Select Amount'
+    
+ //   resultElement.innerHTML=""
+   let resultElement = document.getElementById('result-text').innerHTML='Please Generate Qr Code';                                       
+  // document.getElementById("qrcode").innerHTML='Please Generate Qr Code Here...';
+ // innerHTML='Please Generate Qr Code Here...'
+
+}
+                                                  
+  </script>
+</body>
+</html>
