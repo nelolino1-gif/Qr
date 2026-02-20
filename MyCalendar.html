@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body {
+            font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; 
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction: column; 
+            padding:2vw; 
+            background:;
+            margin-top:2vw;
+                      
+        }
+
+
+
+ .container{
+            border:;
+            width:90vw;
+            display:flex;
+            flex-direction:column;
+            background:;
+            text-align:center;
+            align-items: center;
+            font-size:5vw;
+        }
+
+
+
+
+
+
+p{
+  color:;
+  font-size:5vw;
+  text-align:center;
+}
+#date{
+  color:tomato;
+  background:;
+  
+}
+#NowIs{
+  color:white;
+  background:green; 
+}
+
+#appointment{
+  color:green;
+}
+
+#day{
+  color:violet;
+}
+
+#time{
+  color:purple;
+ font-weight:bold;
+}
+
+#month{
+  color:blue;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  height:auto;  
+  font-weight:bold;
+  margin:2vw;            
+}
+
+th, td {
+  border: .5vw solid brown;
+  padding: 3vw;
+  text-align: center;
+ /* height:35px;*/
+  font-size:4vw; 
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+th {
+  background-color: #f2f2f2;
+  width:33.33%;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+
+  @media (max-width: 1024px) {
+  .container { background: white; padding: 2vw; border-radius: 3vw; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width: 90vw;font-size:4vw;}
+}
+  
+  @media (max-width: 768px) {
+  .container { background: white; padding: 2vw; border-radius: 3vw; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width: 90vw;font-size:4vw;}    
+              
+         
+              
+              
+              
+  }
+
+  
+  @media (max-width: 480px) {
+  .container { background: white; padding: 2vw; border-radius: 3vw; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width:90vw;font-size:4vw;}
+              
+            
+   
+              
+              
+  }
+
+
+</style>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Calendar</title>
+  <!--link rel="stylesheet" href="style.css">
+  <script src="index.js"></script-->
+</head>
+<body>
+
+  <div class="container" style="background:">
+<table>
+ <tr>
+     <td colspan="3" style="color:teal">MY CALENDAR</td>    
+ </tr>
+  <tr>
+    <th>Araw</th>
+    <th>Buwan</th>
+    <th>Taon</th>
+  </tr>
+  <tr>
+    <td id="day"></td>
+    <td id="month"></td>
+    <td id="date"></td>
+  </tr>
+  <tr>
+   <th>Petsa</th> 
+    <td colspan="2" id="NowIs"></td>  
+  </tr>
+  <tr>
+    <td>Oras</td> 
+    <td colspan="2" id="time"></td>    
+  </tr>
+  <tr>
+    <td colspan="2" id="appointment"></td>   
+    <td >Status</td>   
+  </tr>  
+</table>                               
+<div style="background:;width:100%;font-size:1em ;padding:5%;">                          
+ <i style="color:purple ">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple"></i>                                        </div>                                       
+</div>  
+<script> 
+var today = new Date(); 
+let taon = today.getFullYear();
+let monthName =today.toLocaleString('default', { month: 'long' });
+var date=(today.toISOString().split('T')[0]); // halimbawa: 2024-10-26
+var day=(today.toLocaleDateString('tl-PH',{ weekday: 'long' })); // halimbawa: Saturday
+var dayNow = today.getDate(); //  
+var NowIs = dayNow;
+switch (dayNow){
+    case 1:
+    NowIs=`${dayNow}`;
+    break;
+    case 2:
+    NowIs=`${dayNow}`;
+    break;
+    case 3:
+    NowIs="3";
+    break;
+    case 4:
+    NowIs="4";
+    break;
+    case 5:
+    NowIs="5";
+    break;
+    case 6:
+    NowIs="6";
+    break;
+    case 7:
+    NowIs="7";
+    break;
+    case 8:
+    NowIs="8";
+    break;
+    case 9:
+    NowIs="9";
+    break;
+    case 10:
+    NowIs="10";
+    break;
+    case 11:
+    NowIs="11";
+    break;
+    case 12:
+    NowIs="12";
+    break;
+    case 13:
+    NowIs="13 GCREDIT";
+    break;
+    case 14:
+    NowIs="14";
+    break;
+    case 15:
+    NowIs="15 BILL";
+    break;
+    case 16:
+    NowIs="16";
+    break;
+    case 17:
+    NowIs="17";
+    break;
+    case 18:
+    NowIs="18 WIFI BILL";
+    break;
+    case 19:
+    NowIs="19";
+    break;
+    case 20:
+    NowIs="20";
+    break;
+    case 21:
+    NowIs="21 WIFI JOANV";
+    break;
+    case 22:
+    NowIs="22";
+    break;
+    case 23:
+    NowIs="23";
+    break;
+    case 24:
+    NowIs="24";
+    break; 
+    case 25:
+    NowIs="25";
+    break;
+    case 27:
+    NowIs="27";
+    break;
+    case 28:
+    NowIs="28";
+    break;
+    case 29:
+    NowIs="29";
+    break;
+    case 30:
+    NowIs="30 BILL";
+    break;
+    case 31:
+    NowIs="31";
+    break;
+    default:
+    NowIs="add";
+};    
+  setInterval(() => {
+  let now = new Date();
+  let hours = now.getHours() % 12 || 12;
+  let mins = now.getMinutes().toString().padStart(2, '0');
+  let secs = now.getSeconds().toString().padStart(2, '0');
+  let ampm = now.getHours() < 12 ? 'AM' : 'PM';
+  document.getElementById("time").innerHTML=`${hours}:${mins}:${secs} ${ampm}`; 
+   }, 1000);
+  let Sat = 'Sabado';
+  let Sun= 'Linggo';
+ var dayCss=document.getElementById("day")  
+ let color = "red"
+if (day.includes('Lunes') || day.includes('Huwebes')) {
+ dayCss.style.backgroundColor='green';
+  dayCss.style.color='white';
+  status ="May Therapy ";    
+}
+ else if (day.includes(`${Sat}`) || day.includes( `${Sun}`)){
+dayCss.style.backgroundColor='red';
+  dayCss.style.color='white';
+  status =`<span style="color:${color}" >Walang Therapy     </span>`;
+ } 
+else {
+  status =`<span style="color:${color}" >Walang Therapy     </span>`;
+}
+  var date=document.getElementById("date").innerHTML=taon;
+  var day=document.getElementById("day").innerHTML=day; 
+  var NowIs=document.getElementById("NowIs").innerHTML=NowIs;
+  var appointment=document.getElementById("appointment").innerHTML=status;
+ document.getElementById("month").innerHTML=monthName;  
+</script>  
+  
+</body>
+</html>
