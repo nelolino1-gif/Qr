@@ -76,7 +76,9 @@ table {
   width: 100%;
   height:auto;  
   font-weight:bold;
-  margin:2vw;            
+  margin:2vw;     
+  table-layout:fixed;
+              
 }
 
 th, td {
@@ -86,6 +88,7 @@ th, td {
  /* height:35px;*/
   font-size:4vw; 
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  wrap-word-break-word;          
 }
 
 th {
@@ -149,7 +152,7 @@ tr:hover {
   <tr>
    <th>Petsa</th> 
     <td colspan="" id="Now"></td>
-    <td colspan="" id="NowIs"></td>  
+    <td style="font-size:3vw;padding:.5vw"colspan="" id="NowIs"></td>  
   </tr>
   <tr>
     <td>Oras</td> 
@@ -233,7 +236,7 @@ switch (dayNow){
     NowIs="";
     break;
     case 21:
-    NowIs="JOAN WIFI";
+    NowIs="JOAN V WIFI PAYMENT";
     break;
     case 22:
     NowIs="";
