@@ -23,32 +23,27 @@
   }
           
   body {
-   width:100vw;
-  display: flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column ; 
-    padding:1vw; 
-    background:;
-  }
-
-
-
- .container{
-     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     width:100%;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     width:100vw;
      display:flex;
      flex-direction:column;
      background:;
      text-align:center;
-     align-items: center;     
-    }
+     align-items: center; 
+     padding: 3vw; 
+     border-radius: 2vw; 
+         }
+
+
+
+     
+ 
  
                 
   
  .sub-container{
     justify-content:center;
-    width:100%;   
+    width:90vw;   
     display:flex;
     flex-direction:row;    
   }
@@ -59,7 +54,7 @@
         
   
   .discription{
-    width:60%;
+    width:60vw;
     border:.5vw solid teal;      
     font-size: 4vw;       
     text-align:center;
@@ -76,7 +71,7 @@
  
  
   .amount{
-    width:20%;
+    width:15%;
     border:.5vw solid teal;      
     font-size: 4vw;       
     text-align:center;
@@ -94,7 +89,7 @@
    
  
  .total{
-    width:100%;
+    width:90vw;
     border:.5vw solid teal;      
     font-size: 4vw;       
     text-align:center;
@@ -118,7 +113,7 @@
  }
  
  .clientname{
-  width:100%;
+  width:90vw;
  }
  
  
@@ -136,7 +131,7 @@
  
 .btn-submit{
  margin-top:3vw;
- width:100%;
+ width:90vw;
  
 }
  
@@ -212,11 +207,14 @@
         }
  
      
+ 
+
+ 
 
   </style>
 </head>
 <body>
-    <div class="container">    
+      
     <div class=" caption">BLACK AND WHITE <i class="fa fa-print caption"></i></div>     
     <div class="sub-container">
     <input class=" amount" id="pcsIdbw" type="number"  value="" oninput="result()">    
@@ -264,15 +262,9 @@
     
      <div  class="modal fade" id="myExampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
      <div class="modal-dialog">
-     <div  style=" background:;"class="modal-content">
       
-      <!--div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Total</h5>
-      </div>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-      
-      
-      <div class="print-container  modal-body">
+     <div  style=" background:;"class="modal-content">      
+     <div class="print-container  modal-body">
       <div class="receipt-wrapper">
       <header class="center">
         <h1>PWX PRINTING SERVICES</h1>
@@ -344,6 +336,8 @@
     </div>
     </div>      
     </div>
+      
+      
   </div>
 </div>   
   <script>                    
