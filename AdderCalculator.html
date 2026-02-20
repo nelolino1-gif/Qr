@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Dynamic Sum Calculator</title>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
+    <style>
+        body {
+            display :flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            font-family: sans-serif; 
+            padding:0vw; 
+            background-color:
+            #f4f4f9; 
+            font-size:5vw;
+        }
+        .controls {
+            display:flex;
+            flex-direction:row;
+            justify-content:center;
+            
+            margin-bottom: 3vw;
+            gap:2vw;
+        }
+        .input-wrapper { 
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            margin-bottom: 2vw;
+            width: 95vw}
+        input { 
+            padding: 2vw;
+            border: .5vw solid teal;
+            border-radius: 1vw;
+            width: 80vw;
+            font-size:5vw;
+            text-align:center;
+        }
+        
+    input:focus{
+        outline:none;
+        border:.5vw solid tomato;
+    }
+    
+    
+        button {
+            padding: 3vw 5vw;
+            width:40vw;
+            cursor: pointer;
+            border: none; 
+            border-radius: 2vw;
+            color: white;
+            font-size:4vw;
+        }
+        .btn-add {
+            background-color:
+            #28a745; 
+        }
+        .btn-remove {
+            background-color: #dc3545; 
+        }
+        
+        .result-box {
+            margin-top: 2vw; 
+            font-weight: bold; 
+            font-size:6vw;
+        }
+        #total {
+          /*  color: #007bff;*/
+            color: lightseagreen;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Dynamic Sum Calculator</h2>
+
+    <div class="controls">
+        <button class="btn-add" onclick="addField()">+ Add Input</button>
+        <button class="btn-remove" onclick="removeLastField()">- Remove Last</button>
+    </div>
+
+    <div id="container">
+        <div class="input-wrapper">
+            <input type="number" class="val-input" value="" oninput="calculateTotal()">
+        </div>
+    </div>
+
+    <div class="result-box">
+        Total: <span id="total">0</span>
+    </div>
+    <footer style="margin:3vw">
+        <i style="color:purple ">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple"></i>
+    </footer>
+              <script>
+        const container = document.getElementById('container');
+        const totalDisplay = document.getElementById('total');
+
+        function addField() {
+            const div = document.createElement('div');
+            div.className = 'input-wrapper';
+            div.innerHTML = '<input type="number" class="val-input" value="" oninput="calculateTotal()">';
+            container.appendChild(div);
+            calculateTotal(); // Update total after adding
+        }
+
+        function removeLastField() {
+            const fields = container.getElementsByClassName('input-wrapper');
+            // Keep at least one input field
+            if (fields.length > 1) {
+                container.removeChild(fields[fields.length - 1]);
+                calculateTotal(); // Update total after removing
+            }
+        }
+
+        function calculateTotal() {
+            let sum = 0;
+            const inputs = document.querySelectorAll('.val-input');
+            
+            inputs.forEach(input => {
+                const val = parseFloat(input.value) || 0;
+                sum += val;
+            });
+
+            totalDisplay.innerText = sum;
+        }
+    </script>
+
+</body>
+</html>
