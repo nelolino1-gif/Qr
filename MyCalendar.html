@@ -39,13 +39,19 @@ p{
   text-align:center;
 }
 #date{
-  color:tomato;
+  color:green;
   background:;
   
 }
+
+#Now{
+  color:teal;
+  background:; 
+}
+
 #NowIs{
-  color:white;
-  background:green; 
+  color:red;
+  background:; 
 }
 
 #appointment{
@@ -53,7 +59,7 @@ p{
 }
 
 #day{
-  color:violet;
+  color:green;
 }
 
 #time{
@@ -62,7 +68,7 @@ p{
 }
 
 #month{
-  color:blue;
+  color:green;
 }
 
 table {
@@ -167,97 +173,98 @@ var dayNow = today.getDate(); //
 var NowIs = dayNow;
 switch (dayNow){
     case 1:
-    NowIs=`${dayNow}`;
+    NowIs='';
     break;
     case 2:
-    NowIs=`${dayNow}`;
+    NowIs='';
     break;
     case 3:
-    NowIs="3";
+    NowIs="";
     break;
     case 4:
-    NowIs="4";
+    NowIs="";
     break;
     case 5:
-    NowIs="5";
+    NowIs="";
     break;
     case 6:
-    NowIs="6";
+    NowIs="";
     break;
     case 7:
-    NowIs="7";
+    NowIs='';
     break;
     case 8:
-    NowIs="8";
+    NowIs='';
     break;
     case 9:
-    NowIs="9";
+    NowIs="";
     break;
     case 10:
-    NowIs="10";
+    NowIs="";
     break;
     case 11:
-    NowIs="11";
+    NowIs="";
     break;
     case 12:
-    NowIs="12";
+    NowIs="";
     break;
     case 13:
-    NowIs="13 GCREDIT";
+    NowIs="GCREDIT";
     break;
     case 14:
-    NowIs="14";
+    NowIs="";
     break;
     case 15:
-    NowIs="15 BILL";
+    NowIs="BILL";
     break;
     case 16:
-    NowIs="16";
+    NowIs="";
     break;
     case 17:
-    NowIs="17";
+    NowIs='';
     break;
     case 18:
-    NowIs="18 WIFI BILL";
+    NowIs='WIFI PAY';
     break;
     case 19:
-    NowIs="19";
+    NowIs='';
     break;
     case 20:
     NowIs="";
     break;
     case 21:
-    NowIs="WIFI JOANV";
+    NowIs="JOAN WIFI";
     break;
     case 22:
-    NowIs="22";
+    NowIs="";
     break;
     case 23:
-    NowIs="23";
+    NowIs="";
     break;
     case 24:
-    NowIs="24";
+    NowIs="";
     break; 
     case 25:
-    NowIs="25";
+    NowIs='';
     break;
     case 27:
-    NowIs="27";
+    NowIs="";
     break;
     case 28:
-    NowIs="28";
+    NowIs="";
     break;
     case 29:
-    NowIs="29";
+    NowIs="";
     break;
     case 30:
-    NowIs="30 BILL";
+    NowIs="BILL";
     break;
     case 31:
-    NowIs="31";
+    NowIs="";
     break;
     default:
-    NowIs="add";
+    NowIs="default";
+    break;
 };    
   setInterval(() => {
   let now = new Date();
@@ -286,7 +293,7 @@ else {
 }
   var date=document.getElementById("date").innerHTML=taon;
   var day=document.getElementById("day").innerHTML=day; 
-  var NowIs=document.getElementById("NowIs").innerHTML=NowIs;
+  var NowIs=document.getElementById("NowIs").innerText= NowIs;
   var appointment=document.getElementById("appointment").innerHTML=status;
  document.getElementById("month").innerHTML=monthName;  
 document.getElementById("Now").innerHTML=dayNow;  
