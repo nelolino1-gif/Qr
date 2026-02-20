@@ -142,7 +142,8 @@ tr:hover {
   </tr>
   <tr>
    <th>Petsa</th> 
-    <td colspan="2" id="NowIs"></td>  
+    <td colspan="" id="Now"></td>
+    <td colspan="" id="NowIs"></td>  
   </tr>
   <tr>
     <td>Oras</td> 
@@ -223,10 +224,10 @@ switch (dayNow){
     NowIs="19";
     break;
     case 20:
-    NowIs="20";
+    NowIs="";
     break;
     case 21:
-    NowIs="21 WIFI JOANV";
+    NowIs="WIFI JOANV";
     break;
     case 22:
     NowIs="22";
@@ -288,7 +289,9 @@ else {
   var NowIs=document.getElementById("NowIs").innerHTML=NowIs;
   var appointment=document.getElementById("appointment").innerHTML=status;
  document.getElementById("month").innerHTML=monthName;  
-</script>  
+document.getElementById("Now").innerHTML=dayNow;  
+
+   </script>  
   
 </body>
 </html>
