@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        
+    }
+    
+    
+        body {
+            display: flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            font-family: 'Segoe UI', sans-serif;
+            padding:3vw;
+            background-color: #f8f9fa;
+            font-size:4vw;
+        }
+        .box {
+            margin: auto;
+            background: white; 
+            padding: 2ve; 
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Input Area */
+        .entry-form { 
+            display: flex;
+            flex-direction:row;
+            justify-content:center;
+            align-items:center;
+            gap: 1vw; 
+            margin-bottom: 3vw;
+            margin-top: 3vw;
+        }
+        input {
+            text-align:center;
+            font-size:4vw;
+            width:30%;
+            flex: 1; 
+            padding: 2vw;
+            border:.5vw solid lightseagreen;
+            border-radius: 2vw; }
+        input:focus{
+            outline:none;
+            border:.5vw solid tomato;
+        }
+        /* Table Styling */
+        table {
+            font-size:4vw;
+            width: 100%; 
+            border-collapse: collapse;
+            margin-top: 4vw; 
+            
+        }
+        th, td {
+            font-size:4vw;
+            width: 30%; 
+            border: 1px solid #eee; 
+            padding: 2vw;
+            text-align: center;
+            border:.5vw solid teal;
+        }
+        th {
+            background-color:#ddd; 
+            color: brown;
+        }
+        tfoot { background-color: #f1f1f1; font-weight: bold; }
+        
+        /* Buttons */
+        .btn-group { display: flex; gap: 10px; }
+        button { 
+            font-size:4vw;
+            padding: 2vw 7vw;
+            border: none;
+            border-radius: 5px; 
+            cursor: pointer;
+            color: white;
+            font-weight: bold; }
+        .add-btn { background-color: #007bff; }
+        .rem-btn { background-color: #dc3545; }
+        button:hover { opacity: 0.9; }
+    </style>
+</head>
+<body>
+
+    <h2>Order List</h2>
+    
+    <div class="entry-form">
+       
+        <input type="text" id="itemName" placeholder="Item Name">
+        <input type="number" id="itemPrice" placeholder="Price ($)">
+        <input type="number" id="itemPcs" placeholder="Item Pcs">
+       
+    </div>
+
+    <div class="btn-group">
+        <button class="add-btn" onclick="proceedToTable()">Add Row & Calculate</button>
+        <button class="rem-btn" onclick="removeLastRow()">Remove Last Row</button>
+    </div>
+
+    <table id="dataTable">
+        <thead>
+            <tr>             
+                <th>Item</th>               
+                <th>Pcs</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td id="totalValue">0</td>
+                <td id="totalValue2">0</td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+<script>
+    const tableBody = document.querySelector("#dataTable tbody");
+    const totalDisplay = document.getElementById("totalValue");
+    const totalDisplay2 = document.getElementById("totalValue2");
+
+    function proceedToTable() {
+        
+        
+        
+        const nameInp = document.getElementById("itemName");
+        const pcsInp = document.getElementById("itemPcs");
+       
+        const priceInp = document.getElementById("itemPrice");
+
+        if (!nameInp.value || !priceInp.value) {
+            alert("Please enter both Name and Price.");
+            return;
+        }
+
+        // 1. Add new row to TBODY
+        const newRow = tableBody.insertRow();
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        const cell3 = newRow.insertCell(2);
+
+        cell1.innerText = nameInp.value;
+        cell2.innerText = parseFloat(priceInp.value); // Ensure it's a number
+        cell3.innerText = parseFloat(pcsInp.value); // Ensure it's a number
+
+
+        // 2. Clear inputs
+        pcsInp.value = "";
+        nameInp.value = "";
+        priceInp.value = "";
+        nameInp.focus();
+
+        // 3. Update the TFOOT Total
+        updateTotal();
+    }
+
+    function removeLastRow() {
+        if (tableBody.rows.length > 0) {
+            tableBody.deleteRow(-1);
+            updateTotal();
+        } else {
+            alert("No rows to remove.");
+        }
+    }
+
+    function updateTotal() {
+        let sum = 0;
+        let sum2 = 0;
+        // Loop through all rows in tbody and sum the 2nd column
+        for (let i = 0; i < tableBody.rows.length; i++) {
+            const val = parseFloat(tableBody.rows[i].cells[1].innerText);
+            sum += isNaN(val) ? 0 : val;
+        }
+            
+            for (let i = 0; i < tableBody.rows.length; i++) {
+            const val2 = parseFloat(tableBody.rows[i].cells[2].innerText);
+            sum2 += isNaN(val2) ? 0 : val2;
+        }
+            
+        // Update the TFOOT cell
+        totalDisplay.innerText = sum.toFixed(2);
+            
+         
+         totalDisplay2.innerText = sum2.toFixed(2);
+
+    }
+    
+</script>
+
+</body>
+</html>
