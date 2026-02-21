@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    
+    
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+        body {
+            width:100vw;
+            font-size:5vw;
+            font-family: sans-serif; display: flex; justify-content: center; }
+        .calc-box {
+            margin:5vw 0vw;
+            width:90vw; 
+            border: 1px solid #ddd;
+            padding: 4vw; 
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);            
+            display: flex;
+            justify-content: center;
+            flex-direction:column;
+            align-items:center;
+        }
+        input { 
+            width: 85%; 
+            text-align:center;
+            font-size:5vw;
+            padding: 3vw;
+            margin: 2vw;
+            border: .5vw solid teal;
+            border-radius: 1vw 
+            
+        }
+    
+         input:focus{
+             outline:none;
+             border: .5vw solid tomato;
+         }
+            #result { 
+                font-size:5vw;
+                font-weight: bold; 
+                color: #28a745;
+                margin-left: 10px;
+            }
+    </style>
+</head>
+<body>
+
+<div class="calc-box">
+    <h4 style="margin : .5vw"> Divide Calculator </h4>
+    <input type="number" id="num1" placeholder="Number" oninput="divide()">
+    <span> / </span>
+    <input type="number" id="num2" placeholder="Number" oninput="divide()">
+    
+    <!--button onclick="divide()">=</button-->
+    
+    <div id="result">0</div>
+</div>
+
+<script>
+    function divide() {
+        // 1. Get values from inputs
+        const n1 = parseFloat(document.getElementById('num1').value);
+        const n2 = parseFloat(document.getElementById('num2').value);
+        const display = document.getElementById('result');
+
+        // 2. Validation & Calculation
+        if (isNaN(n1) || isNaN(n2)) {
+            display.innerText = "Enter numbers";
+            display.style.color = "red";
+        } else if (n2 === 0) {
+            display.innerText = "Cannot divide by 0";
+            display.style.color = "red";
+        } else {
+            const result = n1 / n2;
+            // 3. Display result (rounded to 2 decimal places)
+            display.innerText = result.toFixed(2);
+            display.style.color = "#28a745";
+        }
+    }
+</script>
+
+</body>
+</html>
