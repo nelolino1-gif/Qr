@@ -145,12 +145,26 @@
          word-wrap:break-word;
          padding: .7vw 0; 
             
-            text-align:center;
+            
         }
+    
+    
+    table td:nth-child(1) {
+  text-align:left;
+}
+
+table td:nth-child(2) {
+  text-align: center;
+}
+
+        table td:nth-child(3) {
+  text-align:right;
+}
+
     
         td { 
 
-           text-align:center;
+           
            padding: .4vw 0; 
            vertical-align: top;
            word-wrap:break-word;
@@ -242,9 +256,9 @@
         <thead>
             <tr>             
             
-                <th>Pcs</th>
-                <th>Items</th>   
-                <th>Price</th>
+                <th style="text-align:left">Pcs</th>
+                <th style="text-align:center">Items</th>   
+                <th style="text-align:right">Price</th>
             </tr>
         </thead>
         <tbody>
@@ -348,8 +362,8 @@
         }
             
         // Update the TFOOT cell
-        totalDisplay.innerText = sum.toFixed(2);
-        totalDisplay2.innerText = sum2.toFixed(2);
+        totalDisplay.innerText = sum.toFixed();
+        totalDisplay2.innerText = sum2.toFixed();
 
     
          
@@ -367,7 +381,7 @@
     let address                                                                                             
     let value2 = document.getElementById('totalValue2').innerText;   
     document.getElementById('subTotal').textContent = `${value2}`;
-    document.getElementById('grandTotal').textContent = `${value2}`;               
+    document.getElementById('grandTotal').innerText = value2;               
     let bannerId = document.querySelector('#bannerId').value         
     document.querySelector('#bannerName').textContent = bannerId;  
     let addressId = document.querySelector('#addressId').value         
