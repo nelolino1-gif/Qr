@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Order Receipt</title>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
+    
+<head>
+    <style>
+    
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        
+    }
+    
+    
+        body {
+            display: flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            padding:3vw;
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', sans-serif;
+          
+            
+        }
+        .box {
+            font-family: 'Segoe UI', sans-serif;
+            font-size:4vw;
+          
+            margin: auto;
+            background: white; 
+            padding: 2ve; 
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* Input Area */
+        .entry-form { 
+            font-family: 'Segoe UI', sans-serif;
+            font-size:4vw;
+          
+            display: flex;
+            flex-direction:row;
+            justify-content:center;
+            align-items:center;
+            gap: 0vw; 
+            margin-bottom: 3vw;
+            margin-top: 3vw;
+        }
+    
+    
+            .entry-form-col{ 
+            width:100%;
+            font-family: 'Segoe UI', sans-serif;
+            font-size:4vw;
+          
+            display: flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            gap: 2vw; 
+            margin-bottom: 3vw;
+            margin-top: 3vw;
+        }
+        input {
+            font-family: 'Segoe UI', sans-serif;
+            font-size:4vw;
+            text-align:center;
+            font-size:4vw;
+            width:30%;
+            flex: 1; 
+            padding: 2vw;
+            border:.5vw solid lightseagreen;
+            border-radius: 0vw; }
+        input:focus{
+            outline:none;
+            border:.5vw solid tomato;
+        }
+        /* Table Styling */
+        
+        
+        tfoot { background-color: #f1f1f1; font-weight: bold; }
+        
+        /* Buttons */
+        .btn-group {
+            font-family: 'Segoe UI', sans-serif;
+            font-size:4vw;
+          
+            width:100%;
+            display: flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            gap: 3vw; 
+        }
+        button { 
+            width:100%;
+            font-size:4vw;
+            padding: 2.5vw 7vw;
+            border: none;
+            border-radius: 5px; 
+            cursor: pointer;
+            color: white;
+            font-weight: bold; }
+        .add-btn { background-color: #007bff; }
+        .rem-btn { background-color: #dc3545; }
+        button:hover { opacity: 0.9; }
+    
+    
+    
+    
+     /* print css */
+        .print-container {            
+        font-family: 'Courier New', Courier, monospace; line-height: 1.2; color: #333; }
+        .receipt-wrapper { width: 90vw; margin: auto; padding: 2vw; border: .5px solid #eee;
+        margin-top:5vw;}
+        .center { text-align: center; }
+        .bold { font-weight: bold; }
+        
+        header { margin-bottom: 2vw; }
+        header h1 { margin: 0; font-size: 6vw; }
+        
+        .info-row { display: flex; justify-content: space-between; margin-bottom: 2vw; font-size: 4vw;}
+        
+         p{
+             
+         font-size: 4vw;
+             
+         }
+        table {
+         font-family: 'Courier New', Courier, monospace; 
+         line-height: 1.2;
+         color: #333; 
+         width: 100%;
+         border-collapse: collapse; 
+         margin-top: 3vw;
+         table-layout:fixed;            
+          font-size: 4vw;
+        }
+        th { 
+         border-bottom: .5vw dashed #000;
+         word-wrap:break-word;
+         padding: .7vw 0; 
+            
+            
+        }
+    
+    
+    table td:nth-child(1) {
+  text-align:left;
+}
+
+table td:nth-child(2) {
+  text-align: center;
+}
+
+        table td:nth-child(3) {
+  text-align:right;
+}
+
+    
+        td { 
+
+           
+           padding: .4vw 0; 
+           vertical-align: top;
+           word-wrap:break-word;
+        }
+        .price {
+         text-align: right; 
+         
+        }
+        
+        .totals {
+         margin-top: 3vw;
+         border-top: .5vw solid #000;
+         padding-top: 2vw; 
+        }
+        .footer-print { 
+         margin-top: 5vw; 
+         font-size: 4vw; 
+         border-top: .5vw dashed #ccc; 
+         padding-top: 3vw;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            .receipt-wrapper {
+             border: none;
+            }
+            button {
+             display: none;
+            } /* Hide print button when printing */
+           /* Hide print button when printing */      
+            
+            .entry-form{
+            display: none;
+            }
+             h2{
+            display: none;
+            }
+            .entry-form-col{
+            display: none;
+            }
+            footer{
+            display: none;
+            }
+            
+        }    
+    </style>
+</head>
+<body>
+    <h2 style="font-size:5vw">Order Receipt</h2>    
+    <div class="entry-form-col">
+        <div style="display:none">
+        <input style="width:100%;"type="text" id="bannerId" value="PWX PRINTING SERVICES" placeholder="Banner" readonly="">       
+        <input style="width:100%"type="text" id="addressId" value="Sama-Sama St. Manggahan 2, Habay 2, Bacoor Cavite" placeholder="Address" readonly="">
+        <input style="width:100%"type="text" id="contactId" value="Contact#: (+639) 755-725-109" placeholder="Contact" readonly="">
+        </div>
+        <input style="width:100%"type="text" id="clientId" placeholder="Client" value="C">    
+    </div>   
+    <div class="entry-form">
+         <input type="number" id="itemPcs" placeholder="pcs">       
+        <input type="text" id="itemName" placeholder="items">
+        <input type="number" id="itemPrice" placeholder="price">    
+    </div>     
+
+    <div class="btn-group">
+        <button class="add-btn" onclick="proceedToTable()">Add Row & Calculate</button>
+        <button class="rem-btn" onclick="removeLastRow()">Remove Last Row</button>
+    </div>   
+    
+     <div class="receipt-wrapper print-container" style="">
+      <header class="center">
+        <h1 id="bannerName">PWX PRINTING SERVICES</h1>
+        <p id="address">Sama-Sama St. Manggahan 2, Habay 2, Bacoor Cavite <p>
+            <p id="contactUs">Contact#: (+639) 755-725-109</p>
+     </header>
+         
+     <div class="info-row">
+     <span id="date">N/A</span>
+     <span id="time">N/A</span>       
+     </div>
+     <div class="info-row">
+     <span id="receiptNum">N/A</span>
+     <span id="cashier">N/A</span>
+     </div>
+
+     <div class="info-row">
+     <span >Name: <b id="clientName">N/A</b></span>
+     </div>
+    <table id="dataTable">
+        <thead>
+            <tr>             
+            
+                <th style="text-align:left">Pcs</th>
+                <th style="text-align:center">Items</th>   
+                <th style="text-align:right">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+        <tfoot>
+            <tr>                                    
+                <td id="totalValue">0</td>
+                <td></td>
+                <td id="totalValue2">0</td>   
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="totals">
+        <div class="info-row">
+            <span >Subtotal</span>
+            <span id="subTotal">0</span>
+        </div>
+        <div class="info-row">
+            <span>discount </span>
+            <span>0</span>
+        </div>
+        <div class="info-row bold">
+            <span>TOTAL</span>
+            <span id="grandTotal">0</span>
+        </div>
+    </div>
+
+    <div class="footer-print center">
+        <p>Thank you </p>
+        <p> Email : printpwx@gmail.com</p>
+        <br>
+       <button type="button" style="padding:3px; border-radius:2px; border: 1px solid; margin-bottom:12px"class="no-print print-container" onclick="window.print()">Print Receipt</button>
+    </div>    
+    </div>  
+    
+    <footer>
+    <i style="color:purple">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple"></i>
+    </footer>
+    
+    
+<script>
+    const tableBody = document.querySelector("#dataTable tbody");
+    const totalDisplay = document.getElementById("totalValue");
+    const totalDisplay2 = document.getElementById("totalValue2");
+
+    function proceedToTable() {
+        
+        
+            const pcsInp = document.getElementById("itemPcs");
+            const nameInp = document.getElementById("itemName");
+            const priceInp = document.getElementById("itemPrice");
+
+        if (!nameInp.value || !priceInp.value) {
+            alert("Please enter both pcs and items.");
+            return;
+        }
+
+        // 1. Add new row to TBODY
+        const newRow = tableBody.insertRow();
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        const cell3 = newRow.insertCell(2);
+
+        cell1.innerText = parseFloat(pcsInp.value); // Ensure it's a number
+        cell2.innerText =nameInp.value;
+        cell3.innerText = parseFloat(priceInp.value); // Ensure it's a number
+
+
+        // 2. Clear inputs
+        pcsInp.value = "";
+        nameInp.value = "";
+        priceInp.value = "";
+        nameInp.focus();
+
+        // 3. Update the TFOOT Total
+        updateTotal();
+    }
+
+    function removeLastRow() {
+        if (tableBody.rows.length > 0) {
+            tableBody.deleteRow(-1);
+            updateTotal();
+        } else {
+            alert("No rows to remove.");
+        }
+    }
+
+    function updateTotal() {
+        let sum = 0;
+        let sum2 = 0;
+        // Loop through all rows in tbody and sum the 2nd column
+        for (let i = 0; i < tableBody.rows.length; i++) {
+            const val = parseFloat(tableBody.rows[i].cells[0].innerText);
+            sum += isNaN(val) ? 0 : val;
+        }
+            
+            for (let i = 0; i < tableBody.rows.length; i++) {
+            const val2 = parseFloat(tableBody.rows[i].cells[2].innerText);
+            sum2 += isNaN(val2) ? 0 : val2;
+        }
+            
+        // Update the TFOOT cell
+        totalDisplay.innerText = sum.toFixed();
+        totalDisplay2.innerText = sum2.toFixed();
+
+    
+         
+         
+ //  let clientValue = document.querySelector('#client').value;
+          
+           
+    let datenow = new Date()
+    document.querySelector('#date').textContent= `Date : ${new Date().toLocaleDateString()}`
+    document.querySelector('#time').textContent= `Time : ${new Date().toLocaleTimeString()}`
+    const randomNum = Math.floor(Math.random() * 10000) + 1;    
+    document.getElementById('receiptNum').textContent = `Receipt #: ${randomNum}`;
+    let cashierName= 'Nel';
+    document.getElementById('cashier').textContent = `Cashier: ${cashierName}`;
+    let address                                                                                             
+    let value2 = document.getElementById('totalValue2').innerText;   
+    document.getElementById('subTotal').textContent = `${value2}`;
+    document.getElementById('grandTotal').innerText = value2;               
+    let bannerId = document.querySelector('#bannerId').value         
+    document.querySelector('#bannerName').textContent = bannerId;  
+    let addressId = document.querySelector('#addressId').value         
+    document.querySelector('#address').textContent = addressId;  
+    let contactId = document.querySelector('#contactId').value         
+    document.querySelector('#contactUs').textContent = contactId;                  
+    let cname= document.querySelector('#clientId').value         
+     document.querySelector('#clientName').textContent = cname;  
+
+}
+    
+</script>
+
+</body>
+</html>
