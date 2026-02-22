@@ -15,15 +15,15 @@
  
  <style>
  
-* {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
- font-size:15px;
-  }
+    * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-size:15px;
+     }
           
-  body {
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
      width:100vw;
      display:flex;
      flex-direction:column;
@@ -32,127 +32,105 @@
      align-items: center; 
      padding: 3vw; 
      border-radius: 2vw; 
-         }
+     }
 
-
-
-     
- 
- 
                 
-  
  .sub-container{
     justify-content:center;
     width:90vw;   
     display:flex;
     flex-direction:row;    
   }
-  
-
-  
-
-        
-  
-  .discription{
-    width:60vw;
-    border:.5vw solid teal;      
-    font-size: 4vw;       
-    text-align:center;
-    padding:1vw;
-    margin:.5vw;
-    border-radius:.5vw;   
-    
-  }
- .discription:focus{
-  outline:none;
-  border:.5vw solid tomato;
-  
- }
+              
+     .discription{
+      width:60vw;
+      border:.5vw solid teal;      
+      font-size: 4vw;       
+      text-align:center;
+      padding:1vw;
+      margin:.5vw;
+      border-radius:.5vw;       
+    }
  
- 
-  .amount{
-    width:15%;
-    border:.5vw solid teal;      
-    font-size: 4vw;       
-    text-align:center;
-    padding:1vw;
-    margin:.5vw;
-    border-radius:.5vw;   
-   
-  }
+    .discription:focus{
+     outline:none;
+     border:.5vw solid tomato;  
+     }
+  
+     .amount{
+      width:15%;
+      border:.5vw solid teal;      
+      font-size: 4vw;       
+      text-align:center;
+      padding:1vw;
+      margin:.5vw;
+      border-radius:.5vw;      
+      }
  
    
- .amount:focus{
-  outline:none; 
-  border:.5vw solid teal
- }
+     .amount:focus{
+      outline:none; 
+      border:.5vw solid teal
+      }
    
  
- .total{
-    width:90vw;
-    border:.5vw solid teal;      
-    font-size: 4vw;       
-    text-align:center;
-    padding:1vw;
-    margin:.5vw;
-    border-radius:.5vw;   
-   
-  }
-
+     .total{
+      width:90vw;
+      border:.5vw solid teal;      
+      font-size: 4vw;       
+      text-align:center;
+      padding:1vw;
+      margin:.5vw;
+      border-radius:.5vw;      
+     }
+ 
+      #finaltotalId{
+      border:.5vw solid purple;
+      color : tomato;
+      font-weight:bold;
+       }
+ 
+      #finaltotalId:focus{
+      border:.5vw solid purple;
+      outline:none; 
+      }
+ 
+     .clientname{
+      width:90vw;
+      }
+ 
+ 
+     .clientname:focus{
+      outline:none; 
+      border:.5vw solid tomato;
+      }
   
+     .caption{
+      margin-top:3vw;
+      font-size:3vw;
+     }    
  
- #finaltotalId{
-  border:.5vw solid purple;
-  color : tomato;
-  font-weight:bold;
- }
- 
-  #finaltotalId:focus{
-  border:.5vw solid purple;
-  outline:none; 
- }
- 
- .clientname{
-  width:90vw;
- }
+     .btn-submit{
+      margin-top:3vw;
+      width:90vw; 
+     }
  
  
- .clientname:focus{
-  outline:none; 
-  border:.5vw solid tomato;
- }
+      footer{
+      margin:2vw;
+      font-size:4vw;
+      }      
   
-  
-
- .caption{
-  margin-top:3vw;
-  font-size:3vw;
- }    
- 
-.btn-submit{
- margin-top:3vw;
- width:90vw;
- 
-}
- 
- 
- footer{
-  margin:2vw;
-  font-size:4vw;
- }      
- 
- 
- 
  /* print css */
        .print-container { font-family: 'Courier New', Courier, monospace; line-height: 1.2; color: #333; }
-        .receipt-wrapper { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #eee; }
-        .center { text-align: center; }
-        .bold { font-weight: bold; }
+       .receipt-wrapper { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #eee; }
+       .center { text-align: center; }
+       .bold { font-weight: bold; }
         
         header { margin-bottom: 20px; }
         header h1 { margin: 0; font-size: 1.5rem; }
         
-        .info-row { display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 0.9rem;}
+       .info-row { display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 0.9rem;}
         
         table {
          font-family: 'Courier New', Courier, monospace; 
@@ -164,13 +142,13 @@
          table-layout:fixed;
         }
         th { 
-        border-bottom: 1px dashed #000;
+         border-bottom: 1px dashed #000;
          word-wrap:break-word;
          text-align: left; 
          padding: 5px 0; }
         td { padding: 8px 0; 
          vertical-align: top;
-           word-wrap:break-word;
+         word-wrap:break-word;
         }
         .price {
          text-align: right; 
@@ -189,32 +167,25 @@
          padding-top: 10px;
         }
 
-        /* Print-specific styles */
         @media print {
-            .receipt-wrapper {
-             border: none;
-            }
-            button {
-             display: none;
+        .receipt-wrapper {
+         border: none;
+           }
+         button {
+         display: none;
             } /* Hide print button when printing */
-            .sub-container{ 
-             display: none;
+        .sub-container{ 
+         display: none;
             } /* Hide print button when printing */      
-            .modal-content{
-             border:none;
-             padding:0px;
-            }
-        }
+        .modal-content{
+         border:none;
+         padding:0px;
+          }
+     }
  
-     
- 
-
- 
-
   </style>
 </head>
-<body>
-      
+<body>      
     <div class=" caption">BLACK AND WHITE <i class="fa fa-print caption"></i></div>     
     <div class="sub-container">
     <input class=" amount" id="pcsIdbw" type="number"  value="" oninput="result()">    
@@ -253,16 +224,11 @@
     <button type="button" style="width:100%; background:#007bff; border-radius: 1vw; border:none;padding:1.5vw ; font-size: 4vw;color:white; font-weight:bold" class="btn-submit" data-bs-toggle="modal" data-bs-target="#myExampleModal">Submit</button> 
     </div>
    
-    <footer>
-    <i class="caption" style="color:purple ">Create by: Nel Olino</i> <i class="fas fa-smile caption"style="color:purple"></i>
-    </footer>
-  
-
- 
-    
+    <footer style="font-size:4vw">
+    <i style="color:purple ">Create by: Nel Olino</i> <i class="fas fa-smile caption"style="color:purple"></i>
+    </footer>    
      <div  class="modal fade" id="myExampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-     <div class="modal-dialog">
-      
+     <div class="modal-dialog">     
      <div  style=" background:;"class="modal-content">      
      <div class="print-container  modal-body">
       <div class="receipt-wrapper">
@@ -270,8 +236,7 @@
         <h1>PWX PRINTING SERVICES</h1>
         <p>Sama-Sama St. Manggahan 2, Habay 2, Bacoor Cavite <br>
         Cel#: (+639) 755-725-109</p>
-     </header>
-         
+     </header>         
      <div class="info-row">
      <span id="date">N/A</span>
      <span id="time">N/A</span>       
@@ -280,7 +245,6 @@
      <span id="receiptNum">N/A</span>
      <span id="casher">N/A</span>
      </div>
-
      <div class="info-row">
      <span >Name: <b id="clientName">N/A</b></span>
      </div>
@@ -391,10 +355,10 @@
     document.getElementById('pcsItems1').textContent = pcsIdbw
     document.getElementById('pcsItems2').textContent = pcsIdclr
     
-    document.getElementById('price1').textContent = `₱ ${price1}`;
-    document.getElementById('price2').textContent = `₱ ${price2}`;
+    document.getElementById('price1').textContent = `${price1}`;
+    document.getElementById('price2').textContent = `${price2}`;
     
-    document.getElementById('subTotal').textContent = `₱ ${sum}`;
+    document.getElementById('subTotal').textContent = `${sum}`;
     document.getElementById('grandTotal').textContent = `₱ ${sum}`;
     document.querySelector('#clientName').textContent = clientValue;  
    }
