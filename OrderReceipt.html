@@ -65,6 +65,36 @@
             margin-bottom: 3vw;
             margin-top: 3vw;
         }
+    
+       .form-card{
+           
+            background:;
+            width:100%;
+            display: flex;
+            flex-direction:row;
+            justify-content:center;
+            align-items:center;
+            gap:1vw;
+            font-weight:bold;
+            color:brown;
+       }
+    
+    
+       .form-card-client{
+            background:;
+            width:100%;
+            display: flex;
+            flex-direction:row;
+            justify-content:center;
+            align-items:center;
+            gap:1vw;
+            font-weight:bold;
+            color:brown;
+            
+       }
+    
+    
+
         input {
             font-family: 'Segoe UI', sans-serif;
             font-size:4vw;
@@ -80,7 +110,10 @@
             border:.5vw solid tomato;
         }
         /* Table Styling */
-        
+        .card-input {
+
+            border:none;
+            }
         
         tfoot { background-color: #f1f1f1; font-weight: bold; }
         
@@ -214,13 +247,28 @@
 </head>
 <body>
     <h2 style="font-size:5vw">Order Receipt</h2>    
-    <div class="entry-form-col">
-        <div style="display:none">
-        <input style="width:100%;"type="text" id="bannerId" value="PWX PRINTING SERVICES" placeholder="Banner" readonly="">       
-        <input style="width:100%"type="text" id="addressId" value="Sama-Sama St. Manggahan 2, Habay 2, Bacoor Cavite" placeholder="Address" readonly="">
-        <input style="width:100%"type="text" id="contactId" value="Contact#: (+639) 755-725-109" placeholder="Contact" readonly="">
+    <div class="entry-form-col" style="background:">
+        <div class="form-card">
+        <caption>Store Name : </caption>
+        <input class="card-input" style="width:50%;"type="text" id="bannerId" value="PWX PRINTING SERVICES" placeholder="Banner"  >       
         </div>
+        <div class="form-card">
+        <caption>Address : </caption>
+        <input class="card-input"style="width:50%"type="text" id="addressId" value="Sama-Sama St. Manggahan 2, Habay 2, Bacoor Cavite" placeholder="Address" >
+        </div>
+        <div class="form-card">
+        <caption>Contact : </caption>
+        <input class="card-input"style="width:100%"type="text" id="contactId" value="755-725-109" placeholder="Contact" >
+        </div>
+        <div class="form-card">
+        <caption>Cashier : </caption>
+        <input class="card-input"style="width:100%"type="text" id="cashierId" value="Nel" placeholder="Cashier" >
+        </div>
+        
+        <div class="form-card-client">
+        <caption>Client Name : </caption>
         <input style="width:100%"type="text" id="clientId" placeholder="Client" value="C">    
+        </div>
     </div>   
     <div class="entry-form">
          <input type="number" id="itemPcs" placeholder="pcs">       
@@ -376,7 +424,9 @@
     document.querySelector('#time').textContent= `Time : ${new Date().toLocaleTimeString()}`
     const randomNum = Math.floor(Math.random() * 10000) + 1;    
     document.getElementById('receiptNum').textContent = `Receipt #: ${randomNum}`;
-    let cashierName= 'Nel';
+    
+    let cashierName= document.getElementById('cashierId').value;
+ 
     document.getElementById('cashier').textContent = `Cashier: ${cashierName}`;
     let address                                                                                             
     let value2 = document.getElementById('totalValue2').innerText;   
@@ -387,7 +437,7 @@
     let addressId = document.querySelector('#addressId').value         
     document.querySelector('#address').textContent = addressId;  
     let contactId = document.querySelector('#contactId').value         
-    document.querySelector('#contactUs').textContent = contactId;                  
+    document.querySelector('#contactUs').textContent =`Contact# : (+639) ${contactId}`;                  
     let cname= document.querySelector('#clientId').value         
      document.querySelector('#clientName').textContent = cname;  
 
