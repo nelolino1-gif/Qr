@@ -13,48 +13,53 @@
     }
         body { 
             font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; 
-             display: flex;
+            display: flex;
             flex-direction: column; 
             align-items: center; 
-            padding: 50px; 
+            padding:; 
             background:;
-            font-size:1vw;
+            font-size:6vw;
         }
         .container{
-            border:;
+            width:90vw;
+            font-size:6vw;
+            border-radius:3vw;
             display:flex;
             flex-direction:column;
+            padding:3vw;
             background:;
             text-align:center;
             align-items: center;
+            box-shadow: 0 .6vw .8vw rgba(0,0,0,0.1);
         } 
         label{
-            font-size:6vw;
+            font-size:5vw;
+            color:brown;
         }
     
          .input-container{
              display:flex;
              flex-direction:column;
              align-items:center;
-             gap:10px;
+             gap:1vw;
              
          
          }
          input { 
             width:90%;
-             margin:0px;
-            font-size:1em;
-            padding: 1vw; 
-            border: .5vw solid #ccc;
+            margin:0px;
+            font-size:5vw;
+            padding: 2vw; 
+            border: .5vw solid teal;
             text-align:center;
             font-weight:bold;
-            border-radius:2vw;
+            border-radius:1vw;
             focus:none;
         }
     
          input:focus {
-          outline: .5vw solid green;
-          border:none;
+          outline:none;
+          border: .5vw solid purple;
             }
     
         .result-container{
@@ -79,36 +84,14 @@
         }
     
     
-      @media (max-width: 1024px) {
-  .container { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width: 90vw;font-size:7vw;}
-}
-  
-  @media (max-width: 768px) {
-  .container { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width: 90vw;font-size:7vw;}    
-              
-         
-              
-              
-              
-  }
-
-  
-  @media (max-width: 480px) {
-  .container { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width: 90vw;font-size:7vw;}
-              
-            
-   
-              
-              
-  }
     
     
+       
     </style>
 </head>
 <body>
 
-    <div class="container">
-        
+    <div class="container">        
         <div class="input-container">
         <div class="input-label">
         <label for="amount">Enter Amount:</label>                
@@ -122,13 +105,13 @@
         
         <div class="result-container">
         <div class="result">
-            Change % : <span id="output">0</span>
+              = % : <span style="color:purple" id="output">0</span>
                </div>
          <div class="result">
-              Subtract -% : <span id="finalsub">0</span>
+              - % : <span style="color:tomato" id="finalsub">0</span>
          </div>  
         <div class="result">
-              Addition +% : <span id="finaladd">0</span>
+              + % : <span style="color:teal" id="finaladd">0</span>
          </div>  
         </div>
         <div style="width:100%">             
