@@ -472,25 +472,29 @@
     let cname= document.querySelector('#clientId').value         
     document.querySelector('#clientName').innerHTML =`Name : <b>${cname}</b>`;  
 
-       let tableHeader = document.querySelector('#theadId')
-     const columns = ['Pcs','Items','Prices'];
-            
-            columns.forEach(column => {
-                const th = document.createElement('th');
-                th.textContent = column;
-                tableHeader.appendChild(th);
-            });
                 
-                
+             
+      
       document.querySelector('#subtotalId').textContent ='Subtotal';  
       document.querySelector('#discountId').textContent ='discount';  
       document.querySelector('#totalId').textContent ='TOTAL';  
 
   
   
+    }      
+          
+        let tableHeader = document.querySelector('#theadId')
+        const columns = ['Pcs','Items','Prices'];
+            
+            columns.forEach(column => {
+                const th = document.createElement('th');
+                th.textContent = column;
+                tableHeader.appendChild(th);
+                columns.innerHTML=''
+                
+      });
                 
                 
-    }
     
 </script>
 
