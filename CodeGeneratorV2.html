@@ -15,12 +15,14 @@
         body { font-family: sans-serif; 
             display: flex;
             flex-direction: column; 
+            justify-content:center;
             align-items: center; 
             padding: 50px; 
             background:;
          /*   touch-action:none; */
         }
         .container{
+            
             border:;
             width:450px;
             display:flex;
@@ -28,6 +30,9 @@
             background:;
             text-align:center;
             align-items: center;
+            
+            
+         
         }
         h2{
             margin:0px;
@@ -56,8 +61,8 @@
     }
         #qrcode {
             
-            width:200px;
-            height:200px;
+            width:250px;
+            height:250px;
            }
         .btn{
             padding:7px 15px;
@@ -159,8 +164,8 @@
     <div class="container">
     <h2>J QR Code Generator</h2> 
     <div id="result-text">Time and Date Appear Here...</div>
-   
-  </h1>    
+    
+  
     <input type="text" id="text-input" placeholder="Vaucher Code" oninput="">   
     <div class="no-print btn-container">
     <select class="btn-select btn-theme"id="select1" onchange="" required>
@@ -213,8 +218,8 @@
             }       
 //Initialize the QR instance
         let qrcode = new QRCode(document.getElementById("qrcode"), {
-            width: 200,
-            height: 200
+            width: 250,
+            height: 250,
         });
 //Qr function start
            function generateQR() {    
