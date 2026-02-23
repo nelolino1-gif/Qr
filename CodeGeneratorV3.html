@@ -11,18 +11,24 @@
         padding:0;
         margin:0;
         box-sizing:border-box;
-    }  
+    }
+
     
-    body{
-        margin-top:0px;
-        border:;
-        width:100vw;          
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        background:;            
-       		font-family:'Arial', san-serif;                       
+        body{
+            margin-top:0px;
+            border:;
+            width:100vw;
+          
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            background:;
+            
+           		font-family:'Arial', san-serif;
+		
+            
+            
         }
     
    .container{
@@ -65,7 +71,7 @@
     
         input {
             padding: 5px; 
-            width:236px;
+            width:240px;
             border:none;
             border-bottom: 2px dashed #000; 
           /*  border-radius: 3px; */
@@ -87,11 +93,12 @@
         flex-direction:row;  
         justify-content:center;
         align-items:center;  
-        margin:5px 0px;    
-        border-radius:5px;
+        margin:5px 0px;        
         
         
     }
+    
+
         .card {
             background:
             ;width: 100%;
@@ -103,20 +110,14 @@
         button{
             width:75px;
             font-size:15px;
-            padding:8px;
-            border-radius:5px;           
-            font-size:15px;           
-            border: none;           
-            cursor: pointer;
-            color: white;
-            font-weight: bold; 
-            background-color: #007bff;                                         
+            padding:5px;
+            border-radius:3px;
+            border:2px solid;
         }
     
         button:focus{
             outline:none;
-            border:;
-            background-color: teal;      
+            border:3px solid teal;
         }
     
     
@@ -128,23 +129,24 @@
 
        select:required:valid {
        border:2px solid purple;
-       background:white;   
+       background:#ccc;   
         }
 
            
         select{
             font-size:15px;
             padding:5px;
-            border-radius:5px;
+            border-radius:3px;
             border:2px solid;
-            width:75px;
+            width:80px;
     
           }
        
        select:focus{
             outline:none;           
         }
-
+          
+       
       .result-container{
           display:flex;
           background:;
@@ -152,11 +154,14 @@
           flex-direction:column;
           align-content:center;
           align-items:center;
-          width:100%;         
+          width:100%;
+          
+          
+          
       }
-    
     #result-text{
-        text-align:center;        
+        text-align:center;
+        
         color:green;
         font-size:16px;
           }
@@ -182,6 +187,46 @@
             
     }
         
+    
+    
+/*    @media (max-width: 1024px) {
+  .container {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 60%;font-size:16px
+  }
+  
+    }
+  
+  @media (max-width: 768px) {
+  .container {
+      background: white; 
+      padding: 25px; 
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+      text-align: center; 
+      width: 200px;font-size:16px
+  }    
+
+  }
+
+  
+  @media (max-width: 480px) {
+  .container {
+      background: white; 
+      padding: 25px; 
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+      text-align: center;
+      width: 300px;font-size:16px
+  }
+       
+}
+*/
+
     </style>
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -191,13 +236,11 @@
     <div style="font-weight:bold"id="result-text">Time and Date Appear Here...</div>  
     <input type="text" id="text-input" placeholder="Vaucher Code" oninput="">  
     <div class="btn-container">
-    <select id="select1" onchange="" required="">
+    <select id="select1" onchange="" required>
         <option value="">N/A</option>       
-        <option value="4h">₱ 5</option>
-        <option value="7h">₱10</option>
-        <option value="15d">₱150</option>
-        <option value="30d">₱300</option>
-
+        <option value="4h">5 Pesos</option>
+        <option value="7h">10 Pesos</option>
+        <option value="15d">150 Pesos</option>
     </select>    
         <button class="btn btn-theme" onclick="generateQR()">submit</button> 
         <button class="btn btn-theme" onclick="generateRandom()">random</button>      
@@ -299,9 +342,6 @@
       break;        
       case "15d":
          document.querySelector('#result-text2').innerHTML=  'Expire:15d | Amount ₱ 150'
-      break;
-      case "30d":
-         document.querySelector('#result-text2').innerHTML=  'Expire:30d | Amount ₱ 300'
       break;
       default:
    // alert("Option 3 ang napili");
