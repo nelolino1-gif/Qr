@@ -105,7 +105,7 @@
         button{
          width:72px;
          font-size:15px;
-         padding:8px;
+         padding:8px 0px;
          border-radius:5px;           
          font-size:15px;           
          border: none;           
@@ -251,73 +251,47 @@
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <body>
-    <div class="container">
-        
-        
-        <h2>J QR Code Generator</h2> 
-        <h1>PWX PISO WI-FI</h1>
+    <div class="container">                
+    <h2>J QR Code Generator</h2> 
+    <h1>PWX PISO WI-FI</h1>
     <div style="font-weight:bold"id="result-text">Time and Date Appear Here...</div>  
     <input type="text" id="text-input" placeholder="Vaucher Code" oninput="">  
-  
-        
-        
-<div class="wrapper">
-    
-        <div id="qrcode"></div>
-    
-  </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
+                  
+    <div class="wrapper">    
+    <div id="qrcode"></div>    
+    </div>
+             
     <div class="result-container"> 
     <div style="font-weight:bold"id="result-text2">Expire and Amount Appear Here...</div>    
     <p style="font-weight:bold;margin: 5px 0px 0px 0px">Portal : http://10.0.0.1</p> 
     </div>  
 
-        
-                <div class="btn-group">
-         <div class="btn-container">
+    <div class="btn-group">
+    <div class="btn-container">
     <select id="select1" onchange="" required="">
         <option value="">N/A</option>       
         <option value="4h">₱ 5</option>
         <option value="7h">₱10</option>
         <option value="15d">₱150</option>
         <option value="30d">₱300</option>
-
     </select>    
         <button class="btn btn-theme" onclick="generateQR()">submit</button> 
         <button class="btn btn-theme" onclick="generateRandom()">random</button>      
-    </div>
-        
-            <div class="btn-container">
+    </div>        
+         <div class="btn-container">
          <button  id="copy-btn">Client</button>        
          <button  id="copy-btn2">Terminal</button>
          <button onclick="window.print()">Print</button>  
          <!--button onclick="clearQr()">Clear</button-->      
-
     </div>   
-        </div>
-        
-        
-        
-        
-        
-        
-        
-     <br>
+    </div>
+    <br>
     <!--hr style="width: 240px; border : .5px solid black "-->
     <div class="no-print" >
         <footer>
             <i style="color:purple">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple"></i>   
         </footer>        
      </div>
-
    </div>
 <script>   
 //input
