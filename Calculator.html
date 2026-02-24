@@ -58,6 +58,11 @@
 				color:teal;
 		
 		}
+ 
+ 		#display:focus{
+ 		 outline:none;
+ 		 border:none;
+ 		}
 		
 		.keys-container{
 				display:flex;
@@ -109,6 +114,33 @@
 		.operator-btn:active{
 				background-color:hsl(270, 100%, 50%)	
 		}
+ 
+ 
+ .operator-add{
+				background-color:hsl(9, 100% , 35%);
+	
+		}
+		.operator-add:hover{
+				background-color:hsl(9, 100% , 45%);
+	
+		}
+		.operator-add:active{
+				background-color:hsl(9, 100%, 50%)	
+		}
+ 
+ .operator-eq{
+				background-color:hsl(180, 100% , 15%);
+	
+		}
+		.operator-eq:hover{
+				background-color:hsl(180, 100% , 25%);
+	
+		}
+		.operator-eq:active{
+				background-color:hsl(180, 100%, 30%)	
+		}
+ 
+ 
 		
 		
 		@media (max-width: 1024px) {
@@ -129,7 +161,7 @@
 		<div class="container">
 		<div id="calculator">
 		  
-		 	<input id="display" readonly>
+		 	<input id="display" readonly="">
 					<main class="keys-container">
 				<div id="keys">
 				<button onclick="appendToDisplay('+')" class="operator-btn">+</button>
@@ -150,14 +182,16 @@
 						<button onclick="appendToDisplay('/')" class="operator-btn">÷</button>
 						<button onclick="appendToDisplay('0')">0</button>
 						<button onclick="appendToDisplay('.')">.</button>
-						<button onclick="calculate()">=</button>
+						<button onclick="calculate()" class="operator-eq">=</button>
 						
 						<button onclick="clearDisplay()"class="operator-btn">C</button>					
-							
+							<button onclick="appendToDisplay('00')" class="operator-add">00</button>					
+						<button onclick="clearLastInput()"class="operator-add">c</button>					
+						
 				</div>
 						</main>
 				<footer style="margin-bottom:2vw">
-						<i style="color:teal ">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:teal"></i>
+						<i style="color:teal ; font-size:4vw">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:teal;font-size:4vw""></i>
 				</footer>
 				</div>
 		</div>
@@ -182,6 +216,20 @@
 					}
 		}
 		
+ 
+ function clearLastInput() {
+  const inputs = document.querySelectorAll('input');
+  if (inputs.length > 0) {
+    const lastInput = inputs[inputs.length - 1];
+    if (lastInput.value.length > 0) {
+      lastInput.value = lastInput.value.slice(0, -1);
+    }
+    else {
+      lastInput.value = '';        
+      }           
+    }    
+  }      
+ 
 		</script>
 		
 		
