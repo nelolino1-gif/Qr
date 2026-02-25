@@ -289,7 +289,7 @@
     <!--hr style="width: 240px; border : .5px solid black "-->
     <div class="no-print" >
         <footer>
-            <i style="color:purple">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple"></i>   
+         <i style="color:purple">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple"></i>   
         </footer>        
      </div>
    </div>
@@ -352,32 +352,42 @@
             }
         }); 
 //select logic               
-        var selectValue = String(document.getElementById("select1").value);
-        let Generation=`/ip hotspot user add name="${vcode}" password="" profile="default" comment="Qrandom" limit-uptime="${selectValue}"`              
-               
-      switch (selectValue) {
-       case "":
-        document.querySelector('#result-text2').innerHTML=  'Plese Select Amount'  
-       break;
+       
+    let selectValue = String(document.getElementById("select1").value);           
+    let user =`/ip hotspot user add name="${vcode}" password="" profile="default" comment="Qrandom" limit-uptime="${selectValue}"`              
+    let admin = `/ip hotspot user add name="${vcode}" password="" profile="default" comment="Qrandom" limit-uptime=`                               
+      switch (selectValue) {          
+      case "":
+     Generation=   admin
+      document.querySelector('#result-text2').innerHTML=  'Plese Select Amount'  
+      break;
       case "4h":
+       Generation=   user;
         document.querySelector('#result-text2').innerHTML=  'Expire:4h | Amount ₱ 5'  
        break;
       case "7h":
+        Generation=   user;
         document.querySelector('#result-text2').innerHTML=  'Expire:7h | Amount ₱ 10'     
-      break;        
+      break;              
       case "15d":
+          Generation=   user;
          document.querySelector('#result-text2').innerHTML=  'Expire:15d | Amount ₱ 150'
       break;
       case "30d":
+         Generation=   user;
          document.querySelector('#result-text2').innerHTML=  'Expire:30d | Amount ₱ 300'
       break;
       default:
-   // alert("Option 3 ang napili");
-}
-                              
-                                           
+          Generation=   admin;
+           
+        }
+
+                                         
         copyBtn2.addEventListener('click', () => {
+         
         const text2 = Generation;
+
+                
             if (text2 && text2 !== "Scanned text will appear here...") {
                 navigator.clipboard.writeText(text2).then(() => {
        //             statusMsg.style.display = 'block';
