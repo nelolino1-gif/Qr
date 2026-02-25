@@ -30,95 +30,121 @@
      background:;
      text-align:center;
      align-items: center; 
-     padding: 3vw; 
-     border-radius: 2vw; 
+     padding:0px; 
+     
      }
-
+   .container{
+    justify-content:center;
+    align-items:center;
+    width:350px;   
+    display:flex;
+    flex-direction:column;   
+    background:;
+    border:;
+    border-radius:5px;
+    margin:25px 0px 0px 0px;
+   }
                 
  .sub-container{
     justify-content:center;
-    width:90vw;   
+    width:100%;   
     display:flex;
     flex-direction:row;    
   }
               
      .discription{
-      width:60vw;
-      border:.5vw solid teal;      
-      font-size: 4vw;       
+      width:60%;
+      border:2px solid teal;      
+      font-size: 15px;       
       text-align:center;
-      padding:1vw;
-      margin:.5vw;
-      border-radius:.5vw;       
+      padding:5px;
+      margin:3px;
+      border-radius:3px;       
     }
  
     .discription:focus{
      outline:none;
-     border:.5vw solid tomato;  
+     border:2px solid tomato;  
      }
   
      .amount{
-      width:15%;
-      border:.5vw solid teal;      
-      font-size: 4vw;       
+      width:20%;
+      border:2px solid teal;      
+      font-size:15px;       
       text-align:center;
-      padding:1vw;
-      margin:.5vw;
-      border-radius:.5vw;      
+      padding:5px;
+      margin:3px;
+      border-radius:3px;  
+            
       }
  
    
      .amount:focus{
       outline:none; 
-      border:.5vw solid teal
+      border:2px solid teal;
+      width:20%;
       }
    
  
      .total{
-      width:90vw;
-      border:.5vw solid teal;      
-      font-size: 4vw;       
+      width:100%;
+      border:2px solid teal;      
+      font-size:15px;       
       text-align:center;
-      padding:1vw;
-      margin:.5vw;
-      border-radius:.5vw;      
+      padding:5px;
+      margin:3px;
+      border-radius:3px;
+      font-weight:bold; 
+      color:green      
      }
  
       #finaltotalId{
-      border:.5vw solid purple;
-      color : tomato;
+      border:2px solid purple;
+      color : #007bff;
       font-weight:bold;
        }
  
       #finaltotalId:focus{
-      border:.5vw solid purple;
+      border:2px solid purple;
       outline:none; 
       }
  
      .clientname{
-      width:90vw;
+      width:100%;
+      color:tomato;
       }
  
  
      .clientname:focus{
       outline:none; 
-      border:.5vw solid tomato;
+      border:2px solid tomato;
       }
   
      .caption{
-      margin-top:3vw;
-      font-size:3vw;
+      margin:5px 0px 0px 0px;
+      font-size:14px;
+      color:brown;
      }    
- 
+     
+      
      .btn-submit{
-      margin-top:3vw;
-      width:90vw; 
+      padding:7px 0px;
+      margin-top:10px;
+      width:98%; 
+      background:#007bff;
+      border-radius: 3px;
+      border:none;
+      font-size: 15px;
+      color:white;
+      font-weight:bold;
      }
  
  
       footer{
-      margin:2vw;
-      font-size:4vw;
+      margin:10px 0px;
+      font-size:18px;
+      background:;
+      font-weight:;
       }      
   
  /* print css */
@@ -186,6 +212,7 @@
   </style>
 </head>
 <body>      
+ <div class="container">
     <div class=" caption">BLACK AND WHITE <i class="fa fa-print caption"></i></div>     
     <div class="sub-container">
     <input class=" amount" id="pcsIdbw" type="number"  value="" oninput="result()">    
@@ -221,12 +248,17 @@
     </div>
    
     <div class="sub-container">   
-    <button type="button" style="width:100%; background:#007bff; border-radius: 1vw; border:none;padding:1.5vw ; font-size: 4vw;color:white; font-weight:bold" class="btn-submit" data-bs-toggle="modal" data-bs-target="#myExampleModal">Submit</button> 
+    <button type="button" class="btn-submit" data-bs-toggle="modal" data-bs-target="#myExampleModal">Submit</button> 
     </div>
    
-    <footer style="font-size:4vw">
-    <i style="font-size:4vw ;color:purple ">Create by: Nel Olino</i> <i style="font-size:4vw;color:purple" class="fas fa-smile "></i>
+    <footer>
+    <i style="color:purple ">Create by: Nel Olino</i> <i style="color:purple" class="fas fa-smile "></i>
     </footer>    
+  </div>
+  
+  
+  
+  
      <div  class="modal fade" id="myExampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
      <div class="modal-dialog">     
      <div  style=" background:;"class="modal-content">      
@@ -261,15 +293,15 @@
             <tr>
                <td style="width:20%;text-align:left"id="pcsItems1">N/A</td>
              
-                <td style="width:60%;text-align:center"id="item1">Item 1<br><small>N/A</small></td>
-                <td style="width:20% " id="price1" class="price"> </td>
+                <td style="width:60%;text-align:center"id="item1">Item 1</td>
+                <td style="width:20% " id="price1" class="price"></td>
             </tr>
             
             <tr>
                <td style="width:20%;text-align:left"id="pcsItems2">N/A</td>
              
                 <td style="width:60%;text-align:center;"id="item2">Item 2</td>
-                <td style="width:20%"id="price2" class="price">0</td>
+                <td style="width:20%"id="price2" class="price"></td>
             </tr>
             
         </tbody>
@@ -278,7 +310,7 @@
     <div class="totals">
         <div class="info-row">
             <span >Subtotal</span>
-            <span id="subTotal">0</span>
+            <span id="subTotal"></span>
         </div>
         <div class="info-row">
             <span>discount </span>
@@ -286,7 +318,7 @@
         </div>
         <div class="info-row bold">
             <span>TOTAL</span>
-            <span id="grandTotal">0</span>
+            <span id="grandTotal"></span>
         </div>
     </div>
 
