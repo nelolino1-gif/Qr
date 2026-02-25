@@ -197,6 +197,7 @@
 						<button onclick="clearDisplay()"class="operator-btn">C</button>					
 							<button onclick="appendToDisplay('00')" class="operator-add">00</button>					
 						<button onclick="clearLastInput()"class="operator-add">c</button>					
+						<button onclick="appendTopercent('*')"class="operator-add">%</button>					
 						
 				</div>
 						</main>
@@ -206,17 +207,38 @@
 				</div>
 		</div>
 		<script>
-		const display =document.getElementById('display');
+ 
+ 
+		let display =document.getElementById('display');
 		
 		function appendToDisplay(input){
 				display.value += input;
 				
 		}
+ 
+ 
+ function appendTopercent(input){
+  display.value /= 100;
+ //let dis = display.value /= 100;
+ 
+  display.value += input ;
+  
+ 
+				
+		}
+ 
+ 
+ 
 			function clearDisplay(){
 				display.value="";
 				
 		}
 		
+ 
+ 
+ 
+ 
+ 
 			function calculate(){
 					try{
 				display.value= eval(display.value);
@@ -226,6 +248,8 @@
 					}
 		}
 		
+
+ 
  
  function clearLastInput() {
   const inputs = document.querySelectorAll('input');
