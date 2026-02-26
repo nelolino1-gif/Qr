@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MikroTik Scheduler Generator</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: ; padding: 0px 5px; }
+        .container { max-width: 600px; background:; padding: 10px; border-radius: 8px; margin:0px auto; }
+        h2 { color: #333; border-bottom: 2px solid #005494; padding: 2px 0px;margin: 0px}
+        label { display: block; margin-top: 10px; font-weight: bold; color: #555; }
+        input, textarea { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-family: monospace; 
+        height:40px;
+        resize:none;
+        focus:none; 
+                    
+        }
+        button { background: #005494; color: white; border: none; padding: 12px 20px; margin-top: 5px; border-radius: 4px; cursor: pointer; width: 100%; font-size: 16px; }
+        button:hover { background: #003d6b; }
+        .output-box { margin-top: 10px; background: #222; color: #0f0; padding: 15px; border-radius: 4px; position: relative;border:1.5px solid #0f0}
+        .output-box pre { margin: 0; white-space: pre-wrap; word-wrap: break-word; }
+        .copy-btn { display:block; top: 10px; right: 10px; background: #444; color: #fff; font-size: 12px; border: none; padding: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="container" style="background:">
+    <h2>Scheduler Generator</h2>
+    
+    <label>Schedule Name</label>
+    <input type="text" id="schedName" placeholder="e.g., auto_reboot">
+
+    <label>Interval (d hh:mm:ss)</label>
+    <input type="text" id="schedInterval" placeholder="1d 00:00:00 or 01:00:00" value="04:00:00">
+     
+    <label>Code</label>
+    <input type="text" id="code" placeholder="C000789">
+    
+    <label>Script Body</label>
+    <textarea id="schedScript" rows="5" placeholder="/system reboot"></textarea>
+
+    <button onclick="generateScript()">Generate Terminal Command</button>
+
+    <div class="output-box" id="outputContainer" style="display:none;">
+        <pre id="finalCommand"></pre>
+        
+         <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
+  
+      
+
+        
+        
+     
+         
+      </div>
+    
+</div>
+
+<script>
+    
+   
+    function generateScript() {
+        const name = document.getElementById('schedName').value || 'myscript';
+        const interval = document.getElementById('schedInterval').value || '1d 00:00:00';
+        const code = document.getElementById('code').value;
+  
+        document.getElementById('schedScript').innerText = `/ip hotspot user remove [find name=${code}];
+/ip hotspot active remove [find user=${code}];
+/ip hotspot cookie remove [find user=${code}];
+/system scheduler remove [find name=${code}];
+`
+        const script = document.getElementById('schedScript').value;
+        
+        // Formats the command for the MikroTik Terminal
+        const command = `/system scheduler add name="${name}" interval=${interval} on-event="${script}"`;
+        
+        document.getElementById('finalCommand').innerText = command;
+        document.getElementById('outputContainer').style.display = 'block';
+    }
+
+    function copyToClipboard() {
+        const text = document.getElementById('finalCommand').innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            alert('Command copied to clipboard!');
+        });
+    }
+</script>
+
+</body>
+</html>
