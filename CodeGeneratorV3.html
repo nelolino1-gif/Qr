@@ -308,7 +308,9 @@ const newtoday = formattedDate.replace(/-/g, '');
 const randomNum = Math.floor(Math.random() * 1000) + 1;       
 myValue = `C${newtoday}${randomNum}`;
 myInput.value = myValue;
-}       
+generateQR()
+    
+       }
 //Initialize the QR instance
 let qrcode = new QRCode(document.getElementById("qrcode"), {
 width: 200,
