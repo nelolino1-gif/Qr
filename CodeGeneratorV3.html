@@ -1,251 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J QR Code Generator</title>
-    <script src="assets/js/qrcode.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <style>
-    *{
-        padding:0;
-        margin:0;
-        box-sizing:border-box;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J QR Code Generator</title>
+<script src="assets/js/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+*{
+padding:0;
+margin:0;
+box-sizing:border-box;
     }  
     
-    body{
-        margin-top:0px;
-        border:;
-        width:100vw;          
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        background:;            
-       		font-family:'Arial', san-serif;                       
-        }
+body{
+margin-top:0px;
+border:;
+width:100vw;          
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:;            
+font-family:'Arial', san-serif;                       
+}
     
-   .container{
-        width:300px;
-        font-size:15px;
-        border:;
-        padding:5px;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        background:;
+.container{
+width:300px;
+font-size:15px;
+border:;
+padding:5px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:;
                            
-        }
-    
-    .btn-container{
-            
-        font-size:15px;
-        border:;
-        width:100%;
-        display:flex;
-        flex-direction:row;
-        justify-content:center;
-        align-items:center;
-        gap:5px;
-        background:;
-        margin:5px;          
-    }
+}
+.btn-container{
+font-size:15px;
+border:;
+width:100%;
+display:flex;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+gap:5px;
+background:;
+margin:5px;          
+}
     
     
-        h2{
-        margin-top:15px;
-        background:;
-        font-size:20px;
-        }
+h2{
+margin-top:15px;
+background:;
+font-size:20px;
+}
     
     
-        h1{
-        display:none;
-        margin-top:5px 0px;
-        background:;
-        font-size:20px;
-        }
+h1{
+display:none;
+margin-top:5px 0px;
+background:;
+font-size:20px;
+}
     
-        input {
-         padding: 5px; 
-         width:236px;
-         border:none;
-               
-        /* border-bottom: 1px dashed #000;
-          /*  border-radius: 3px; */
-         text-align:center;
-         font-weight:bold;
-         font-size:18px;    
-         background:;
-         margin-top:5px;
-         
-       }
+input {
+padding: 5px; 
+width:236px;
+border:none;               
+/* border-bottom: 1px dashed #000;
+/*  border-radius: 3px; */
+text-align:center;
+font-weight:bold;
+font-size:18px;    
+background:;
+margin-top:5px;
+
+}
     
-    input:focus{
-        outline:none;
-        border:2px solid tomato;
-    }
+input:focus{
+outline:none;
+border:2px solid tomato;
+}
     
     .wrapper{
-        background:white;
-        border:1px solid;
-        padding:15px;
-        display: flex;
-        flex-direction:row;  
-        justify-content:center;
-        align-items:center;  
-        margin:5px 0px;    
-     /*   border-radius:5px;*/
+background:white;
+border:1px solid;
+padding:15px;
+display: flex;
+flex-direction:row;  
+justify-content:center;
+align-items:center;  
+margin:5px 0px;    
+/*   border-radius:5px;*/
         
         
     }
 
 
-        button{
-         width:72px;
-         font-size:15px;
-         padding:8px 0px;
-         border-radius:5px;           
-         font-size:15px;           
-         border: none;           
-         cursor: pointer;
-         color: white;
-         font-weight: bold;
-         background-color: #007bff;                                         
-        }
+button{
+width:72px;
+font-size:15px;
+padding:8px 0px;
+border-radius:5px;           
+font-size:15px;           
+border: none;           
+cursor: pointer;
+color: white;
+font-weight: bold;
+background-color: #007bff;                                         
     
-        button:focus{
-        outline:none;
-        border:;
-        background-color: teal;      
-        }
+}
     
-        .btn-group{
-        margin-top:5px;
-    /*    border:1px solid; */
-        width:240px;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        padding:0px 2px;
-        background:;
+button:focus{
+outline:none;
+border:;
+background-color: teal;      
+}
+    
+.btn-group{
+margin-top:5px;
+/*    border:1px solid; */
+width:240px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:0px 2px;
+background:;
           
-        }
-       select:required {
-       border: 2px solid purple;
-       background:red;       
-       color:white;    
-       font-weight: bold;
-       }
+}
+select:required {
+border: 2px solid purple;
+background:red;       
+color:white;    
+font-weight: bold;
+}
 
-       select:required:valid {
-       border:2px solid purple;
-       background:white;  
-       color:#000; 
-        }
+select:required:valid {
+border:2px solid purple;
+background:white;  
+color:#000; 
+}
 
            
-        select{
-       color:white;     
-       font-size:15px;
-       padding:5px;
-       border-radius:5px;
-       border:2px solid;
-       width:74px;
-       }
+select{
+color:white;     
+font-size:15px;
+padding:5px;
+border-radius:5px;
+border:2px solid;
+width:74px;
+}
        
-       select:focus{
-       outline:none;           
-        }
+select:focus{
+outline:none;           
+}
 
-      .result-container{
-       display:flex;
-       background:;
-       text-align:center;
-       flex-direction:column;
-       align-content:center;
-       align-items:center;
-       width:100%;         
-      }
+.result-container{
+display:flex;
+background:;
+text-align:center;
+flex-direction:column;
+align-content:center;
+align-items:center;
+width:100%;         
+}
     
-    #result-text{
-        font-family: 'Courier New', monospace;
-      text-align:center;        
-      color:green;
-      font-size:16px;
-     }
+#result-text{
+font-family: 'Courier New', monospace;
+text-align:center;        
+color:green;
+font-size:16px;
+}
     
-    #result-text2{
-        font-family: 'Courier New', monospace;
-      margin-top:5px;  
-      text-align:center;        
-      font-size:16px;
-      color:purple;
+#result-text2{
+font-family: 'Courier New', monospace;
+margin-top:5px;  
+text-align:center;        
+font-size:16px;
+color:purple;
+}
+    
+    
+@media print {
+button{
+display: none !important;
     }
-    
-    
-    @media print {
-    button{
-      display: none !important;
-    }
-    select{
-      display: none !important;
-    }
-    footer{
-      display: none !important;
+select{
+display: none !important;
+}
+footer{
+display: none !important;
     }        
-       h2{display: none !important;}     
-       h1{display: block !important;}     
+h2{display: none !important;}     
+h1{display: block !important;}     
 
-        
-        
-    }
+}
     
     
-    @media (max-width: 1024px) {
+@media (max-width: 1024px) {
 .container{
-        width:300px;
-        font-size:15px;
-        border:;
-        padding:5px;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        background:;
+width:300px;
+font-size:15px;
+border:;
+padding:5px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:;
                             
-        }}
+}}
   
-  @media (max-width: 768px) {
-  .container{
-        width:300px;
-        font-size:15px;
-        border:;
-        padding:5px;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        background:;
+@media (max-width: 768px) {
+.container{
+width:300px;
+font-size:15px;
+border:;
+padding:5px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:;
                            
-        } }
+} }
 
   
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
 .container{
-        width:300px;
-        font-size:15px;
-        border:;
-        padding:5px;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        background:;
+width:300px;
+font-size:15px;
+border:;
+padding:5px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:;
                             
-        }}	
+}}	
         
     </style>
 </head>
@@ -299,132 +295,174 @@
    </div>
 <script>   
 //input
-            var myInput = document.getElementById("text-input");
-            var myValue = myInput.value;
+var myInput = document.getElementById("text-input");
+var myValue = myInput.value;
 //random Qr
-            function generateRandom() {                
-            var date = new Date();
-            var month = (date.getMonth() + 1).toString().padStart(2, '0');
-            var day = date.getDate().toString().padStart(2, '0');
-            var formattedDate = month + '' + day;
+function generateRandom() {                
+var date = new Date();
+var month = (date.getMonth() + 1).toString().padStart(2, '0');
+var day = date.getDate().toString().padStart(2, '0');
+var formattedDate = month + '' + day;
 //  const today = new Date().toISOString().split('T')[0];
-            const newtoday = formattedDate.replace(/-/g, '');             
-            const randomNum = Math.floor(Math.random() * 1000) + 1;       
-            myValue = `C${newtoday}${randomNum}`;
-            myInput.value = myValue;
-            }       
+const newtoday = formattedDate.replace(/-/g, '');             
+const randomNum = Math.floor(Math.random() * 1000) + 1;       
+myValue = `C${newtoday}${randomNum}`;
+myInput.value = myValue;
+}       
 //Initialize the QR instance
-        let qrcode = new QRCode(document.getElementById("qrcode"), {
-            width: 200,
-            height: 200,
+let qrcode = new QRCode(document.getElementById("qrcode"), {
+width: 200,
+height: 200,
         });
 //Qr function start
-           function generateQR() {    
-            
-            const formattedDate = new Date().toISOString().split('T')[0];
+function generateQR() {    
+
+const formattedDate = new Date().toISOString().split('T')[0];
     
-           const vcode=  document.getElementById("text-input").value;
-          // let vcresult= "http://10.0.0.1/login?="+vcode+"&password=";
-          let vcresult=`http://10.0.0.1/login?username=${vcode}&password=`
-          let resultElement = document.getElementById('result-text')                                        
-          const copyBtn = document.getElementById('copy-btn');
-          const copyBtn2 = document.getElementById('copy-btn2');  
-          const statusMsg = document.getElementById('status');
-          resultElement.innerText= `${new Date().toLocaleDateString()} | ${new Date().toLocaleTimeString()}`;                                                                                                
-          const data =vcresult;
+const vcode=  document.getElementById("text-input").value;
+// let vcresult= "http://10.0.0.1/login?="+vcode+"&password=";
+let vcresult=`http://10.0.0.1/login?username=${vcode}&password=`
+let resultElement = document.getElementById('result-text')                                        
+const copyBtn = document.getElementById('copy-btn');
+const copyBtn2 = document.getElementById('copy-btn2');  
+const statusMsg = document.getElementById('status');
+resultElement.innerText= `${new Date().toLocaleDateString()} | ${new Date().toLocaleTimeString()}`;                                                                                                
+const data =vcresult;
 // if condition Qr        
-            if (data) {
-                qrcode.makeCode(data);                
-                if (vcode) {
-                qrcode.makeCode(data);
-                } else {
-                qrcode.clear(); // Clears the QR if input is empty
-               // resultElement.innerHTML=""
-                       }                                                               
-               } 
-               else {
-                qrcode.clear(); // Clears the QR if input is empty
-               }                         
+if (data) {
+qrcode.makeCode(data);                
+if (vcode) {
+qrcode.makeCode(data);
+} else {
+qrcode.clear(); // Clears the QR if input is empty
+// resultElement.innerHTML=""
+}                                                               
+} 
+else {
+qrcode.clear(); // Clears the QR if input is empty
+}                         
 // 2. Clipboard Logic
-        copyBtn.addEventListener('click', () => {
-           const text = vcresult;
-            if (text && text !== "Time and Date appear Here...") {
-                navigator.clipboard.writeText(text).then(() => {
-             //       statusMsg.style.display = 'block';
-             //       setTimeout(() => statusMsg.style.display = 'none', 2000);
-                });
-            }
-        }); 
-//select logic               
+copyBtn.addEventListener('click', () => {
+const text = vcresult;
+if (text && text !== "Time and Date appear Here...") {
+navigator.clipboard.writeText(text).then(() => {
+//       statusMsg.style.display = 'block';
+//       setTimeout(() => statusMsg.style.display = 'none', 2000);
+});
+}
+}); 
+//select logic       
+let selectValue = String(document.getElementById("select1").value);           
+ 
+switch (selectValue) {          
+case "":
        
-    let selectValue = String(document.getElementById("select1").value);           
-    let user =`/ip hotspot user add name="${vcode}" password="" profile="default" comment="" limit-uptime="${selectValue}"`              
-    let admin = `/ip hotspot user add name="${vcode}" password="" profile="default" comment="QrAdmin" limit-uptime=`                               
-      switch (selectValue) {          
-      case "":
-     Generation=   admin
-      document.querySelector('#result-text2').innerHTML=  'Plese Select Amount'  
-      break;
-      case "4h":
-       Generation=   user;
-        document.querySelector('#result-text2').innerHTML=  'Expire:4h | Amount ₱ 5'  
-       break;      
-      case "7h":
-        Generation=   user;
-        document.querySelector('#result-text2').innerHTML=  'Expire:7h | Amount ₱ 10'     
-      break;    
-      case "11h":
-        Generation=   user;
-        document.querySelector('#result-text2').innerHTML=  'Expire:11h | Amount ₱ 15'     
-      break;   
-      case "15h":
-         Generation=   user;
-         document.querySelector('#result-text2').innerHTML=  'Expire:15h | Amount ₱ 20'
-      break;
-      case "19h":
-         Generation=   user;
-         document.querySelector('#result-text2').innerHTML=  'Expire:19h | Amount ₱ 25'
-      break;
-      case "1d":
-         Generation=   user;
-         document.querySelector('#result-text2').innerHTML=  'Expire:1d | Amount ₱ 30'
-      break;
-      case "15d":
-         Generation=   user;
-         document.querySelector('#result-text2').innerHTML=  'Expire:15d | Amount ₱ 150'
-      break;
-      case "30d":
-         Generation=   user;
-         document.querySelector('#result-text2').innerHTML=  'Expire:30d | Amount ₱ 300'
-      break;
-      default:
-          Generation=   admin;
+break;
+case "4h":
+var comment= '240m,5,0,PWX_Hotspot_PisoWifi'
+break;      
+case "7h":
+var comment= '420m,10,0,PWX_Hotspot_PisoWifi'
+break;    
+case "11h":
+var comment= '660m,15,0,PWX_Hotspot_PisoWifi'
+   
+break;   
+case "15h":
+var comment= '900m,20,0,PWX_Hotspot_PisoWifi'
+break;
+case "19h":
+var comment= '1140m,25,0,PWX_Hotspot_PisoWifi'
+break;
+case "1d":
+var comment= '1440m,30,0,PWX_Hotspot_PisoWifi'
+break;
+case "15d":
+var comment= ''  
+break;
+case "30d":
+var comment= ''
+break;
+default:
+var comment= ''
+
+ }
+               
+               
+               
+               
+   
+  //  let selectValue = String(document.getElementById("select1").value);           
+let user =`/ip hotspot user add name="${vcode}" password="" profile="default" comment="${comment}" limit-uptime="${selectValue}"`              
+let admin = `/ip hotspot user add name="${vcode}" password="" profile="default" comment="QrAdmin" limit-uptime=`                               
+switch (selectValue) {          
+case "":
+Generation=   admin
+document.querySelector('#result-text2').innerHTML=  'Plese Select Amount'  
+      
+break;
+case "4h":
+Generation=   user;
+          
+document.querySelector('#result-text2').innerHTML=  'Expire:4h | Amount ₱ 5'  
+var comment= 'fgd'
+break;      
+case "7h":
+Generation=   user;
+document.querySelector('#result-text2').innerHTML=  'Expire:7h | Amount ₱ 10'     
+break;    
+case "11h":
+Generation=   user;
+document.querySelector('#result-text2').innerHTML=  'Expire:11h | Amount ₱ 15'     
+break;   
+case "15h":
+Generation=   user;
+document.querySelector('#result-text2').innerHTML=  'Expire:15h | Amount ₱ 20'
+break;
+case "19h":
+Generation=   user;
+document.querySelector('#result-text2').innerHTML=  'Expire:19h | Amount ₱ 25'
+break;
+case "1d":
+Generation=   user;
+document.querySelector('#result-text2').innerHTML=  'Expire:1d | Amount ₱ 30'
+break;
+case "15d":
+Generation=   user;
+document.querySelector('#result-text2').innerHTML=  'Expire:15d | Amount ₱ 150'
+break;
+case "30d":
+Generation=   user;
+document.querySelector('#result-text2').innerHTML=  'Expire:30d | Amount ₱ 300'
+break;
+default:
+Generation=   admin;
            
-        }
+}
 
                                          
-        copyBtn2.addEventListener('click', () => {
+copyBtn2.addEventListener('click', () => {
          
-        const text2 = Generation;
+const text2 = Generation;
 
                 
-            if (text2 && text2 !== "Scanned text will appear here...") {
-                navigator.clipboard.writeText(text2).then(() => {
+if (text2 && text2 !== "Scanned text will appear here...") {
+navigator.clipboard.writeText(text2).then(() => {
        //             statusMsg.style.display = 'block';
        //             setTimeout(() => statusMsg.style.display = 'none', 2000);
-               });
-            }
-        });                                                               
-  }
+});
+}
+});                                                               
+}
 
 function clearQr(){
-    qrcode.clear()
+qrcode.clear()
   //  resultElement.innerHTML=""
-    document.getElementById("text-input").value="";
-    document.querySelector('#result-text2').textContent='Please Select Amount'
+document.getElementById("text-input").value="";
+document.querySelector('#result-text2').textContent='Please Select Amount'
     
  //   resultElement.innerHTML=""
-   let resultElement = document.getElementById('result-text').innerHTML='Please Generate Qr Code';                                       
+let resultElement = document.getElementById('result-text').innerHTML='Please Generate Qr Code';                                       
   // document.getElementById("qrcode").innerHTML='Please Generate Qr Code Here...';
  // innerHTML='Please Generate Qr Code Here...'
 
@@ -432,7 +470,7 @@ function clearQr(){
 
 generateRandom()
 generateQR()
-                                                  
+
   </script>
 </body>
 </html>
