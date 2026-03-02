@@ -272,6 +272,10 @@
         <option value="">N/A</option>       
         <option value="4h">₱ 5</option>
         <option value="7h">₱10</option>
+        <option value="11h">₱15</option>      
+        <option value="15h">₱20</option>      
+        <option value="19h">₱25</option>      
+        <option value="1d">₱30</option>            
         <option value="15d">₱150</option>
         <option value="30d">₱300</option>
     </select>    
@@ -354,8 +358,8 @@
 //select logic               
        
     let selectValue = String(document.getElementById("select1").value);           
-    let user =`/ip hotspot user add name="${vcode}" password="" profile="default" comment="Qrandom" limit-uptime="${selectValue}"`              
-    let admin = `/ip hotspot user add name="${vcode}" password="" profile="default" comment="Qrandom" limit-uptime=`                               
+    let user =`/ip hotspot user add name="${vcode}" password="" profile="default" comment="" limit-uptime="${selectValue}"`              
+    let admin = `/ip hotspot user add name="${vcode}" password="" profile="default" comment="QrAdmin" limit-uptime=`                               
       switch (selectValue) {          
       case "":
      Generation=   admin
@@ -364,13 +368,29 @@
       case "4h":
        Generation=   user;
         document.querySelector('#result-text2').innerHTML=  'Expire:4h | Amount ₱ 5'  
-       break;
+       break;      
       case "7h":
         Generation=   user;
         document.querySelector('#result-text2').innerHTML=  'Expire:7h | Amount ₱ 10'     
-      break;              
+      break;    
+      case "11h":
+        Generation=   user;
+        document.querySelector('#result-text2').innerHTML=  'Expire:11h | Amount ₱ 15'     
+      break;   
+      case "15h":
+         Generation=   user;
+         document.querySelector('#result-text2').innerHTML=  'Expire:15h | Amount ₱ 20'
+      break;
+      case "19h":
+         Generation=   user;
+         document.querySelector('#result-text2').innerHTML=  'Expire:19h | Amount ₱ 25'
+      break;
+      case "1d":
+         Generation=   user;
+         document.querySelector('#result-text2').innerHTML=  'Expire:1d | Amount ₱ 30'
+      break;
       case "15d":
-          Generation=   user;
+         Generation=   user;
          document.querySelector('#result-text2').innerHTML=  'Expire:15d | Amount ₱ 150'
       break;
       case "30d":
