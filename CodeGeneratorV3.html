@@ -265,7 +265,7 @@ background:;
 
     <div class="btn-group">
     <div class="btn-container">
-    <select id="select1" onchange="generateQR()" required="">
+    <select id="select1" onchange="generateRandom()" required="">
         <option value="">N/A</option>       
         <option value="4h" >₱ 5</option>
         <option value="7h">₱10</option>9
@@ -283,8 +283,11 @@ background:;
          <button  id="copy-btn">Client</button>        
          <button  id="copy-btn2">Terminal</button>
          <button onclick="window.print()">Print</button>  
-         <!--button onclick="clearQr()">Clear</button-->      
-    </div>   
+    </div> 
+         <div class="btn-container">
+         <button style="width:96%"onclick="clearQr()">Clear</button>      
+    </div> 
+             
     </div>
     <br>
     <!--hr style="width: 240px; border : .5px solid black "-->
