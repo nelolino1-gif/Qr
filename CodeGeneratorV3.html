@@ -190,13 +190,14 @@ display: none !important;
     }
 select{
 display: none !important;
-}
+    }
 footer{
 display: none !important;
     }        
-h2{display: none !important;}     
-h1{display: block !important;}     
-
+h2{display: none !important;    
+    }     
+h1{display: block !important;
+    }     
 }
     
     
@@ -264,10 +265,10 @@ background:;
 
     <div class="btn-group">
     <div class="btn-container">
-    <select id="select1" onchange="" required="">
+    <select id="select1" onchange="generateQR()" required="">
         <option value="">N/A</option>       
-        <option value="4h">₱ 5</option>
-        <option value="7h">₱10</option>
+        <option value="4h" >₱ 5</option>
+        <option value="7h">₱10</option>9
         <option value="11h">₱15</option>      
         <option value="15h">₱20</option>      
         <option value="19h">₱25</option>      
@@ -310,12 +311,12 @@ myValue = `C${newtoday}${randomNum}`;
 myInput.value = myValue;
 generateQR()
     
-       }
+}
 //Initialize the QR instance
 let qrcode = new QRCode(document.getElementById("qrcode"), {
 width: 200,
 height: 200,
-        });
+});
 //Qr function start
 function generateQR() {    
 
@@ -387,14 +388,13 @@ var comment= ''
 break;
 default:
 var comment= ''
-
- }
+}
                
                
                
                
    
-  //  let selectValue = String(document.getElementById("select1").value);           
+//  let selectValue = String(document.getElementById("select1").value);           
 let user =`/ip hotspot user add name="${vcode}" password="" profile="default" comment="${comment}" limit-uptime="${selectValue}"`              
 let admin = `/ip hotspot user add name="${vcode}" password="" profile="default" comment="QrAdmin" limit-uptime=`                               
 switch (selectValue) {          
