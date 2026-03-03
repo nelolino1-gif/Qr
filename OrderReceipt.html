@@ -5,295 +5,313 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
     
 <head>
-    <style>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
     
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
+    
+body {
+display: flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:5px;
+background-color: #f8f9fa;
+font-family: 'Segoe UI', sans-serif;
+}
+    
+.container{
+padding:5px;
+width:330px;
+background:;
+display: flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+gap:1px; 
+}
+    
+.box {
+font-family: 'Segoe UI', sans-serif;
+font-size:15px;
+margin: auto;
+background: white; 
+padding: 5px; 
+border-radius: 10px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
         
-    }
+/* Input Area */
+.entry-form { 
+font-family: 'Segoe UI', sans-serif;
+font-size:15px;         
+display: flex;
+flex-direction:row;
+justify-content:center;
+align-items:center;            
+margin-bottom: 5px;
+}
     
     
-        body {
-            display: flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            padding:3vw;
-            background-color: #f8f9fa;
-            font-family: 'Segoe UI', sans-serif;
-          
-            
-        }
-        .box {
-            font-family: 'Segoe UI', sans-serif;
-            font-size:4vw;
-          
-            margin: auto;
-            background: white; 
-            padding: 2ve; 
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+.entry-form-col{ 
+width:100%;
+font-family: 'Segoe UI', sans-serif;
+font-size:15px;          
+display: flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;            
+margin-bottom: 5px;
+margin-top: 5px;
+}
+
+/*hide card  display:none / default display :flex */
+.form-card{
+background:;
+width:100%;
+display: ;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+font-weight:bold;
+color:brown;
+}
+    
+
+    
+.form-card-client{
+background:;
+width:100%;
+display: flex;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+gap:5px;
+font-weight:bold;
+color:brown;            
+}
         
-        /* Input Area */
-        .entry-form { 
-            font-family: 'Segoe UI', sans-serif;
-            font-size:4vw;
-          
-            display: flex;
-            flex-direction:row;
-            justify-content:center;
-            align-items:center;
-            gap: 0vw; 
-            margin-bottom: 3vw;
-            margin-top: 3vw;
-        }
+
+input {
+font-family: 'Segoe UI', sans-serif;
+font-size:15px;
+text-align:center;
+width:30%;
+flex: 1; 
+padding: 8px;
+border:1.5px solid lightseagreen;
+border-radius: 0px; }
     
+input:focus{
+outline:none;
+border:1.5px solid tomato;
+}
     
-            .entry-form-col{ 
-            width:100%;
-            font-family: 'Segoe UI', sans-serif;
-            font-size:4vw;
+/* Table Styling */
+.card-input {
+border:none;
+margin-bottom:5px;
+background:none
+}
+        
+tfoot { background-color: #f1f1f1; font-weight: bold; 
+color: #f1f1f1;
+border-top: 1px dashed #ddd;
+}
+        
+/* Buttons */
+.btn-group {
+font-family: 'Segoe UI', sans-serif;
+font-size:15px;          
+width:100%;
+display: flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+gap: 5px; 
+}
+    
+button { 
+width:100%;
+font-size:15px;
+padding: 10px 7px;
+border: none;
+border-radius: 5px; 
+cursor: pointer;
+color: white;
+font-weight: bold;
+}
+    
+.add-btn { background-color: #007bff; }
+.rem-btn { background-color: #dc3545; }
+button:hover { opacity: 0.9; }
+    
+  /* print css */
+.print-container {            
+font-family: 'Courier New', Courier, monospace; line-height: 1.2; color: #333; }
+
+.receipt-wrapper {    
+width: 100%;
+margin:auto;
+padding: 5px;
+border: .5px dashed #000;
+margin-top:10px;
+padding:5px;
+}
+
+
+.center { 
+text-align: center; }
+
+.bold { 
+font-weight: bold; }
+        
+header { margin-bottom: 3px; }
+
+h1 { margin: 0px; font-size: 1.5rem; }
+        
+.info-row { display: flex; justify-content: space-between; margin-bottom: 3px; font-size: 0.8rem;}
+        
+p{            
+font-size: 0.8rem;
+}
+    
+table {
+font-family: 'Courier New', Courier, monospace; 
+line-height: 1.2;
+color: #333; 
+width: 100%;
+border-collapse: collapse; 
+margin-top: 3px;
+table-layout:fixed;            
+font-size: 0.8rem;
+}
+    
+th { 
+border-bottom: 1px dashed #000;
+word-wrap:break-word;
+text-align:right;       
+}
+                     
+table th:nth-child(1) {
+text-align: right;               
+width:20%;
+}
+
+table th:nth-child(2) {
+text-align: left;
+width:20%;
+}
+
           
-            display: flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            gap: 2vw; 
-            margin-bottom: 3vw;
-            margin-top: 3vw;
-        }
-    /*hide card  display:none / default display :flex */
-       .form-card{
            
-            background:;
-            width:100%;
-            display: none;
-            flex-direction:row;
-            justify-content:center;
-            align-items:center;
-            gap:1vw;
-            font-weight:bold;
-            color:brown;
-       }
+table th:nth-child(3) {
+text-align: center;
+width:60%;
+}
     
     
-       .form-card-client{
-            background:;
-            width:100%;
-            display: flex;
-            flex-direction:row;
-            justify-content:center;
-            align-items:center;
-            gap:1vw;
-            font-weight:bold;
-            color:brown;
+table td:nth-child(1) {
+text-align:left;
+width:20%;
+}
+
+table td:nth-child(2) {
+text-align: center;
+width:60%;
+}
+
+table td:nth-child(3) {
+text-align:right;
+width:20%;
+}
+
+    
+td { 
+padding: 1px 0px; 
+vertical-align: top;
+word-wrap:break-word;
+}
+
+.price {
+text-align: right; 
+}
+        
+.totals {
+margin-top: 5px;
+border-top: 1px solid #000;
+padding-top: 3px; 
+}
+    
+.footer-print { 
+margin-top: 5px; 
+font-size: 0.8rem; 
+border-top: 1px dashed #ccc; 
+padding-top: 3px;
+}
+
+/* Print-specific styles */
+@media print {
+.receipt-wrapper {
+border: none;
+display:block !important
+}
+    
+button {
+display: none;
+} /* Hide print button when printing */
+/* Hide print button when printing */      
             
-       }
+.entry-form{
+display: none;
+}
     
+h2{
+display: none;
+}
     
-
-        input {
-            font-family: 'Segoe UI', sans-serif;
-            font-size:4vw;
-            text-align:center;
-            font-size:4vw;
-            width:30%;
-            flex: 1; 
-            padding: 2vw;
-            border:.5vw solid lightseagreen;
-            border-radius: 0vw; }
-        input:focus{
-            outline:none;
-            border:.5vw solid tomato;
-        }
-        /* Table Styling */
-        .card-input {
-
-            border:none;
-            }
-        
-        tfoot { background-color: #f1f1f1; font-weight: bold; 
-            border-top: .5vw dashed #ddd;
-        }
-        
-        /* Buttons */
-        .btn-group {
-            font-family: 'Segoe UI', sans-serif;
-            font-size:4vw;
-          
-            width:100%;
-            display: flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            gap: 3vw; 
-        }
-        button { 
-            width:100%;
-            font-size:4vw;
-            padding: 2.5vw 7vw;
-            border: none;
-            border-radius: 5px; 
-            cursor: pointer;
-            color: white;
-            font-weight: bold; }
-        .add-btn { background-color: #007bff; }
-        .rem-btn { background-color: #dc3545; }
-        button:hover { opacity: 0.9; }
+.entry-form-col{
+display: none;
+}
     
+footer{
+display: none;
+}
     
-    
-    
-     /* print css */
-        .print-container {            
-        font-family: 'Courier New', Courier, monospace; line-height: 1.2; color: #333; }
-        .receipt-wrapper { width: 90vw; margin: auto; padding: 2vw; border: .5px solid #eee;
-        margin-top:5vw;}
-        .center { text-align: center; }
-        .bold { font-weight: bold; }
-        
-        header { margin-bottom: 2vw; }
-        header h1 { margin: 0; font-size: 6vw; }
-        
-        .info-row { display: flex; justify-content: space-between; margin-bottom: 2vw; font-size: 4vw;}
-        
-         p{
-             
-         font-size: 4vw;
-             
-         }
-        table {
-         font-family: 'Courier New', Courier, monospace; 
-         line-height: 1.2;
-         color: #333; 
-         width: 100%;
-         border-collapse: collapse; 
-         margin-top: 3vw;
-         table-layout:fixed;            
-          font-size: 4vw;
-        }
-        th { 
-         border-bottom: .5vw dashed #000;
-         word-wrap:break-word;
-         text-align:right;       
+tfoot{
+display: none;
+}
             
-        }
-    
-    
-    
-         
-
-           table th:nth-child(1) {
-          text-align: right;
-               
-           width:20%;
-           }
-
-         table th:nth-child(2) {
-         text-align: left;
-           width:20%;
-          }
-
-          
-           
-           table th:nth-child(3) {
-             text-align: center;
-           width:60%;
-             }
-
-    
-    
-            table td:nth-child(1) {
-            text-align:left;
-            width:20%;
-             }
-
-           table td:nth-child(2) {
-          text-align: center;
-           width:60%;
-           }
-
-         table td:nth-child(3) {
-         text-align:right;
-          width:20%;
-          }
-
-    
-        td { 
-           padding: .4vw 0; 
-           vertical-align: top;
-           word-wrap:break-word;
-        }
-        .price {
-         text-align: right; 
-         
-        }
-        
-        .totals {
-         margin-top: 3vw;
-         border-top: .5vw solid #000;
-         padding-top: 2vw; 
-        }
-        .footer-print { 
-         margin-top: 5vw; 
-         font-size: 4vw; 
-         border-top: .5vw dashed #ccc; 
-         padding-top: 3vw;
-        }
-
-        /* Print-specific styles */
-        @media print {
-            .receipt-wrapper {
-             border: none;
-            }
-            button {
-             display: none;
-            } /* Hide print button when printing */
-           /* Hide print button when printing */      
-            
-            .entry-form{
-            display: none;
-            }
-             h2{
-            display: none;
-            }
-            .entry-form-col{
-            display: none;
-            }
-            footer{
-            display: none;
-            }
-            
-        }    
+}    
     </style>
 </head>
 <body>
-    <h2 style="font-size:5vw">Order Receipt</h2>    
+    <div class="container">
+    <h2>Order Receipt</h2>    
     <div class="entry-form-col" style="background:">
         <div class="form-card">
         <caption>Store Name : </caption>
-        <input class="card-input" style="width:50%;"type="text" id="bannerId" value="PWX PRINTING SERVICES" placeholder="Banner"  >       
+        <input class="card-input" style="width:70%;"type="text" id="bannerId" value="PWX PRINTING SERVICES" placeholder="Banner"  >       
         </div>
         <div class="form-card">
         <caption>Address : </caption>
-        <input class="card-input"style="width:50%"type="text" id="addressId" value="Sama-Sama St. Manggahan 2, Habay 2, Bacoor Cavite" placeholder="Address" >
+        <input class="card-input"style="width:70%"type="text" id="addressId" value="Sama-Sama St. Manggahan 2, Habay 2, Bacoor Cavite" placeholder="Address" >
         </div>
         <div class="form-card">
         <caption>Contact : </caption>
-        <input class="card-input"style="width:100%"type="text" id="contactId" value="755-725-109" placeholder="Contact" >
+        <input class="card-input"style="width:70%"type="text" id="contactId" value="755-725-109" placeholder="Contact" >
         </div>
         <div class="form-card">
         <caption>About : </caption>
-        <input class="card-input"style="width:100%"type="text" id="aboutId" value="Email : printpwx@gmail.com" placeholder="Contact" >
+        <input class="card-input"style="width:80%"type="text" id="aboutId" value="Email : printpwx@gmail.com" placeholder="Contact" >
         </div>
         <div class="form-card">
         <caption>Cashier : </caption>
-        <input class="card-input"style="width:100%"type="text" id="cashierId" value="Nel" placeholder="Cashier" >
-        </div>
-        
+        <input class="card-input"style="width:80%"type="text" id="cashierId" value="Nel" placeholder="Cashier" >
+        </div>        
         <div class="form-card-client">
         <caption>Client Name : </caption>
         <input style="width:100%"type="text" id="clientId" placeholder="Client" value="C">    
@@ -304,19 +322,17 @@
         <input type="text" id="itemName" placeholder="items">
         <input type="number" id="itemPrice" placeholder="price">    
     </div>     
-
     <div class="btn-group">
         <button class="add-btn" onclick="proceedToTable()">Add Row & Calculate</button>
-        <button class="rem-btn" onclick="removeLastRow()">Remove Last Row</button>
-    </div>   
-    
+        <button class="rem-btn" onclick="removeLastRow()">Remove Last Row</button>              
+        <button type="button" style="background:teal"class="add-btn" onclick="window.print()">Print Receipt</button>  
+    </div>       
      <div class="receipt-wrapper print-container" style="">
-      <header class="center">
+     <header class="center">
         <h1 id="bannerName"></h1>
         <p id="address"><p>
-            <p id="contactUs"></p>
-     </header>
-         
+        <p id="contactUs"></p>
+     </header>         
      <div class="info-row">
      <span id="date"></span>
      <span id="time"></span>       
@@ -325,21 +341,16 @@
      <span id="receiptNum"></span>
      <span id="cashier"></span>
      </div>
-
      <div class="info-row">
      <span id="clientName"></span>
      </div>
     <table id="dataTable">
         <thead id="theadId">
-            <tr>             
-            
-                <!--th style="text-align:left; width:20%">Pcs</th>
-                <th style="text-align:center;width:60%">Items</th>   
-                <th style="text-align:right;width:20%">Price</th-->
-            </tr>
+           <tr>                         
+           </tr>
         </thead>
         <tbody>
-            </tbody>
+        </tbody>
         <tfoot>
             <tr>                                    
                 <td id="totalValue"></td>
@@ -348,7 +359,6 @@
             </tr>
         </tfoot>
     </table>
-
     <div class="totals">
         <div class="info-row">
             <span id="subtotalId"></span>
@@ -363,140 +373,114 @@
             <span id="grandTotal"></span>
         </div>
     </div>
-
     <div class="footer-print center">
-        
-        <p id="aboutUs"></p>
-        <br>
-       <button type="button" style="padding:3px; border-radius:2px; border: 1px solid; margin-bottom:12px"class="no-print print-container" onclick="window.print()">Print Receipt</button>
-    </div>    
+<p id="aboutUs"></p>
+  </div>    
     </div>  
     <br>
-    <footer style="font-size:4vw">
+    <footer>
     <i style="color:purple">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple"></i>
     </footer>
-    
-    
+  
 <script>
-    const tableBody = document.querySelector("#dataTable tbody");
-    const totalDisplay = document.getElementById("totalValue");
-    const totalDisplay2 = document.getElementById("totalValue2");
+const tableBody = document.querySelector("#dataTable tbody");
+const totalDisplay = document.getElementById("totalValue");
+const totalDisplay2 = document.getElementById("totalValue2");
 
-    function proceedToTable() {
-        
-        
-            const pcsInp = document.getElementById("itemPcs");
-            const nameInp = document.getElementById("itemName");
-            const priceInp = document.getElementById("itemPrice");
+function proceedToTable() {                    
+const pcsInp = document.getElementById("itemPcs");
+const nameInp = document.getElementById("itemName");
+const priceInp = document.getElementById("itemPrice");
 
-        if (!nameInp.value || !priceInp.value) {
-            alert("Please enter both pcs and items.");
-            return;
-        }
+if (!nameInp.value || !priceInp.value) {
+alert("Please enter both pcs and items.");
+return;
+}
 
-        // 1. Add new row to TBODY
-        const newRow = tableBody.insertRow();
-        const cell1 = newRow.insertCell(0);
-        const cell2 = newRow.insertCell(1);
-        const cell3 = newRow.insertCell(2);
+// 1. Add new row to TBODY
+const newRow = tableBody.insertRow();
+const cell1 = newRow.insertCell(0);
+const cell2 = newRow.insertCell(1);
+const cell3 = newRow.insertCell(2);
 
-        cell1.innerText = parseFloat(pcsInp.value); // Ensure it's a number
-        cell2.innerText =nameInp.value;
-        cell3.innerText = parseFloat(priceInp.value); // Ensure it's a number
+cell1.innerText = parseFloat(pcsInp.value); // Ensure it's a number
+cell2.innerText =nameInp.value;
+cell3.innerText = parseFloat(priceInp.value); // Ensure it's a number
 
 
-        // 2. Clear inputs
-        pcsInp.value = "";
-        nameInp.value = "";
-        priceInp.value = "";
-        nameInp.focus();
+// 2. Clear inputs
+pcsInp.value = "";
+nameInp.value = "";
+priceInp.value = "";
+nameInp.focus();
 
-        // 3. Update the TFOOT Total
-        updateTotal();
-    }
+// 3. Update the TFOOT Total
+updateTotal();
+}
 
-    function removeLastRow() {
-        if (tableBody.rows.length > 0) {
-            tableBody.deleteRow(-1);
-            updateTotal();
-        } else {
-            alert("No rows to remove.");
-        }
-    }
+function removeLastRow() {
+if (tableBody.rows.length > 0) {
+tableBody.deleteRow(-1);
+updateTotal();
+} else {
+alert("No rows to remove.");
+}
+}
 
-    function updateTotal() {
-        let sum = 0;
-        let sum2 = 0;
-        // Loop through all rows in tbody and sum the 2nd column
-        for (let i = 0; i < tableBody.rows.length; i++) {
-            const val = parseFloat(tableBody.rows[i].cells[0].innerText);
-            sum += isNaN(val) ? 0 : val;
-        }
+function updateTotal() {
+let sum = 0;
+let sum2 = 0;
+// Loop through all rows in tbody and sum the 2nd column
+for (let i = 0; i < tableBody.rows.length; i++) {
+const val = parseFloat(tableBody.rows[i].cells[0].innerText);
+sum += isNaN(val) ? 0 : val;
+}
             
-            for (let i = 0; i < tableBody.rows.length; i++) {
-            const val2 = parseFloat(tableBody.rows[i].cells[2].innerText);
-            sum2 += isNaN(val2) ? 0 : val2;
-        }
+for (let i = 0; i < tableBody.rows.length; i++) {
+const val2 = parseFloat(tableBody.rows[i].cells[2].innerText);
+sum2 += isNaN(val2) ? 0 : val2;
+}
             
-        // Update the TFOOT cell
-        totalDisplay.innerText = sum.toFixed();
-        totalDisplay2.innerText = sum2.toFixed();
-
-    
-         
-         
- //  let clientValue = document.querySelector('#client').value;
-          
-           
-    let datenow = new Date()
-    document.querySelector('#date').textContent= `Date : ${new Date().toLocaleDateString()}`
-    document.querySelector('#time').textContent= `Time : ${new Date().toLocaleTimeString()}`
-    const randomNum = Math.floor(Math.random() * 10000) + 1;    
-    document.getElementById('receiptNum').textContent = `Receipt #: ${randomNum}`;
-    
-    let cashierName= document.getElementById('cashierId').value;
+// Update the TFOOT cell
+totalDisplay.innerText = sum.toFixed();
+totalDisplay2.innerText = sum2.toFixed();
+                    
+//  let clientValue = document.querySelector('#client').value;
+let datenow = new Date()
+document.querySelector('#date').textContent= `Date : ${new Date().toLocaleDateString()}`
+document.querySelector('#time').textContent= `Time : ${new Date().toLocaleTimeString()}`
+const randomNum = Math.floor(Math.random() * 10000) + 1;    
+document.getElementById('receiptNum').textContent = `Receipt #: ${randomNum}`;    
+let cashierName= document.getElementById('cashierId').value; 
+document.getElementById('cashier').textContent = `Cashier: ${cashierName}`;
+let value2 = document.getElementById('totalValue2').innerText;       document.getElementById('subTotal').textContent = `${value2}`;    document.getElementById('grandTotal').innerText = value2;               
+let bannerId = document.querySelector('#bannerId').value         
+document.querySelector('#bannerName').textContent = bannerId;  
+let addressId = document.querySelector('#addressId').value         
+document.querySelector('#address').textContent = addressId;  
+let contactId = document.querySelector('#contactId').value         
+document.querySelector('#contactUs').textContent =`Contact# : (+639) ${contactId}`;   
+let aboutId = document.querySelector('#aboutId').value         
+document.querySelector('#aboutUs').innerHTML =`thank you ! <br> ${aboutId}`;                     
+let cname= document.querySelector('#clientId').value         
+document.querySelector('#clientName').innerHTML =`Name : <b>${cname}</b>`;  
+                                  
+document.querySelector('#subtotalId').textContent ='Subtotal';  
+document.querySelector('#discountId').textContent ='discount';  
+document.querySelector('#totalId').textContent ='TOTAL';  
  
-    document.getElementById('cashier').textContent = `Cashier: ${cashierName}`;
-    let address                                                                                             
-    let value2 = document.getElementById('totalValue2').innerText;   
-    document.getElementById('subTotal').textContent = `${value2}`;
-    document.getElementById('grandTotal').innerText = value2;               
-    let bannerId = document.querySelector('#bannerId').value         
-    document.querySelector('#bannerName').textContent = bannerId;  
-    let addressId = document.querySelector('#addressId').value         
-    document.querySelector('#address').textContent = addressId;  
-    let contactId = document.querySelector('#contactId').value         
-    document.querySelector('#contactUs').textContent =`Contact# : (+639) ${contactId}`;   
-    let aboutId = document.querySelector('#aboutId').value         
-    document.querySelector('#aboutUs').innerHTML =`thank you ! <br> ${aboutId}`;                     
-    let cname= document.querySelector('#clientId').value         
-    document.querySelector('#clientName').innerHTML =`Name : <b>${cname}</b>`;  
-
-                
-             
-      
-      document.querySelector('#subtotalId').textContent ='Subtotal';  
-      document.querySelector('#discountId').textContent ='discount';  
-      document.querySelector('#totalId').textContent ='TOTAL';  
-
-  
-  
-    }      
+}      
           
-        let tableHeader = document.querySelector('#theadId')
-        const columns = ['Pcs','Items','Price'];
+let tableHeader = document.querySelector('#theadId')
+const columns = ['Pcs','Items','Total'];
             
-            columns.forEach(column => {
-                const th = document.createElement('th');
-                th.textContent = column;
-                tableHeader.appendChild(th);
-                columns.innerHTML=''
-                
-      });
-                
-                
-    
+columns.forEach(column => {
+const th = document.createElement('th');
+th.textContent = column;
+tableHeader.appendChild(th);                                
+});
+          
 </script>
-
+</div>
 </body>
 </html>
