@@ -7,26 +7,25 @@
 		<title>Counter</title>
 		<style>
 		
-		* {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
- font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
  }
 		
  
 	body { 
-font-family:'Arial', san-serif;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 display: flex;
 flex-direction: column; 
 align-items: center;             
 background:;
 font-size:7vw;
-	touch-action:;
+touch-action:;
 }
  
 .container{
- margin:20px;
+margin:20px;
 border:;
 width:330px;
 display:flex;
@@ -39,81 +38,79 @@ box-shadow: 0 5px 8px rgba(0,0,0,0.1);
 border-radius:8px;
 }
  
- input{ 
-  border:2px solid teal;
-  width:93%;
-  padding:10px;
-  text-align:center;
-  font-size:20px;
-  border-radius:3px;
- }
- input:focus{ 
-  outline:none;
-  border:2px solid tomato;
-  border-radius:3px;
+input{ 
+border:2px solid teal;
+width:93%;
+padding:10px;
+text-align:center;
+font-size:20px;
+border-radius:3px;
  }
  
- 
- 
- .temp{ 
- font-size:30px;
- width:93%;
- border: 2px solid teal;
-		text-align: center;
- background:grey;
- padding:20px;
- border-radius:5px;
- color:white;
- margin:10px 0px;
- 
+input:focus{ 
+outline:none;
+border:2px solid tomato;
+border-radius:3px;
  }
  
- label{
+ 
+ 
+.temp{ 
+font-size:30px;
+width:93%;
+border: 2px solid teal;
+text-align: center;
+background:grey;
+padding:20px;
+border-radius:5px;
+color:white;
+margin:10px 0px;
+}
+ 
+label{
+font-size:20px;
+}
+
+  
+#countLabel{
+color:lightseagreen;
+text-align: center;
+font-size: 120px;
+ }
+
+
+ 
+.btnContainer{
+	display:flex;
+flex-direction:row;
+width:100%;
+justify-content:center;
+gap:5px;
+margin:10px;
+padding:0px;
+ }
+
+ 
+button{
+font-size:20px;
+padding:20px 0px;
+border-radius:5px;
+background:#ccc;
+width:30%;
+border:none;
+font-weight:bold;
 font-size:20px;
  }
-
- 
- 
- #countLabel{
-		color:lightseagreen;
-		text-align: center;
-		font-size: 120px;
- }
-
-
- 
- .btnContainer{
-	 display:flex;
-  flex-direction:row;
-  width:100%;
-  justify-content:center;
-  gap:5px;
-  margin:10px;
-  padding:0px;
- }
-
- 
- button{
-  font-size:20px;
-  padding:20px 0px;
-  border-radius:5px;
-  background:#ccc;
-  width:30%;
-  border:none;
-  font-weight:bold;
- }
  
 
- button:hover{
- 
- background:skyblue;
- 
+button:hover{ 
+background:skyblue; 
  }
 
  
 footer{
- font-size:15px;
- margin:10px 0px;
+font-size:15px;
+margin:10px 0px;
 }  
 
 		
@@ -121,26 +118,17 @@ footer{
  </head>
  <body>
  <div class="container">
- <br>
- 
 			<h1 class="temp"id="myH1">RESULT</h1>
- 
-
-	<label>Final Result: <i class="fa fa-arrow-down" style="color:teal"></i>
+<label>Final Result: <i class="fa fa-arrow-down" style="color:teal"></i>
 </label>
-
-	<input type="number" placeholder="0" id="myText" value="0">
-
-		
+	<input type="number" placeholder="0" id="myText" value="0">		
 	<div	class="btnContainer">
 		<button id="mySubmit" class="counterBtn">SUBMIT</button>			
 			<button id="reset" class="counterBtn">RESET</button>
 			<button id="add" class="counterBtn">+ ADD</button>
 		</div>
-  
- 	<label id="countLabel">0</label><br>
- 
-	 	<div class="btnContainer">		
+ <label id="countLabel">0</label><br> 
+		<div class="btnContainer">		
 		<button id="decreasedBtn" class="counterBtn">-</button>
 		<button id="resetBtn" class="counterBtn">0</button>
 		<button id="increaseBtn" class="counterBtn">+</button>						
@@ -152,14 +140,12 @@ footer{
 
     
 		<script>
-	let username
-  
-	document.getElementById("mySubmit").onclick= function(){
-		username=document.getElementById("myText").value ;
-	document.getElementById("myH1").textContent=username;		
+let username  
+document.getElementById("mySubmit").onclick= function(){
+username=document.getElementById("myText").value ;
+document.getElementById("myH1").textContent=username;		
 	}
-  
-  
+    
 document.getElementById("reset").onclick= function(){
 document.getElementById("myH1").textContent= "Reset";
 username=document.getElementById("myText").value= result;
@@ -180,27 +166,25 @@ const increaseBtn	=	document.getElementById("increaseBtn");
 const countLabel	= document.getElementById("countLabel");
 let count = 0;
 		
-		decreasedBtn.onclick = function(){
-	count--
-		countLabel.textContent= count;				
+decreasedBtn.onclick = function(){
+count--
+countLabel.textContent= count;				
 		}
 
-		increaseBtn.onclick = function(){
-		count++
-		countLabel.textContent= count;				
+increaseBtn.onclick = function(){
+count++
+countLabel.textContent= count;				
 		}
 			
-		resetBtn.onclick = function(){
-		count=0
-		countLabel.textContent= count;	
-		username=document.getElementById("myText").value= result;
+resetBtn.onclick = function(){
+count=0
+countLabel.textContent= count;	
+username=document.getElementById("myText").value= result;
 		}
 		 
 		 
-		 function refresh() {
-  // code na gusto mong i-refresh every 1 minute
- // let result2= document.getElementById("myH1").value;
-  username=document.getElementById("myText").value= result;
+function refresh() {
+username=document.getElementById("myText").value= result;
 
 }
 
@@ -209,5 +193,3 @@ setInterval(refresh, 5000); // 60000 milliseconds = 1 minute
 		</script>
 </body>
 </html>
-<script>
-</script>
