@@ -1,6 +1,8 @@
 
 <!DOCTYPE html>
 <html>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 body {
@@ -9,9 +11,9 @@ body {
             justify-content:center;
             align-items:center;
             flex-direction: column; 
-            padding:2vw; 
+            padding:5px; 
             background:;
-            margin-top:2vw;
+            margin-top:5px;
                       
         }
 
@@ -19,13 +21,13 @@ body {
 
  .container{
             border:;
-            width:90vw;
+            width:350px;
             display:flex;
             flex-direction:column;
             background:;
             text-align:center;
             align-items: center;
-            font-size:5vw;
+            font-size:15px;
         }
 
 
@@ -35,7 +37,7 @@ body {
 
 p{
   color:;
-  font-size:5vw;
+  font-size:15px;
   text-align:center;
 }
 #date{
@@ -73,20 +75,20 @@ p{
 
 table {
   border-collapse: collapse;
-  width: 100%;
+  width: 95%;
   height:auto;  
   font-weight:bold;
-  margin:2vw;     
+  margin:5px;     
   table-layout:fixed;
               
 }
 
 th, td {
-  border: .5vw solid brown;
-  padding: 3vw;
+  border: 1.5px solid brown;
+  padding: 10px;
   text-align: center;
  /* height:35px;*/
-  font-size:4vw; 
+  font-size:15px; 
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   wrap-word-break-word;          
 }
@@ -101,28 +103,6 @@ tr:hover {
 }
 
 
-  @media (max-width: 1024px) {
-  .container { background: white; padding: 2vw; border-radius: 3vw; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width: 90vw;font-size:4vw;}
-}
-  
-  @media (max-width: 768px) {
-  .container { background: white; padding: 2vw; border-radius: 3vw; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width: 90vw;font-size:4vw;}    
-              
-         
-              
-              
-              
-  }
-
-  
-  @media (max-width: 480px) {
-  .container { background: white; padding: 2vw; border-radius: 3vw; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width:90vw;font-size:4vw;}
-              
-            
-   
-              
-              
-  }
 
 
 </style>
@@ -250,6 +230,9 @@ switch (dayNow){
     case 25:
     NowIs='';
     break;
+    case 26:
+    NowIs="";
+    break;
     case 27:
     NowIs="";
     break;
@@ -261,6 +244,7 @@ switch (dayNow){
     break;
     case 30:
     NowIs="BILL PAYMENT";
+    alert("BILL PAYMENT"); 
     break;
     case 31:
     NowIs="";
@@ -284,7 +268,8 @@ switch (dayNow){
 if (day.includes('Lunes') || day.includes('Huwebes')) {
  dayCss.style.backgroundColor='green';
   dayCss.style.color='white';
-  status ="May Therapy ";    
+  status ="May Therapy "; 
+  alert("May Theraphy")            
 }
  else if (day.includes(`${Sat}`) || day.includes( `${Sun}`)){
 dayCss.style.backgroundColor='red';
