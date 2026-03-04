@@ -11,32 +11,33 @@
 padding:0;
 margin:0;
 box-sizing:border-box;
-    }  
+}  
     
 body{
 margin-top:0px;
-border:;
-width:100vw;          
+border:;        
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 background:;            
-font-family:'Arial', san-serif;                       
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; 
 }
     
 .container{
-width:300px;
+width:330px;
 font-size:15px;
 border:;
+border-radius:15px;
 padding:5px;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 background:;
-                           
+box-shadow: 0 5px 8px rgba(0,0,0,0.1);                          
 }
+    
 .btn-container{
 font-size:15px;
 border:;
@@ -84,7 +85,7 @@ outline:none;
 border:2px solid tomato;
 }
     
-    .wrapper{
+.wrapper{
 background:white;
 border:1px solid;
 padding:15px;
@@ -95,8 +96,7 @@ align-items:center;
 margin:5px 0px;    
 /*   border-radius:5px;*/
         
-        
-    }
+}
 
 
 button{
@@ -109,8 +109,7 @@ border: none;
 cursor: pointer;
 color: white;
 font-weight: bold;
-background-color: #007bff;                                         
-    
+background-color: #007bff;                                            
 }
     
 button:focus{
@@ -183,6 +182,10 @@ font-size:16px;
 color:purple;
 }
     
+footer{
+margin:10px 0px;    
+}
+    
     
 @media print {
 button{
@@ -201,50 +204,8 @@ h1{display: block !important;
 }
     
     
-@media (max-width: 1024px) {
-.container{
-width:300px;
-font-size:15px;
-border:;
-padding:5px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-background:;
-                            
-}}
-  
-@media (max-width: 768px) {
-.container{
-width:300px;
-font-size:15px;
-border:;
-padding:5px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-background:;
-                           
-} }
 
-  
-@media (max-width: 480px) {
-.container{
-width:300px;
-font-size:15px;
-border:;
-padding:5px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-background:;
-                            
-}}	
-        
-    </style>
+</style>
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <body>
@@ -289,7 +250,7 @@ background:;
     </div> 
              
     </div>
-    <br>
+    
     <!--hr style="width: 240px; border : .5px solid black "-->
     <div class="no-print" >
         <footer>
