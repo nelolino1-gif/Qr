@@ -14,125 +14,104 @@
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  }
 		
- input{ 
-  width:50vw;
-  padding:2vw;
- }
  
-		body { font-family:'Arial', san-serif;
-            display: flex;
-            flex-direction: column; 
-            align-items: center;             
-            background:;
-            font-size:7vw;
-		           touch-action:none;
-        }
+	body { 
+font-family:'Arial', san-serif;
+display: flex;
+flex-direction: column; 
+align-items: center;             
+background:;
+font-size:7vw;
+	touch-action:;
+}
  
 .container{
-            border:;
-            width:90vw;
-            display:flex;
-            flex-direction:column;
-            background:;
-            text-align:center;
-            align-items: center;
-            font-size:5vw;
-        }
+ margin:20px;
+border:;
+width:330px;
+display:flex;
+flex-direction:column;
+background:;
+text-align:center;
+align-items: center;
+font-size:1px;
+box-shadow: 0 5px 8px rgba(0,0,0,0.1);                          
+border-radius:8px;
+}
  
- #myText{
-		display: block;
-		text-align: center;
-		font-size: 5vw;
+ input{ 
+  border:2px solid teal;
+  width:93%;
+  padding:10px;
+  text-align:center;
+  font-size:20px;
+  border-radius:3px;
  }
- 
- 
- #myText:focus{
+ input:focus{ 
   outline:none;
+  border:2px solid tomato;
+  border-radius:3px;
  }
  
- #mySubmit{
-		font-size: 5vw 5vw;
-		padding: 3vw;
+ 
+ 
+ .result{ 
+ font-size:30px;
+ width:93%;
+ border: 2px solid teal;
+		text-align: center;
+ background:grey;
+ padding:20px;
+ border-radius:5px;
+ color:white;
+ 
  }
  
-
- #reset{
-font-size: 5vw 5vw;
-		padding: 5vw;
+ label{
+font-size:20px;
  }
 
- #add{
-		font-size: 5vw 5vw;
-		padding: 3vw;
- }
+ 
  
  #countLabel{
 		
 		text-align: center;
-		font-size: 25vw;
+		font-size: 120px;
  }
 
- #myH1{ 
- width:85vw;
- border: 1px solid white;
-		text-align: center;
- background:grey;
- padding:5vw;
- border-radius:3vw;
- color:white;
- font-size:10vw;
- }
+
  
  .btnContainer{
 	 display:flex;
   flex-direction:row;
-  width:90vw;
+  width:100%;
   justify-content:center;
-  gap:2vw;
+  gap:5px;
  }
 
  
  button{
-  border-radius:2vw;
+  font-size:20px;
+  padding:20px 0px;
+  border-radius:5px;
   background:#ccc;
-  width:25vw;
- }
- .counterBtn{
- 	font-size: 5vw;
-	 padding: 5vw 10vw;
+  width:30%;
   border:none;
+  font-weight:bold;
  }
-  
+ 
 
- .counterBtn:hover{
+ button:hover{
  
  background:skyblue;
  
  }
 
  
-  @media (max-width: 1024px) {
-  .container { background: white; padding: 2vw; border-radius: 3vw; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width: 90vw;font-size:4vw;}
-}
-  
-  @media (max-width: 768px) {
-  .container { background: white; padding: 2vw; border-radius: 3vw; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width: 90vw;font-size:4vw;}    
-              
-         
-              
-              
-              
-  }
-
-  
-  @media (max-width: 480px) {
-  .container { background: white; padding: 2vw; border-radius: 3vw; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;  width:90vw;font-size:4vw;}
-              
-            
-   
-              
-              
-  }
+footer{
+ font-size:15px;
+ margin:10px 0px;
+}  
 
 		
 		</style>
@@ -140,15 +119,15 @@ font-size: 5vw 5vw;
  <body>
  <div class="container">
  <br>
- <center>
-			<h1 id="myH1">RESULT</h1>
- </center>
+ 
+			<h1 class="result"id="myH1">RESULT</h1>
+ 
  <br>
-	<label style="margin-bottom:1vw;font-size:7vw">Final Result: <i class="fa fa-arrow-down" style="color:teal"></i>
+	<label>Final Result: <i class="fa fa-arrow-down" style="color:teal"></i>
 </label>
-<center>
+
 	<input type="number" placeholder="0" id="myText" value="0">
-		</center>
+
 		<br>
 	<div	class="btnContainer">
 		<button id="mySubmit" class="counterBtn">SUBMIT</button>			
@@ -200,7 +179,7 @@ document.getElementById("myH1").textContent= result.toString();
 		<button id="resetBtn" class="counterBtn">0</button>
 		<button id="increaseBtn" class="counterBtn">+</button>						
 		</div>		
-  <footer style="margin:3vw">
+  <footer>
    <i style="color:purple ">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple"></i>
   </footer> 
  </div> 
