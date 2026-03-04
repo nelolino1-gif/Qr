@@ -55,7 +55,7 @@ border-radius:8px;
  
  
  
- .result{ 
+ .temp{ 
  font-size:30px;
  width:93%;
  border: 2px solid teal;
@@ -64,6 +64,7 @@ border-radius:8px;
  padding:20px;
  border-radius:5px;
  color:white;
+ margin:10px 0px;
  
  }
  
@@ -74,7 +75,7 @@ font-size:20px;
  
  
  #countLabel{
-		
+		color:lightseagreen;
 		text-align: center;
 		font-size: 120px;
  }
@@ -122,42 +123,41 @@ footer{
  <div class="container">
  <br>
  
-			<h1 class="result"id="myH1">RESULT</h1>
+			<h1 class="temp"id="myH1">RESULT</h1>
  
- <br>
+
 	<label>Final Result: <i class="fa fa-arrow-down" style="color:teal"></i>
 </label>
 
 	<input type="number" placeholder="0" id="myText" value="0">
 
-		<br>
+		
 	<div	class="btnContainer">
 		<button id="mySubmit" class="counterBtn">SUBMIT</button>			
 			<button id="reset" class="counterBtn">RESET</button>
 			<button id="add" class="counterBtn">+ ADD</button>
 		</div>
-  <br>
   
+ 	<label id="countLabel">0</label><br>
+ 
+	 	<div class="btnContainer">		
+		<button id="decreasedBtn" class="counterBtn">-</button>
+		<button id="resetBtn" class="counterBtn">0</button>
+		<button id="increaseBtn" class="counterBtn">+</button>						
+		</div>		
+  <footer>
+   <i style="color:purple ">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple"></i>
+  </footer> 
+ </div> 
+
+    
 		<script>
 	let username
   
 	document.getElementById("mySubmit").onclick= function(){
 		username=document.getElementById("myText").value ;
 	document.getElementById("myH1").textContent=username;		
-
-	 
-	
-  
-	 
-	 
-	 
 	}
-  
-  
-  
-  
-  
-  
   
   
 document.getElementById("reset").onclick= function(){
@@ -173,19 +173,7 @@ count = Number(count);
 result = username+count
 document.getElementById("myH1").textContent= result.toString();				
 		}	
-		</script>
-			
-		<label id="countLabel">0</label><br>
- 	<div class="btnContainer">		
-		<button id="decreasedBtn" class="counterBtn">-</button>
-		<button id="resetBtn" class="counterBtn">0</button>
-		<button id="increaseBtn" class="counterBtn">+</button>						
-		</div>		
-  <footer>
-   <i style="color:purple ">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple"></i>
-  </footer> 
- </div> 
-<script>
+		
 const decreasedBtn	= document.getElementById("decreasedBtn");
 const resetBtn	=		document.getElementById("resetBtn");
 const increaseBtn	=	document.getElementById("increaseBtn");
