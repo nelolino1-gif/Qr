@@ -155,7 +155,8 @@ button:hover { opacity: 0.9; }
 .print-container {            
 font-family: 'Courier New', Courier, monospace; line-height: 1.2; color: #333; }
 
-.receipt-wrapper {    
+.receipt-wrapper {   
+display:none;  
 width: 100%;
 margin:auto;
 padding: 5px;
@@ -385,14 +386,17 @@ display: none;
     </footer>  
 <script>
 const tableBody = document.querySelector("#dataTable tbody");
+  
 const totalDisplay = document.getElementById("totalValue");
 const totalDisplay2 = document.getElementById("totalValue2");
 
-function proceedToTable() {                    
+function proceedToTable() {  
+const wrapper = document.querySelector(".receipt-wrapper");
+wrapper.style.display='block'
+
 const pcsInp = document.getElementById("itemPcs");
 const nameInp = document.getElementById("itemName");
 const priceInp = document.getElementById("itemPrice");
-
 if (!nameInp.value || !priceInp.value) {
 alert("Please enter both pcs and items.");
 return;
