@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Order Receipt</title>    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
     
@@ -104,7 +105,7 @@ width:30%;
 flex: 1; 
 padding: 8px;
 border:1.5px solid lightseagreen;
-border-radius: 0px; }
+border-radius: 3px; }
     
 input:focus{
 outline:none;
@@ -319,9 +320,9 @@ display: none;
         </div>
     </div>   
     <div class="entry-form">
-         <input type="number" id="itemPcs" placeholder="pcs">       
-        <input type="text" id="itemName" placeholder="items">
-        <input type="number" id="itemPrice" placeholder="price">    
+        <input type="number" id="itemPcs" placeholder="Pcs">       
+        <input type="text" id="itemName" placeholder="Items">
+        <input type="number" id="itemPrice" placeholder="Total">    
     </div>     
     <div class="btn-group">
         <button class="add-btn" onclick="proceedToTable()">Add Row & Calculate</button>
@@ -381,8 +382,7 @@ display: none;
     <br>
     <footer>
     <i style="color:purple">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple"></i>
-    </footer>
-  
+    </footer>  
 <script>
 const tableBody = document.querySelector("#dataTable tbody");
 const totalDisplay = document.getElementById("totalValue");
@@ -454,7 +454,9 @@ const randomNum = Math.floor(Math.random() * 10000) + 1;
 document.getElementById('receiptNum').textContent = `Receipt #: ${randomNum}`;    
 let cashierName= document.getElementById('cashierId').value; 
 document.getElementById('cashier').textContent = `Cashier: ${cashierName}`;
-let value2 = document.getElementById('totalValue2').innerText;       document.getElementById('subTotal').textContent = `${value2}`;    document.getElementById('grandTotal').innerText = value2;               
+let value2 = document.getElementById('totalValue2').innerText;      
+document.getElementById('subTotal').textContent = `${value2}`;    
+document.getElementById('grandTotal').innerText = `₱ ${value2}`;               
 let bannerId = document.querySelector('#bannerId').value         
 document.querySelector('#bannerName').textContent = bannerId;  
 let addressId = document.querySelector('#addressId').value         
