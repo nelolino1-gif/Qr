@@ -5,77 +5,112 @@
     <title>Dynamic Sum Calculator</title>    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
     <style>
-        body {
-            display :flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            font-family: sans-serif; 
-            padding:0vw; 
-            background-color:
-            #f4f4f9; 
-            font-size:5vw;
-        }
-        .controls {
-            display:flex;
-            flex-direction:row;
-            justify-content:center;
-            
-            margin-bottom: 3vw;
-            gap:3.5vw;
-        }
-        .input-wrapper { 
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            margin-bottom: 2vw;
-            width: 95vw}
-        input { 
-            padding: 2vw;
-            border: .5vw solid teal;
-            border-radius: 1vw;
-            width: 80vw;
-            font-size:5vw;
-            text-align:center;
-        }
+*{
+padding:0;
+margin:0;
+box-sizing:border-box;
+}
+body {
+display :flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+font-family: sans-serif; 
+padding:0; 
+background-color:#f4f4f9; 
+}
+    
+.container{
+padding :10px;    
+margin:20px 0px 0px 0px;          
+width:330px;
+display :flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+border-radius:8px;
+border:1.5px solid seagreen;    
+           
+}
+    
+h2{
+margin:5px 0px;    
+}    
+#container{
+ width:100%;   
+}
+.controls {
+ width:100%;   
+background:;
+display:flex;
+flex-direction:row;
+justify-content:center;            
+margin-bottom: 10px;
+gap:10px;
+}
+    
+.input-wrapper {    
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+margin-bottom: 10px;
+width: 100%;
+}
+    
+input { 
+padding: 8px;
+border: 1.5px solid teal;
+border-radius:3px;
+width: 93.5%;
+font-size:15px;
+text-align:center;
+}
         
-    input:focus{
-        outline:none;
-        border:.5vw solid tomato;
-    }
+input:focus{
+outline:none;
+border:1.5px solid tomato;
+}
     
     
-        button {
-            padding: 3vw 5vw;
-            width:40.5vw;
-            cursor: pointer;
-            border: none; 
-            border-radius: 1vw;
-            color: white;
-            font-size:4vw;
-        }
-        .btn-add {
-            background-color:
-            #28a745; 
-        }
-        .btn-remove {
-            background-color: #dc3545; 
-        }
+button {
+padding:8px;
+width:45%;
+cursor: pointer;
+border: none; 
+border-radius:3px;
+color: white;
+font-size:15px;
+}
+    
+.btn-add {
+background-color:#28a745; 
+}
+    
+.btn-remove {
+background-color: #dc3545; 
+}
         
-        .result-box {
-            margin-top: 2vw; 
-            font-weight: bold; 
-            font-size:6vw;
-        }
-        #total {
-          /*  color: #007bff;*/
-            color: lightseagreen;
-        }
+.result-box {
+margin-top: 0px 10px 0px 0px; 
+font-weight: bold; 
+font-size:1.5rem;
+}
+#total {
+font-size:1.5rem;
+/*  color: #007bff;*/
+color: lightseagreen;
+}
+    
+footer{
+margin:5px;    
+font-size:15px;
+/*  color: #007bff;*/
+}
     </style>
 </head>
 <body>
-
+<div class="container">
     <h2>Dynamic Sum Calculator</h2>
 
     <div class="controls">
@@ -84,6 +119,7 @@
     </div>
 
     <div id="container">
+
         <div class="input-wrapper">
             <input type="number" class="val-input" value="" oninput="calculateTotal()">
         </div>
@@ -92,9 +128,10 @@
     <div class="result-box">
         Total: <span id="total">0</span>
     </div>
-    <footer style="margin:3vw">
+    <footer >
         <i style="color:purple ">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple"></i>
     </footer>
+  </div>
               <script>
         const container = document.getElementById('container');
         const totalDisplay = document.getElementById('total');
@@ -105,6 +142,7 @@
             div.innerHTML = '<input type="number" class="val-input" value="" oninput="calculateTotal()">';
             container.appendChild(div);
             calculateTotal(); // Update total after adding
+            
         }
 
         function removeLastField() {
