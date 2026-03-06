@@ -42,6 +42,7 @@ box-shadow: 0 6px 8px rgba(0,0,0,0.1);
 label{
 font-size:15px;
 color:brown;
+margin-bottom:5px;
 }
     
 .input-container{
@@ -111,7 +112,7 @@ font-weight: bold;
 color: #2c3e50; 
 font-size:18px;
 background:;
-padding :7px 0px;   
+padding :7px 5px;   
 border-radius:;    
 
         }    
@@ -126,7 +127,8 @@ font-weight: bold;
 color: #2c3e50; 
 font-size:18px;
 background:;
-padding :7px 0px;   
+padding :7px 5px;   
+overflow:scroll;        
  
 
         }
@@ -152,7 +154,7 @@ font-weight:;
         </div>  
         <div class="input-label">
         <label  for="percent">%Percentage:</label>        
-        <input type="number" id="percent" placeholder="" oninput="calculate()">
+        <input type="number" pattern="[0-9,]*" id="percent" placeholder="" oninput="calculate()">
         </div> 
         </div>    
       
@@ -213,6 +215,9 @@ font-weight:;
                 finaladd.innerText = "0";
             }
         }
+        
+        
+
     </script>
 
 </body>
