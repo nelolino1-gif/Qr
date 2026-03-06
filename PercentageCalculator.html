@@ -1,146 +1,144 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>% Reducer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        *{
-        padding:0;
-        margin:0;
-        box-sizing:border-box;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>% Percentage Calculator</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{
+padding:0;
+margin:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
             
-    }
-        body { 
-            font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; 
-            display: flex;
-            flex-direction: column; 
-            justify-content:center;
-            align-items: center; 
-            align-content:center;          
-            background:;
-            font-size:18px;
+}
+body { 
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; 
+display: flex;
+flex-direction: column; 
+justify-content:center;
+align-items: center; 
+align-content:center;          
+background:;
+font-size:18px;
         }
-        .container{
-            margin-top:25px;
-            width:300px;
-            font-size:20px;
-            border-radius:10px;
-            display:flex;
-            flex-direction:column;
-            padding:5px;
-            background:;
-            text-align:center;
-            align-items: center;
-            box-shadow: 0 .6vw .8vw rgba(0,0,0,0.1);
-        } 
-        label{
-            font-size:18px;
-            color:brown;
-        }
-    
-         .input-container{
-             display:flex;
-             flex-direction:column;
-             align-items:center;
-             gap:5px;
-             
-         
-         }
-         input { 
-            width:90%;
-            margin:0px;
-            font-size:20px;
-            padding: 8px; 
-            border: 2px solid teal;
-            text-align:center;
-            font-weight:bold;
-            border-radius:5px;
-            
-        }
-    
-         input:focus {
-          outline:none;
-          border:2px solid purple;
-            }
-    
-        .result-container{
-             margin-top:5px;
-             width:100%;
-             display:flex;
-             flex-direction:column;
-             align-items:center;
-             gap:5px;
-             background:;
-             
-         
-         }
-    
-         
-        .result { 
-            font-weight: bold;
-            color: #2c3e50; 
-            font-size:20px;
-            background:;
-            
-        }
-    
-    
-    
-        @media (max-width: 1024px) {
 .container{
-        width:300px;
-        font-size:20px;
-        border:;
-        padding:5px;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        background:;
-                            
-        }}
-  
-  @media (max-width: 768px) {
-  .container{
-        width:300px;
-        font-size:20px;
-        border:;
-        padding:5px;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        background:;
-                           
-        } }
+margin-top:25px;
+width:330px;
+font-size:20px;
+border-radius:10px;
+display:flex;
+flex-direction:column;
+padding:5px;
+background:;
+text-align:center;
+align-items: center;
+box-shadow: 0 6px 8px rgba(0,0,0,0.1);
+} 
 
+
+label{
+font-size:15px;
+color:brown;
+}
+    
+.input-container{
+width:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;        
+align-items:center;
+column-gap:5px;
+}       
+.input-label{
+margin-top:10px;        
+width:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;        
+align-items:center;
+column-gap:5px;
+         
+}
+input { 
+width:92%;
+margin:0px;
+font-size:15px;
+padding: 10px; 
+border: 1.5px solid teal;
+text-align:center;
+font-weight:bold;
+border-radius:50px;
+            
+}
+    
+input:focus {
+outline:2.5px solid #ccc;
+border:1.5px solid tomato;
+}
+    
+.result-group{
+
+width:100%;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;    
+background:;
+row-gap:0px;
+}
+    
+    
+.result-container{
+
+width:100%;
+display:flex;
+flex-direction:row;
+align-items:center;
+justify-content:center;    
+column-gap:0px;    
+background:;
+             
+         
+}
+    
+.result-label { 
+width:30%;    
+border:1.5px solid teal;    
+font-weight: bold;
+color: #2c3e50; 
+font-size:18px;
+background:;
+padding :7px 0px;   
+border-radius:;    
+
+        }    
+    
+    
+         
+.result { 
   
-  @media (max-width: 480px) {
-.container{
-        width:300px;
-        font-size:20px;
-        border:;
-        padding:5px;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        background:;
-                            
-        }}	
+width:30%;    
+border:1.5px solid teal;    
+font-weight: bold;
+color: #2c3e50; 
+font-size:18px;
+background:;
+padding :7px 0px;   
+ 
+
+        }
+footer{
+margin:10px 0px;
+font-size:15px;
+background:;
+font-weight:;
+}         
     
     
-    
-    
-    
-    
-    
-    
-    
+     
        
     </style>
 </head>
@@ -149,28 +147,37 @@
     <div class="container">        
         <div class="input-container">
         <div class="input-label">
-        <label for="amount">Enter Amount:</label>                
+        <label for="amount">Amount:</label>                
         <input type="number" id="amount" placeholder="" oninput="calculate()">     
         </div>  
         <div class="input-label">
-        <label  for="percent">Enter Percentage:</label>        
+        <label  for="percent">%Percentage:</label>        
         <input type="number" id="percent" placeholder="" oninput="calculate()">
         </div> 
         </div>    
-        
+      
+            <label style="margin-top:10px" for="result">Result:</label>                
+     
+        <div class="result-group">
         <div class="result-container">
-        <div class="result">
-              = % : <span style="color:purple" id="output">0</span>
-               </div>
-         <div class="result">
-              - % : <span style="color:tomato" id="finalsub">0</span>
+    <label style="border-radius:5px 0px 0px 0px"class="result-label">= % : </label> 
+    <label  style="border-radius:0px 0px 0px 0px" class="result-label">- % : </label> 
+    <label style="border-radius:0px 5px 0px 0px" class="result-label">+ % : </label> 
+       </div>  
+        <div class="result-container">
+        <div style="border-radius:0px 0px 0px 5px" class="result">
+         <span     style="color:purple" id="output">0</span>
+         </div>
+         <div style="border-radius:0px 0px 0px 0px"class="result">
+         <span style="color:tomato" id="finalsub">0</span>
          </div>  
-        <div class="result">
-              + % : <span style="color:teal" id="finaladd">0</span>
+        <div style="border-radius:0px 0px 5px 0px" class="result">
+        <span style="color:teal" id="finaladd">0</span>
          </div>  
         </div>
-        <footer style="width:100%;margin:5px 0px">             
-       <i style="color:purple ;font-size:16px; ">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple ;font-size:16px"></i>    
+        </div>
+        <footer>             
+       <i style="color:purple">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple ;font-size:16px"></i>    
       </footer>        
      </div>
     <script>
@@ -199,7 +206,7 @@
                //console.log(num); // output: 123
                 const add = num + num2
                 finaladd.innerText = add.toLocaleString();
-        
+
             } else {
                 output.innerText = "0";
                 finalsub.innerText = "0";
