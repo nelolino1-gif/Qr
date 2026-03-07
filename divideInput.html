@@ -1,67 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-		 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
-  <style>   
-    
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
+<meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+<style>       
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
     }
-        body {
+    
+body {
+font-size:15px;
+font-family: sans-serif; 
+display: flex; 
+justify-content: center; 
+       }
+    
+.calc-box {
+background:#ddd;
+margin:20px 0px;
+width:330px; 
+border:1.5px solid #ccc ;
+padding: 5px; 
+border-radius: 10px;
+box-shadow: 0 6px 8px rgba(0,0,0,0.1);            
+display: flex;
+justify-content: center;
+flex-direction:column;
+align-items:center;
+}
+input { 
+font-weight:bold;
+width: 90%; 
+text-align:center;     
+padding: 10px;
+margin: 5px 0px;
+border: 1.5px solid teal;
+border-radius: 20px;
+}
+    
+input:focus{
+outline:2.5px solid #ddd;
+border: 1.5px solid tomato;
+}
 
-            font-size:15px;
-            font-family: sans-serif; 
-            display: flex; 
-            justify-content: center; 
-         }
-        .calc-box {
-            
-            background:;
-            margin:20px 0px;
-            width:330px; 
-            border: ;
-            padding: 5px; 
-            border-radius: 8px;
-            box-shadow: 0 6px 8px rgba(0,0,0,0.1);            
-            display: flex;
-            justify-content: center;
-            flex-direction:column;
-            align-items:center;
-        }
-        input { 
-            font-weight:bold;
-            width: 95%; 
-            text-align:center;     
-            padding: 10px;
-            margin: 5px 0px;
-            border: 1.5px solid teal;
-            border-radius: 50px;
-            
-        }
-    
-         input:focus{
-             outline:2.5px solid #ddd;
-             border: 1.5px solid tomato;
-         }
-            #result { 
-                font-size:20px;
-                font-weight: bold; 
-                color: #28a745;
-                margin: 10px 0px;
+#result { 
+font-size:20px;
+font-weight: bold; 
+color: #28a745;
+margin: 10px 0px;
             }
-    .divide{
-        margin:5px 0px;
-        font-size: 18px;
-        color : blue;
-        font-weight:bold;
+.divide{
+margin:5px 0px;
+font-size: 18px;
+color : blue;
+font-weight:bold;
     }
-    h4{
-        margin:5px 0px;
-        font-size: 18px;
+h4{
+margin:10px 0px;
+font-size: 18px;
         
     }
 footer{
@@ -73,44 +72,35 @@ font-size:15px;
     </style>
 </head>
 <body>
-
 <div class="calc-box">
     <h4> Divide Calculator </h4>
     <input type="number" id="num1" placeholder="" oninput="divide()">
     <span class="divide"> ÷ </span>
-    <input type="number" id="num2" placeholder="" oninput="divide()">
-    
-    <!--button onclick="divide()">=</button-->
-    
-    <div id="result">0</div>
-    
+    <input type="number" id="num2" placeholder="" oninput="divide()">    
+    <!--button onclick="divide()">=</button-->    
+    <div id="result">0</div>    
  <footer>                       
  <i style="color:purple ">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple"></i>                                        </div>                                       
 </footer>  
 </div>
-
 <script>
-    function divide() {
-        // 1. Get values from inputs
-        const n1 = parseFloat(document.getElementById('num1').value);
-        const n2 = parseFloat(document.getElementById('num2').value);
-        const display = document.getElementById('result');
+function divide() {
+const n1 = parseFloat(document.getElementById('num1').value);
+const n2 = parseFloat(document.getElementById('num2').value);
+const display = document.getElementById('result');
 
-        // 2. Validation & Calculation
-        if (isNaN(n1) || isNaN(n2)) {
-            display.innerText = "Enter numbers";
-            display.style.color = "red";
-        } else if (n2 === 0) {
-            display.innerText = "Cannot divide by 0";
-            display.style.color = "red";
-        } else {
-            const result = n1 / n2;
-            // 3. Display result (rounded to 2 decimal places)
-            display.innerText = result.toFixed();
-            display.style.color = "#28a745";
-        }
-    }
+if (isNaN(n1) || isNaN(n2)) {
+display.innerText = "Enter numbers";
+display.style.color = "red";
+} else if (n2 === 0) {
+display.innerText = "Cannot divide by 0";
+display.style.color = "red";
+} else {
+const result = n1 / n2;
+display.innerText = result.toFixed();
+display.style.color = "#28a745";
+}
+}
 </script>
-
 </body>
 </html>
