@@ -21,24 +21,27 @@ background-color:#f4f4f9;
 }
     
 .container{
-padding :10px;    
+padding :5px;    
 margin:20px 0px 0px 0px;          
 width:330px;
 display :flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-border-radius:8px;
-border:1.5px solid seagreen;    
+border-radius:10px;
+border:1.5px solid seagreen;  
+background:#ddd; 
            
 }
     
 h2{
-margin:5px 0px;    
+margin:10px 0px;    
 }    
+ 
 #container{
  width:100%;   
 }
+ 
 .controls {
  width:100%;   
 background:;
@@ -46,7 +49,7 @@ display:flex;
 flex-direction:row;
 justify-content:center;            
 margin-bottom: 10px;
-gap:10px;
+gap:0;
 }
     
 .input-wrapper {    
@@ -59,10 +62,10 @@ width: 100%;
 }
     
 input { 
-padding: 8px;
+padding: 10px;
 border: 1.5px solid teal;
 border-radius:10px;
-width: 93.5%;
+width: 90%;
 font-size:15px;
 text-align:center;
 }
@@ -74,13 +77,18 @@ border:1.5px solid tomato;
     
     
 button {
-padding:8px;
+padding:10px;
 width:45%;
 cursor: pointer;
 border: none; 
-border-radius:3px;
+border-radius:10px;
 color: white;
 font-size:15px;
+}
+ 
+button:focus{
+outline:1.5px solid #ccc;
+border:none; 
 }
     
 .btn-add {
@@ -92,28 +100,28 @@ background-color: #dc3545;
 }
         
 .result-box {
- width: 93.5%;
- border:1.5px solid lightseagreen; 
- padding:5px;
- border-radius:3px;
+width: 89%;
+border:1.5px solid lightseagreen; 
+padding:7px;
+border-radius:10px;
 margin-top: 10px 0px 0px 0px; 
 font-size:1rem;
 color: brown; 
 font-weight:bold; 
- background:lightseagreen;
- text-align:center
+background:lightseagreen;
+text-align:center
 }
+ 
 #total {
-
 font-size:1.2rem;
 /*  color: #007bff;*/
 color: #fff;
 }
     
 footer{
-margin:5px;    
+margin:10px 0px 0px 0px;    
 font-size:15px;
-/*  color: #007bff;*/
+/*color: #007bff;*/
 }
     </style>
 </head>
@@ -121,16 +129,14 @@ font-size:15px;
 <div class="container">
     <h2>Dynamic Sum Calculator</h2>
     <div class="controls">
-        <button class="btn-add" onclick="addField()">+ Add Input</button>
-        <button class="btn-remove" onclick="removeLastField()">- Remove Last</button>
+        <button style="border-radius : 10px 0px 0px 10px" class="btn-add" onclick="addField()">+ Add Input</button>
+        <button style="border-radius : 0px 10px 10px 0px" class="btn-remove" onclick="removeLastField()">- Remove Last</button>
     </div>
-
     <div id="container">
         <div class="input-wrapper">
-            <input type="number" class="val-input" value="" oninput="calculateTotal()">
+        <input type="number" class="val-input" value="" oninput="calculateTotal()">
         </div>
     </div>
-
     <div class="result-box">
         Total: <span id="total">0</span>
     </div>
