@@ -178,7 +178,7 @@ font-size:15px;
         
         <label class="btn-label" for="qr-input"><i class="fa fa-qrcode"></i> Choose Image / Take Photo</label>
         <input type="file" id="qr-input" accept="image/jpeg, image/png ">
-        <!--button for="copy" class="btn-label" id="copy-btn"><i class="fas fa-clipboard"></i> Copy</button-->
+        <button for="copy" style="background:teal" class="btn-label" onclick='btnMenu()'><i class="fa fa-boxes"></i> Menu</button>
      
         </div>
          
@@ -237,7 +237,10 @@ status.style.color = "red";
 console.error(err);
 });
 });
-   
+function btnMenu() {
+window.location.href ="https://nelolino1-gif.github.io/Qr/menu.html"
+            
+}
     
     </script>
 </body>
