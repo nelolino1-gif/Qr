@@ -44,7 +44,7 @@ margin:10px 0px;
  
 .controls {
  width:100%;   
-background:;
+background:none;
 display:flex;
 flex-direction:row;
 justify-content:center;            
@@ -71,7 +71,7 @@ text-align:center;
 }
         
 input:focus{
-outline:none;
+outline:2px solid #ccc;
 border:1.5px solid tomato;
 }
     
@@ -85,6 +85,8 @@ border-radius:10px;
 color: white;
 font-size:15px;
 }
+ 
+ 
  
 button:focus{
 outline:1.5px solid #ccc;
@@ -109,7 +111,9 @@ font-size:1rem;
 color: brown; 
 font-weight:bold; 
 background:lightseagreen;
-text-align:center
+text-align:center;
+margin-bottom:5px;
+
 }
  
 #total {
@@ -119,7 +123,7 @@ color: #fff;
 }
     
 footer{
-margin:10px 0px 0px 0px;    
+margin:10px 0px;    
 font-size:15px;
 /*color: #007bff;*/
 }
@@ -160,7 +164,7 @@ calculateTotal(); // Update total after adding
 function removeLastField() {
 const fields = container.getElementsByClassName('input-wrapper');
 // Keep at least one input field
-if (fields.length > 1) {
+if (fields.length > 0) {
 container.removeChild(fields[fields.length - 1]);
 calculateTotal(); // Update total after removing
 }
