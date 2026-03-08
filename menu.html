@@ -81,7 +81,7 @@ input[type="file"] {
 display: none; 
 }
     
-p{
+.p-content{
 font-family:'fontello' ;
 margin:5px;
 text-align:left;
@@ -136,9 +136,9 @@ text-align: center;
 #status { 
 width: 100%;
 padding: 5px; 
-border: 1.5px solid teal; 
+border: none; 
 border-radius: 5px; 
-background: ; 
+background:#ccc; 
 min-height: 40px;
 word-break: break-all;
 margin:0px 0px;
@@ -164,23 +164,27 @@ font-size:15px;
 </head>
 <body>
     <div class="container" >
-        <h2>QR File Scanner</h2>
+        <h2><i class="fa fa-boxes"></i> Menu</h2>
         <div class="p-container" >
-        <p>Select a QR code image to auto-connect Maraming Salamat</p>             
+        <div class="p-content">Select a QR code image to auto-connect Maraming Salamat</div>             
         </div>
         
         <div class="result-container">
-        <textarea id="status" readonly="" rows="2" cols="5" >Waiting for file...</textarea>
+        <textarea id="status" readonly="" rows="2" cols="5" >Welcome to my Project</textarea>
         </div>  
         <div class="btn-group">
-        <a style="text-decoration:none"class="btn-label" href="intent://nelolino1-gif.github.io/Qr#Intent;scheme=http;package=com.android.chrome;end">
-        <i class="icon icon-chrome-1">&#xf268;</i> Open in Chrome</a>
-        
-        <label class="btn-label" for="qr-input"><i class="fa fa-qrcode"></i> Choose Image / Take Photo</label>
-        <input type="file" id="qr-input" accept="image/jpeg, image/png ">
-        <button for="copy" style="background:teal" class="btn-label" onclick='btnMenu()'><i class="fa fa-boxes"></i> Menu</button>
-     
-        </div>
+         <button class="btn-label" onclick='btnChrome() '>    
+        <i class="fa fa-qrcode"></i> Code Scanner</a>        
+         </button>
+
+        <button class="btn-label" onclick='btnCalculator() '>    
+         <i class="fa fa-calculator"></i> Calculator</a>        
+         </button>    
+         
+ 
+ 
+ 
+           </div>
          
         
         
@@ -191,57 +195,22 @@ font-size:15px;
         </footer>
         </div>
     <script>
-const html5QrCode = new Html5Qrcode("reader");
-const fileInput = document.getElementById('qr-input');
-const status = document.getElementById('status');
-        
-        // Function to check if a string is a valid HTTP/HTTPS URL
-function isValidHttpUrl(string) {
-let url;
-try {
-url = new URL(string);
-} catch (_) {
-return false;  
-}
-return url.protocol === "http:" || url.protocol === "https:";
-}
+ const pcontent= 'Welcome to may Project';
+ const status = 'latest update : 03/08/26 - Menu';
+ document.querySelector('.p-content').innerText= pcontent;
+ document.querySelector('#status').innerText= status;
+ 
 
-fileInput.addEventListener('change', e => {
-if (e.target.files.length === 0) return;
-
-const imageFile = e.target.files[0];
-status.innerText = "Scanning...";
-status.style.color = "orange";
-
-// Scan the uploaded file
-html5QrCode.scanFile(imageFile, true)
-.then(decodedText => {
-status.innerText = `Found: ${decodedText}`;
-                    
-// Check if it's a link
-if (isValidHttpUrl(decodedText)) {
-status.innerText = "Redirecting...";
-status.style.color = "green";
-// Auto-visit the link
-
-window.location.href = decodedText;
-} else {
-status.style.color = "black";
-alert("Scanned text is not a valid web link: " + decodedText);
-                   
-}
-})
-.catch(err => {
-status.innerText = "Error: No QR code found in this image.";
-status.style.color = "red";
-console.error(err);
-});
-});
-function btnMenu() {
-window.location.href ="https://nelolino1-gif.github.io/Qr/menu.html"
+function btnChrome() {
+window.location.href ="intent://nelolino1-gif.github.io/Qr#Intent;scheme=http;package=com.android.chrome;end"
             
 }
-    
+
+function btnCalculator() {
+window.location.href ="https://nelolino1-gif.github.io/Qr/Calculator.html"
+            
+}
+
     </script>
 </body>
 </html>
