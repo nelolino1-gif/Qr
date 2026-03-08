@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GCASH PAYMENT</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="assets/js/qrcode.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GCASH PAYMENT</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="assets/js/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
 *{
 padding:0;
 margin:0;
@@ -44,10 +44,12 @@ box-shadow: 0 6px 8px rgba(0,0,0,0.1);
 } 
 h2{
 margin:0px 0px;
-font-size:20px;    
+font-size:20px; 
+font-family: 'Courier New', monospace;
 }   
 h4{
 font-size:14px;
+font-family: 'Courier New', monospace;  
 }  
 .wrapper{
 background:white;
@@ -92,20 +94,20 @@ display: none !important;
  </style>
 </head>
 <body>
-    <div class="container">
-    <h2 style="margin-top:10px">GCASH PAYMENT</h2>
+    <div class="container">        
+    <button onclick="window.print()">Print</button>     
+    <h2 style="margin-top:10px;">GCASH PAYMENT</h2>
     <div class="wrapper" >
     <div id="qrcode"></div>
     </div>    
     <h2>AR**L O.</h2>
     <h2 style="margin-top:0px">0975-572-5109</h2>
     <h4>User ID: ***********WDUOIT</h4>
-   <footer>
+    <footer>
     <i style="color:purple">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple"></i>   
     </footer>   
-    <button onclick="window.print()">Print</button>   
     </div>    
-    <script>
+<script>
 const qrcode = new QRCode(document.getElementById("qrcode"),{
 width: 150,
 height: 150
@@ -115,7 +117,7 @@ const data ='00020101021127830012com.p2pqrpay0111GXCHPHM2XXX02089996440303152170
 if (data) {
 qrcode.makeCode(data);
     
-if (vcode) {
+if (data) {
 qrcode.makeCode(data);
 } else {
 qrcode.clear(); // Clears the QR if input is empty
@@ -126,7 +128,7 @@ qrcode.clear(); // Clears the QR if input is empty
 }     
 }
 generateQR() 
-    </script>
+</script>
 
 </body>
 </html>
