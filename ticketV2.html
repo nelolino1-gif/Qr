@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ticket</title>
+<script src="assets/js/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+*{
+padding:0;
+margin:0;
+box-sizing:border-box;
+}  
+    
+body{
+background:white;    
+margin-top:0px;
+border:;        
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:;            
+font-family:'Tahoma',Verdana, Geneva, sans-serif;
+}
+    
+.container{
+margin-top:15px;  
+width:330px;
+font-size:15px;
+border:none;
+border-radius:8px;
+padding:5px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:white;
+box-shadow: 0 5px 8px rgba(0,0,0,0.1);                          
+}
+    
+.sub-container{
+margin-top:15px;   
+width:250px;
+font-size:15px;
+border:1.5px solid black ;
+border-radius:0px;
+padding:5px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:;
+}    
+    
+    
+.main-group{
+border-top:1.5px solid ;    
+border-bottom:1.5px solid; 
+padding: 5px 0px;    
+display:flex;
+margin-top:5px;    
+text-align:center;
+flex-direction:column;
+align-content:center;
+align-items:center;
+justify-content:space-evenly;    
+width:240px;   
+gap:10px;    
+}
+    
+    
+    
+.btn-container{
+
+font-size:15px;
+border:;
+width:100%;
+display:flex;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+gap:5px;
+background:;
+margin-top:5px;          
+}
+    
+    
+h2{
+background:;
+font-size:20px;
+font-style:italic ;   
+}
+    
+    
+h1{
+font-style:italic ;  
+display:none;
+background:;
+font-size:20px;
+}
+    
+input {
+padding: 5px; 
+width:63%;
+border:none;               
+border: 1.5px solid #000;
+/*  border-radius: 3px; */
+text-align:center;
+font-weight:bold;
+font-size:18px;    
+background:;
+margin-top:5px;
+
+}
+    
+input:focus{
+outline:none;
+border:2px solid tomato;
+}
+ #qrcode img{
+height:150px;
+width:150px;
+ }   
+.wrapper{
+border:0px solid;
+
+display: flex;
+flex-direction:row;  
+justify-content:center;
+align-items:center;  
+margin:5px 0px;    
+    
+/*   border-radius:5px;*/
+        
+}
+
+
+button{
+width:72px;
+font-size:15px;
+padding:8px 0px;
+border-radius:5px;           
+font-size:15px;           
+border: none;           
+cursor: pointer;
+color: white;
+font-weight: bold;
+background-color: #007bff;                                            
+}
+    
+button:focus{
+outline:none;
+border:;
+background-color: teal;      
+}
+    
+.btn-group{
+width:250px;
+margin-top:5px;
+border-radius:5px;    
+border:1.5px solid #ccc; 
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+align-items:center;
+padding:5px 2px;
+background:#ddd;
+
+          
+}
+select:required {
+border: 2px solid purple;
+background:red;       
+color:white;    
+font-weight: bold;
+}
+
+select:required:valid {
+border:2px solid purple;
+background:white;  
+color:#000; 
+}
+
+           
+select{
+color:white;     
+font-size:15px;
+padding:5px;
+border-radius:5px;
+border:2px solid;
+width:74px;
+}
+       
+select:focus{
+outline:none;           
+}
+
+.result-container{
+display:flex;
+background:;
+text-align:center;
+flex-direction:column;
+align-content:center;
+align-items:center;
+width:100%;         
+}
+    
+#result-text{
+font-weight:bold;  
+font-family: 'Courier New', monospace;
+text-align:center;        
+color:teal;
+font-size:15px;
+}
+    
+#result-text2{
+font-weight:bold;    
+margin-top:5px;  
+text-align:center;        
+font-size:15px;
+color:teal;
+}
+    
+footer{
+margin:10px 0px;    
+}
+    
+    
+@media print {
+.container{
+box-shadow:none !important;
+margin-top:0px  ;  
+}  
+.sub-container{
+margin-top:0px  ;  
+}  
+.btn-group{
+border:none;  
+background:none;    
+    }
+button{
+display: none !important;
+    }
+select{
+display: none !important;
+    }
+footer{
+display: none !important;
+    }        
+h2{display: none !important;    
+    }     
+h1{display: block !important;
+    }     
+}
+    
+    
+
+</style>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<body>
+    <div class="container">  
+    <div class="sub-container">  
+    <h2>J QR Code Generator</h2> 
+    <h1>PWX_Hotspot_PisoWifi</h1>
+    <div style="font-weight:bold"id="result-text">Time and Date Appear Here...</div>  
+        <div class="main-group">
+   <input type="text" id="text-input" placeholder="Vaucher" oninput="">  
+                  
+    <div class="wrapper">    
+    <div id="qrcode"></div>    
+    </div>
+            
+        </div>
+ 
+    <div class="result-container"> 
+    <div id="result-text2">Expire and Amount Appear Here...</div>    
+    <p style="font-weight:bold;margin: 5px 0px 0px 0px">[Extend] Portal : http://10.0.0.1</p> 
+    </div>  
+</div>
+    <div class="btn-group">
+    <div class="btn-container">
+    <select id="select1" onchange="generateRandom()" required="">
+        <option value="">N/A</option>       
+        <option value="4h" >₱ 5</option>
+        <option value="7h">₱10</option>9
+        <option value="11h">₱15</option>      
+        <option value="15h">₱20</option>      
+        <option value="19h">₱25</option>      
+        <option value="1d">₱30</option>            
+        <option value="15d">₱150</option>
+        <option value="30d">₱300</option>
+    </select>    
+        <button class="btn btn-theme" onclick="generateQR()">submit</button> 
+        <button class="btn btn-theme" onclick="generateRandom()">random</button>      
+    </div>        
+         <div class="btn-container">
+         <button  id="copy-btn">Client</button>        
+         <button  id="copy-btn2">Terminal</button>
+         <button onclick="window.print()">Print</button>  
+    </div> 
+         <div class="btn-container">
+         <button style="width:94%;margin-bottom:5px"onclick="clearQr()">Clear</button>      
+    </div> 
+             
+    </div>
+    
+    <!--hr style="width: 240px; border : .5px solid black "-->
+    <div class="no-print" >
+        <footer>
+         <i style="color:purple">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple"></i>   
+        </footer>        
+    </div>
+   </div>
+   
+<script>   
+//input
+var myInput = document.getElementById("text-input");
+var myValue = myInput.value;
+//random Qr
+function generateRandom() {                
+var date = new Date();
+var month = (date.getMonth() + 1).toString().padStart(2, '0');
+var day = date.getDate().toString().padStart(2, '0');
+var formattedDate = month + '' + day;
+//  const today = new Date().toISOString().split('T')[0];
+const newtoday = formattedDate.replace(/-/g, '');             
+const randomNum = Math.floor(Math.random() * 1000) + 1;       
+myValue = `C${newtoday}${randomNum}`;
+myInput.value = myValue;
+generateQR()
+    
+}
+//Initialize the QR instance
+let qrcode = new QRCode(document.getElementById("qrcode"), {
+           
+  width: 150,
+  height: 150, 
+  colorDark : "#000000",
+  colorLight : "#ffffff",
+  correctLevel : QRCode.CorrectLevel.H, // High error correction
+  margin: 2,
+  scale:10
+});
+//Qr function start
+function generateQR() {    
+
+const formattedDate = new Date().toISOString().split('T')[0];
+    
+const vcode=  document.getElementById("text-input").value;
+// let vcresult= "http://10.0.0.1/login?="+vcode+"&password=";
+let vcresult=`http://10.0.0.1/login?username=${vcode}&password=`
+ //   let vcresult=vcode
+let resultElement = document.getElementById('result-text')                                        
+const copyBtn = document.getElementById('copy-btn');
+const copyBtn2 = document.getElementById('copy-btn2');  
+const statusMsg = document.getElementById('status');
+resultElement.innerText= `${new Date().toLocaleDateString()} | ${new Date().toLocaleTimeString()}`;                                                                                                
+const data =vcresult;
+// if condition Qr        
+if (data) {
+qrcode.makeCode(data);                
+if (vcode) {
+qrcode.makeCode(data);
+} else {
+qrcode.clear(); // Clears the QR if input is empty
+// resultElement.innerHTML=""
+}                                                               
+} 
+else {
+qrcode.clear(); // Clears the QR if input is empty
+}                         
+// 2. Clipboard Logic
+copyBtn.addEventListener('click', () => {
+const text =` http://10.0.0.1/login?username=${vcode}&password=`;
+if (text && text !== "Time and Date appear Here...") {
+navigator.clipboard.writeText(text).then(() => {
+//       statusMsg.style.display = 'block';
+//       setTimeout(() => statusMsg.style.display = 'none', 2000);
+});
+}
+}); 
+//select logic       
+let selectValue = String(document.getElementById("select1").value);           
+ 
+switch (selectValue) {          
+case "":
+       
+break;
+case "4h":
+var comment= '240m,5,0,PWX_Hotspot_PisoWifi'
+break;      
+case "7h":
+var comment= '420m,10,0,PWX_Hotspot_PisoWifi'
+break;    
+case "11h":
+var comment= '660m,15,0,PWX_Hotspot_PisoWifi'
+   
+break;   
+case "15h":
+var comment= '900m,20,0,PWX_Hotspot_PisoWifi'
+break;
+case "19h":
+var comment= '1140m,25,0,PWX_Hotspot_PisoWifi'
+break;
+case "1d":
+var comment= '1440m,30,0,PWX_Hotspot_PisoWifi'
+break;
+case "15d":
+var comment= ''  
+break;
+case "30d":
+var comment= ''
+break;
+default:
+var comment= ''
+}
+               
+               
+               
+               
+   
+//  let selectValue = String(document.getElementById("select1").value);           
+let user =`/ip hotspot user add name="${vcode}" password="" profile="default" comment="${comment}" limit-uptime="${selectValue}"`              
+let admin = `/ip hotspot user add name="${vcode}" password="" profile="default" comment="QrAdmin" limit-uptime=`                               
+switch (selectValue) {          
+case "":
+Generation=   admin
+document.querySelector('#result-text2').innerHTML=  'Plese Select Amount'  
+      
+break;
+case "4h":
+Generation=   user;
+          
+document.querySelector('#result-text2').innerHTML=  'Exp: 4h | Price: ₱5.00'  
+var comment= 'fgd'
+break;      
+case "7h":
+Generation=   user;
+document.querySelector('#result-text2').innerHTML=  'Exp: 7h | Price: ₱10.00'     
+break;    
+case "11h":
+Generation=   user;
+document.querySelector('#result-text2').innerHTML=  'Exp: 11h | Price: ₱15.00'     
+break;   
+case "15h":
+Generation=   user;
+document.querySelector('#result-text2').innerHTML=  'Exp: 15h | Price: ₱20.00'
+break;
+case "19h":
+Generation=   user;
+document.querySelector('#result-text2').innerHTML=  'Exp: 19h | Price: ₱25.00'
+break;
+case "1d":
+Generation=   user;
+document.querySelector('#result-text2').innerHTML=  'Exp: 1d | Price: ₱30.00'
+break;
+case "15d":
+Generation=   user;
+document.querySelector('#result-text2').innerHTML=  'Exp: 15d | Price: ₱150'
+break;
+case "30d":
+Generation=   user;
+document.querySelector('#result-text2').innerHTML=  'Exp: 30d | Price: ₱300'
+break;
+default:
+Generation=   admin;
+           
+}
+
+                                         
+copyBtn2.addEventListener('click', () => {
+         
+const text2 = Generation;
+
+                
+if (text2 && text2 !== "Scanned text will appear here...") {
+navigator.clipboard.writeText(text2).then(() => {
+       //             statusMsg.style.display = 'block';
+       //             setTimeout(() => statusMsg.style.display = 'none', 2000);
+});
+}
+});                                                               
+}
+
+function clearQr(){
+qrcode.clear()
+  //  resultElement.innerHTML=""
+document.getElementById("text-input").value="";
+document.querySelector('#result-text2').textContent='Please Select Amount'
+    
+ //   resultElement.innerHTML=""
+let resultElement = document.getElementById('result-text').innerHTML='Please Generate Qr Code';                                       
+  // document.getElementById("qrcode").innerHTML='Please Generate Qr Code Here...';
+ // innerHTML='Please Generate Qr Code Here...'
+
+}
+
+generateRandom()
+generateQR()
+
+  </script>
+</body>
+</html>
