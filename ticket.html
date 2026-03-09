@@ -217,7 +217,6 @@ font-size:15px;
     
 #result-text2{
 font-weight:bold;    
-font-family: 'Courier New', monospace;
 margin-top:5px;  
 text-align:center;        
 font-size:15px;
@@ -375,7 +374,7 @@ qrcode.clear(); // Clears the QR if input is empty
 }                         
 // 2. Clipboard Logic
 copyBtn.addEventListener('click', () => {
-const text = vcresult;
+const text =` http://10.0.0.1/login?username=${vcode}&password=`;
 if (text && text !== "Time and Date appear Here...") {
 navigator.clipboard.writeText(text).then(() => {
 //       statusMsg.style.display = 'block';
@@ -435,36 +434,36 @@ break;
 case "4h":
 Generation=   user;
           
-document.querySelector('#result-text2').innerHTML=  'Exp: 4h | Price: ₱ 5.00'  
+document.querySelector('#result-text2').innerHTML=  'Exp: 4h | Price: ₱5.00'  
 var comment= 'fgd'
 break;      
 case "7h":
 Generation=   user;
-document.querySelector('#result-text2').innerHTML=  'Exp: 7h | Price: ₱ 10.00'     
+document.querySelector('#result-text2').innerHTML=  'Exp: 7h | Price: ₱10.00'     
 break;    
 case "11h":
 Generation=   user;
-document.querySelector('#result-text2').innerHTML=  'Exp: 11h | Price: ₱ 15.00'     
+document.querySelector('#result-text2').innerHTML=  'Exp: 11h | Price: ₱15.00'     
 break;   
 case "15h":
 Generation=   user;
-document.querySelector('#result-text2').innerHTML=  'Exp: 15h | Price: ₱ 20.00'
+document.querySelector('#result-text2').innerHTML=  'Exp: 15h | Price: ₱20.00'
 break;
 case "19h":
 Generation=   user;
-document.querySelector('#result-text2').innerHTML=  'Exp: 19h | Price: ₱ 25.00'
+document.querySelector('#result-text2').innerHTML=  'Exp: 19h | Price: ₱25.00'
 break;
 case "1d":
 Generation=   user;
-document.querySelector('#result-text2').innerHTML=  'Exp: 1d | Price: ₱ 30.00'
+document.querySelector('#result-text2').innerHTML=  'Exp: 1d | Price: ₱30.00'
 break;
 case "15d":
 Generation=   user;
-document.querySelector('#result-text2').innerHTML=  'Exp: 15d | Price: ₱ 150'
+document.querySelector('#result-text2').innerHTML=  'Exp: 15d | Price: ₱150'
 break;
 case "30d":
 Generation=   user;
-document.querySelector('#result-text2').innerHTML=  'Exp: 30d | Price: ₱ 300'
+document.querySelector('#result-text2').innerHTML=  'Exp: 30d | Price: ₱300'
 break;
 default:
 Generation=   admin;
