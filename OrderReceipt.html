@@ -2,8 +2,8 @@
 <html lang="en">
 <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Order Receipt</title>    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
+<title>Order Receipt</title>    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
     
 <head>
 <style>
@@ -26,7 +26,7 @@ font-family: 'Segoe UI', sans-serif;
     
 .container{
 padding:5px;
-width:350px;
+width:330px;
 background:;
 display: flex;
 flex-direction:column;
@@ -74,7 +74,7 @@ margin-top: 5px;
 .form-card{
 background:;
 width:100%;
-display:none ;
+display: block;
 flex-direction:row;
 justify-content:center;
 align-items:center;
@@ -317,7 +317,7 @@ display: none;
         <caption>About : </caption>
         <input class="card-input"style="width:80%"type="text" id="aboutId" value="Email : printpwx@gmail.com" placeholder="Contact" >
         </div>
-        <div class="form-card">
+        <div class="form-card" id="formCard">
         <caption>Cashier : </caption>
         <input class="card-input"style="width:80%"type="text" id="cashierId" value="Nel" placeholder="Cashier" >
         </div>        
@@ -395,10 +395,15 @@ const tableBody = document.querySelector("#dataTable tbody");
   
 const totalDisplay = document.getElementById("totalValue");
 const totalDisplay2 = document.getElementById("totalValue2");
-
 function proceedToTable() {  
 const wrapper = document.querySelector(".receipt-wrapper");
 wrapper.style.display='block'
+document.querySelectorAll(".form-card")[0].style.display='none'
+document.querySelectorAll(".form-card")[1].style.display='none'
+document.querySelectorAll(".form-card")[2].style.display='none'
+document.querySelectorAll(".form-card")[3].style.display='none'
+document.querySelectorAll(".form-card")[4].style.display='none'
+
 
 const pcsInp = document.getElementById("itemPcs");
 const nameInp = document.getElementById("itemName");
