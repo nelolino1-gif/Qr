@@ -19,9 +19,10 @@ box-sizing:border-box;
 body {
 font-family: sans-serif;
 display: flex;
-flex-direction: column;
+flex-direction: row;
 align-items: center;
 background-color:white;
+justify-content:center; 
 }
 
 .container {
@@ -197,6 +198,11 @@ font-size:15px;
          <button class="btn-label" onclick='btnGcash() '>    
          <i class="fa fa-coins"></i> Gcash Payment</a>        
          </button>  
+
+         <button class="btn-label" onclick='btnCalendar() '>    
+         <i class="fa fa-calendar"></i> Calendar</a>        
+         </button>  
+
  
  
  
@@ -208,8 +214,7 @@ font-size:15px;
         </div>
     <script>
  const pcontent= 'Welcome to may Project';
- const status = 'latest update : 03/08/26 - Button   \
-update : 03/08/26 - Menu';
+ const status = 'latest update : 03/11/26 -Calendar \ update : 03/08/26 - Button   \n      update : 03/08/26 - Menu';
  document.querySelector('.p-content').innerText= pcontent;
  document.querySelector('#status').innerText= status;
  
@@ -244,6 +249,11 @@ window.location.href ="https://nelolino1-gif.github.io/Qr/Counter.html"
 
 function btnGcash()  {
 window.location.href ="https://nelolino1-gif.github.io/Qr/Gcash.html"
+            
+}
+
+function btnCalendar()  {
+window.location.href ="https://nelolino1-gif.github.io/Qr/Calendar.html"
             
 }
 
