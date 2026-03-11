@@ -70,8 +70,11 @@ background: #007bff !important;
         }
 
 .calendar-content {
+background: rgba(18, 28, 36, 0.9);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);                      
 padding :0px;
-background:teal;
+/*background:teal;*/
 justify-content:center;
 display: flex;
 border-top:1.5px solid #007bff;
@@ -162,6 +165,7 @@ width:100%;
 text-align:center;        
 margin:10px 0px 0px 0px;  
 font-size:15px;    
+color:white;        
 }
         
     </style>
@@ -190,7 +194,7 @@ font-size:15px;
                 </div>
                 <div class="days-grid" id="calendar-days"></div>
                     <footer>
-                    <i style="color:purple ">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple"></i>
+                    <i>Create by: Nel Olino</i> <i class="fas fa-smile"></i>
                     </footer>                  
                </div>           
                <div class="events-sidebar" style="display:none">
