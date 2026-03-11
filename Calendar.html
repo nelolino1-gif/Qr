@@ -24,10 +24,9 @@
 
         .calendar-container {
             margin:20px 0px;
-            border:;
-            background: white;
+            border:1.5px solid teal;
             border-radius: 10px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
             width: 330px;
             overflow: hidden;
         }
@@ -35,7 +34,7 @@
         .calendar-header {
             background:teal;
             color: white;
-            padding: 10px;
+padding: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -70,15 +69,17 @@
         }
 
         .calendar-content {
-            background:#ddd;
+            padding :0px;
+            background:teal;
             justify-content:center;
             display: flex;
+            border-top:1.5px solid green;
              }
 
         .calendar-grid {
           
             flex: 3;
-            padding: 30px;
+            padding: 10px;
         }
 
         .weekdays {
@@ -86,11 +87,12 @@
             grid-template-columns: repeat(7, 1fr);
             text-align: center;
             font-weight: 600;
-            color :teal;
+            color :white;
           /*  color: #667eea;*/
-            padding-bottom: 15px;
+            padding-bottom: 10px;
             border-bottom: 2px solid #f0f0f0;
             margin-bottom: 15px;
+            background:;
         }
 
         .days-grid {
@@ -138,7 +140,7 @@
 
         .today {
             color:white;
-            background:teal;
+            background:purple;
             border:none;
         }
     
@@ -393,8 +395,8 @@
             // Check if selected
             if (dateObj.toDateString() === selectedDate.toDateString()) {
                 day.style.background = '#e3f2fd';
-                day.style.border = '2px solid teal';
-                day.style.color = 'teal';
+                day.style.border = '2px solid purple';
+                day.style.color = 'red';
 
             }
 
