@@ -18,6 +18,7 @@ margin-top:5px;
 }
 
 .container{
+margin-top:10%;  
 border:;
 width:330px;
 display:flex;
@@ -67,7 +68,7 @@ p{
   color:green;
 }
 
-table {
+/*table {
 border-collapse: collapse;
 width: 95%;
 height:auto;  
@@ -75,20 +76,55 @@ font-weight:bold;
 margin:5px;     
 table-layout:fixed;
               
-}
+}*/
 
-th, td {
-border: 1.5px solid brown;
-padding: 10px;
+/*th, td {
+padding: 12px;
 text-align: center;
-/* height:35px;*/
+/* height:35px;
 font-size:15px; 
 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 wrap-word:break-word;          
+}*/
+
+table {
+width:95%;
+/* Crucial: separate allows the radius to show */
+border-collapse:separate; 
+border-spacing: 0;
+border: 1.5px solid brown;
+border-radius: 10px;
+overflow: hidden; /* Keeps cell backgrounds from overlapping the curve */
+font-weight:bold;
+  }
+
+
+
+th, td {
+padding: 12px;
+text-align: center;
+border-bottom: 1.5px solid brown;
+border-right: 1.5px solid brown;
+text-align: center;
+font-size:15px; 
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+wrap-word:break-word; 
 }
 
+  /* Remove borders from the last column and row for a cleaner look */
+  th:last-child, td:last-child {
+    border-right: none;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+
+
+
 th {
-background-color: #f2f2f2;
+background-color: #ddd;
 width:33.33%;
 }
 
@@ -120,7 +156,7 @@ color:white
 color:red;
 }
 footer{
-margin:5px;    
+margin:10px 0px;    
 font-size:15px;
 /*  color: #007bff;*/
 }
@@ -136,7 +172,7 @@ font-size:15px;
   <div class="container" style="background:">
 <table>
  <tr>
-     <td colspan="3" style="color:teal">MY CALENDAR</td>    
+     <td colspan="3" style="color:teal">MY CALENDAR <i class="fa fa-calendar" aria-hidden="true"></i></td>    
  </tr>
   <tr>
     <th>Araw</th>
