@@ -23,7 +23,6 @@ align-items: center;
 
 .calendar-container {
 margin:20px 0px;
-border:1.5px solid teal;
 border-radius: 10px;
 box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
 width: 330px;
@@ -289,8 +288,9 @@ font-size:15px;
             // Check if selected
             if (dateObj.toDateString() === selectedDate.toDateString()) {
                 day.style.background = '#e3f2fd';
-                day.style.border = '2px solid purple';
-                day.style.color = 'red';
+                day.style.border = '1px solid white';
+                day.style.color = 'white';
+                day.style.background = '#007bff';
 
             }
 
