@@ -92,7 +92,7 @@ width:95%;
 /* Crucial: separate allows the radius to show */
 border-collapse:separate; 
 border-spacing: 0;
-border: 1.5px solid brown;
+border: 2px solid brown;
 border-radius: 10px;
 overflow: hidden; /* Keeps cell backgrounds from overlapping the curve */
 font-weight:bold;
@@ -103,8 +103,8 @@ font-weight:bold;
 th, td {
 padding: 12px;
 text-align: center;
-border-bottom: 1.5px solid brown;
-border-right: 1.5px solid brown;
+border-bottom: 2px solid brown;
+border-right: 2px solid brown;
 text-align: center;
 font-size:15px; 
 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -112,15 +112,13 @@ wrap-word:break-word;
 }
 
   /* Remove borders from the last column and row for a cleaner look */
-  th:last-child, td:last-child {
-    border-right: none;
+th:last-child, td:last-child {
+border-right: none;
   }
 
-  tr:last-child td {
-    border-bottom: none;
+tr:last-child td {
+border-bottom: none;
   }
-
-
 
 
 th {
@@ -135,10 +133,12 @@ background-color: #f5f5f5;
 .alert{
 display: none;
 padding: 20px; 
-background-color: lightseagreen; 
-border: 2px solid tomato;
-height:50px;
-top:45px;
+background: rgba(18, 28, 36, 0.9);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);                      
+padding :25px 10px;
+border:1.5px solid purple;
+top:85px;
 border-radius:5px;   
 }
 
@@ -153,8 +153,9 @@ color:white
 
 
 .alert > .alert-message{ 
-color:red;
+color:white;
 }
+
 footer{
 margin:10px 0px;    
 font-size:15px;
