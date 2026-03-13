@@ -329,7 +329,7 @@ var formattedDate =  day;
 
 //  const today = new Date().toISOString().split('T')[0];
 const newtoday = formattedDate.replace(/-/g, '');             
-const randomNum = Math.floor(1000 + Math.random() * 9000);;       
+const randomNum = Math.floor(1000 + Math.random() * 9000);  
 myValue = `${newtoday}${randomNum}`;
 myInput.value = myValue;
 generateQR()
