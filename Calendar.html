@@ -103,13 +103,13 @@ gap: 5px;
         }
 
 .day {            
-color:#007bff;
+color:lightseagreen;
 width:40px;
 display:flex;
 justify-content:center;
 align-items:center;
-background:#f8f9fa;
-/*  background: #f8f9fa;*/
+/*background:#f8f9fa;*/
+background:white;
 border-radius: 5px;
 padding: 10px;
 cursor: pointer;
@@ -125,8 +125,8 @@ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
 .day-number {
-font-weight: 600;
-font-size:1.2rem;            
+font-weight:bold;
+font-size:1rem;            
         }
 
 .other-month {
@@ -241,7 +241,7 @@ updateSelectedDateTitle();
 renderEventsForDate(selectedDate);
     });
 
-addEventBtn.addEventListener('click', addEvent);
+//addEventBtn.addEventListener('click', addEvent);
 
 // Functions
 function renderCalendar() {
