@@ -19,7 +19,8 @@ box-sizing:border-box;
 body {
 font-family: sans-serif;
 display: flex;
-flex-direction: row;
+flex-direction: column;
+justify-content:center; 
 align-items: center;
 background-color:white;
 justify-content:center; 
@@ -158,8 +159,51 @@ h2{
 footer{
 margin:10px 0px;    
 font-size:15px;
-/*color: #007bff;*/
+/*color: #007bff;*/ 
 }
+ 
+.notification {
+position: fixed;
+bottom: 20px;
+right: 30px;
+width: 300px;
+background-color: #333;
+color: white;
+padding: 16px;
+border-radius: 8px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+font-family: sans-serif;
+display: flex;
+justify-content: space-between;
+align-items: center;
+transition: opacity 0.5s, transform 0.5s;
+z-index: 1000;
+        }
+
+/* Success theme */
+.notification.success {
+border-left: 5px solid #4CAF50;
+        }
+
+/* Close button styling */
+.close-btn {
+cursor: pointer;
+font-weight: bold;
+margin-left: 10px;
+opacity: 0.7;
+}
+
+.close-btn:hover {
+opacity: 1;
+}
+
+/* Class to hide the notification */
+.hidden {
+opacity: 0;
+transform: translateY(20px);
+pointer-events: none;
+} 
+ 
 
     </style>
 </head>
@@ -210,9 +254,14 @@ font-size:15px;
         <div id="reader" style="display:none;"></div>
         <footer>
         <i style="color:purple ">Create by: Nel Olino</i> <i class="fas fa-smile"style="color:purple"></i>
-        </footer>
+        </footer>     
         </div>
-    <script>
+       
+        <div id="myNotification" class="notification success">
+        <span><strong>Greeting!</strong> Welcome to my Project</span>
+        <span class="close-btn" onclick="closeNotify()">×</span>
+        </div>
+   <script>
 const pcontent= 'Welcome to may Project';
 const status = 'latest update : 03/11/26 -Calendar \ update : 03/08/26 - Button   \n      update : 03/08/26 - Menu';
 document.querySelector('.p-content').innerText= pcontent;
@@ -259,7 +308,14 @@ window.location.href ="https://nelolino1-gif.github.io/Qr/Calendar.html"
 
 
 
+function closeNotify() {
+            const note = document.getElementById('myNotification');
+            note.classList.add('hidden');
+        }
 
+        // Optional: Auto-hide after 5 seconds
+        setTimeout(closeNotify, 5000);
+ 
     </script>
 </body>
 </html>
