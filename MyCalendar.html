@@ -251,7 +251,6 @@ NowIs="";
 break;
 case 5:
 NowIs="";
-showAlert('JOAN V WIFI PAYMENT'); 
 break;
 case 6:
 NowIs="";
@@ -282,11 +281,11 @@ case 14:
 NowIs="";
 break;
 case 15:
-NowIs="BILL PAYMENT";
-showAlert('BILL PAYMENT'); 
+NowIs=`BILL PAYMENT \n Shoppee \n Gcredit`;
+showAlert('BILLS PAYMENT');
 break;
 case 16:
-NowIs="";
+NowIs=`BILL PAYMENT \n Seabank \n Billease`;
 break;
 case 17:
 NowIs='';
@@ -331,7 +330,7 @@ case 29:
 NowIs="";
 break;
 case 30:
-NowIs="BILL PAYMENT";
+NowIs="BILL PAYMENT Uno billese";
 showAlert("BILL PAYMENT"); 
 break;
 case 31:
@@ -373,7 +372,7 @@ status =`<span style="color:${red}" >Walang Therapy</span>`;
   
 var date=document.getElementById("date").innerHTML=taon;
 var day=document.getElementById("day").innerHTML=day; 
-var NowIs=document.getElementById("NowIs").innerText= NowIs;
+var NowIs=document.getElementById("NowIs").value= NowIs;
 var appointment=document.getElementById("appointment").innerHTML=status;
 document.getElementById("month").innerHTML=monthName;  
 document.getElementById("Now").innerHTML=dayNow;  
