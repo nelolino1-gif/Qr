@@ -430,7 +430,7 @@ var comment= ''
    
 //  let selectValue = String(document.getElementById("select1").value);           
 let user =`/ip hotspot user add name="${vcode}" password="" profile="default" comment="${comment}" limit-uptime="${selectValue}"`;              
-let admin = `/ip hotspot user add name="${vcode}" password="" profile="admin" comment="admin" limit-uptime=`;                               
+let admin = `/ip hotspot user add name="${vcode}" password="" profile="admin" comment="admin" limit-uptime=0`;                               
 let datapromo = `/ip hotspot user add name="${vcode}" password="" profile="default" comment="" limit-uptime=0 limit-bytes-total="1073741824"`;                               
 let divice3 = `/ip hotspot user add name="${vcode}" password="" profile="D3" comment="" limit-uptime="1d"`;                               
 let divice5 = `/ip hotspot user add name="${vcode}" password="" profile="D5" comment="" limit-uptime="1d"`;                               
