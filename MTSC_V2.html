@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MikroTik Scheduler Generator - VIP</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* Reset and Base Styles */
+* { box-sizing: border-box; }
+
+body { 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Dikit sa taas */
+    font-family: 'Courier New', Courier, monospace;
+    background: #0a0a0a; 
+    margin: 0; /* No body margin */
+    padding: 0;
+    color: #e0e0e0;
+}
+    
+.container { 
+    display: flex;
+    flex-direction: column;    
+    width: 360px; /* Eksaktong width */
+    height: 550px; /* Eksaktong height */
+    background: #1a1a1a; 
+    padding: 15px;
+    margin-top: 0; /* No margin top */
+    border: 1px solid #ff0000;
+    border-radius: 0; /* Sharp corners */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    text-align: left;
+    overflow-y: auto; /* Scrollable kung lumampas ang content */
+}
+    
+h2 { 
+    color: #ff0000;
+    border-bottom: 2px solid #ff0000;
+    padding-bottom: 5px;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 18px;
+}
+    
+label { 
+    display: block; 
+    margin-top: 8px; 
+    font-weight: bold; 
+    color: #ff4d4d; 
+    font-size: 11px;
+    text-transform: uppercase;
+}    
+    
+input, textarea {
+    width: 100%;
+    padding: 10px; 
+    margin-top: 5px; 
+    border: 1px solid #333; 
+    border-radius: 0; /* No rounding */
+    box-sizing: border-box;
+    font-family: monospace; 
+    background: #000;
+    color: #00ff00;
+    height: 38px;
+    resize: none;
+    outline: none; 
+    font-size: 12px;
+}
+
+/* Horizontal Scroll for Script Body */
+textarea#schedScript {
+    height: 80px;
+    white-space: pre; 
+    overflow-x: auto; 
+    overflow-y: auto; 
+    wrap: off;
+}
+
+input:focus, textarea:focus {
+    border-color: #ff0000;
+}
+
+button { 
+    background: #990000; 
+    color: white; 
+    border: 1px solid #ff0000;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 0; 
+    cursor: pointer;
+    width: 100%; 
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+    
+button:hover {
+    background: #ff0000; 
+}
+    
+.output-box { 
+    margin-top: 12px;
+    background: #000;
+    color: #ff0000;
+    padding: 10px;
+    border-radius: 0; 
+    border: 1px dashed #ff0000;
+}
+    
+.output-box pre { 
+    margin: 0; 
+    white-space: pre; 
+    overflow-x: auto;
+    font-size: 11px;
+}
+    
+.copy-btn { 
+    display: block; 
+    background: #222; 
+    color: #ff4d4d; 
+    font-size: 10px; 
+    border: 1px solid #ff4d4d;
+    padding: 5px; 
+    cursor: pointer; 
+    margin-top: 8px;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.copy-script-btn {
+    background: #111;
+    color: #aaa;
+    border: 1px solid #444;
+    padding: 4px 8px;
+    margin-top: 4px;
+    font-size: 10px;
+    display: inline-block;
+}
+
+footer {
+    margin-top: auto; /* Push to bottom of container */
+    padding-top: 10px;
+    font-size: 10px;
+}   
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>VIP TERMINAL</h2>   
+    
+    <label><i class="fas fa-terminal"></i> Schedule Name</label>
+    <input type="text" id="schedName" placeholder="e.g., auto_reboot">
+    
+    <label><i class="fas fa-clock"></i> Interval (d hh:mm:ss)</label>
+    <input type="text" id="schedInterval" placeholder="1d 00:00:00" value="04:00:00">     
+    
+    <label><i class="fas fa-code"></i> Code</label>
+    <input type="text" id="code" placeholder="C000789">    
+    
+    <label><i class="fas fa-file-code"></i> Script Body</label>
+    <textarea id="schedScript" rows="5" placeholder="/system reboot"></textarea>
+    <button type="button" class="copy-script-btn" onclick="copyScriptOnly()">Copy Script Logic</button>
+
+    <button onclick="generateScript()">Generate Command</button>
+    
+    <div class="output-box" id="outputContainer" style="display:none;">
+        <pre id="finalCommand"></pre>        
+        <button class="copy-btn" onclick="copyToClipboard()"><i class="fas fa-copy"></i> Copy Full Command</button>  
+    </div> 
+
+    <center>   
+    <footer>
+   <i class="fas fa-code" style="color:#ff0000"></i><i style="color:#ff0000"> Created by: Nel Olino</i> <i class="fas fa-smile" style="color:#ff0000"></i>
+    </footer>   
+    </center> 
+</div>
+
+<script>  
+function generateScript() {
+    const name = document.getElementById('schedName').value || 'myscript';
+    const interval = document.getElementById('schedInterval').value || '1d 00:00:00';
+    const code = document.getElementById('code').value;
+  
+    const scriptContent = `/ip hotspot user remove [find name=${code}]; /ip hotspot active remove [find user=${code}]; /ip hotspot cookie remove [find user=${code}]; /system scheduler remove [find name=${code}];`;
+
+    document.getElementById('schedScript').value = scriptContent;
+    const script = document.getElementById('schedScript').value;
+        
+    const command = `/system scheduler add name="${name}" interval=${interval} on-event="${script}"`;
+        
+    document.getElementById('finalCommand').innerText = command;
+    document.getElementById('outputContainer').style.display = 'block';
+}
+
+function copyScriptOnly() {
+    const scriptText = document.getElementById('schedScript').value;
+    if(scriptText) {
+        navigator.clipboard.writeText(scriptText).then(() => {
+            alert('VIP Script Body copied!');
+        });
+    } else {
+        alert('Generate muna!');
+    }
+}
+
+function copyToClipboard() {
+    const text = document.getElementById('finalCommand').innerText;
+    navigator.clipboard.writeText(text).then(() => {
+        alert('Full VIP Command copied!');
+    });
+}
+</script>
+
+</body>
+</html>
