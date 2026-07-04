@@ -1,0 +1,15 @@
+{
+  "name": "PWX Printing Sales",
+  "short_name": "Sales 2.3",
+  "start_url": "SaleV2.3",
+  "display": "standalone",
+  "background_color": "#dddddd",
+  "theme_color": "#007bff",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2830/2830283.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
