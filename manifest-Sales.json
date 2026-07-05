@@ -1,5 +1,5 @@
 {
-  "name": "PWX Printing Sales",
+  "name": "PWX Print Invoice",
   "short_name": "Sales 2.3",
   "start_url": "SaleV2.3",
   "display": "standalone",
@@ -9,7 +9,7 @@
     {
       "src": "iconSale.jpg",
       "sizes": "512x512",
-      "type": "image/jpg"
+      "type": "image/jpeg"
     }
   ]
 }
