@@ -1,8 +1,8 @@
 const CACHE_NAME = 'pwx-v1';
 const ASSETS = [
-  '/',
-  '/manifest-Sales.json',
-  '/iconSale.png'
+  './',
+  'manifest-Sales.json',
+  'iconSale.png'
 ];
 
 // I-install ang Service Worker at i-cache ang basic assets
