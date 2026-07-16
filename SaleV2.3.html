@@ -313,10 +313,13 @@ padding-top: 10px;
 
   /* Header adjustments para sa pinaliit na scale */
   header {
+    margin-top: 15px;
     margin-bottom: 8px !important; 
   }
   header h1 {
-    font-size: 1.35rem !important;
+    font-weight:bold;
+    font-family:san-serif;
+    font-size: 1.55rem !important;
     margin-bottom: 4px !important;
   }
   header p {
@@ -337,7 +340,7 @@ padding-top: 10px;
   #receiptNum, 
   #casher, 
   #clientName {
-    font-size: 12px !important; /* Pwede mong palitan ito (e.g., 10px, 12px) depende sa gusto mong liit */
+    font-size: 12.5px !important; /* Pwede mong palitan ito (e.g., 10px, 12px) depende sa gusto mong liit */
   }
 
   /* Table styles sa loob ng scaled area */
@@ -345,11 +348,11 @@ padding-top: 10px;
     margin-top: 10px !important; 
   }
   th {
-    font-size: 11px !important;
+    font-size: 12.5px !important;
     padding: 4px 0 !important;
   }
   td {
-    font-size: 11px !important;
+    font-size: 12.5px !important;
     padding: 2px 0 !important;
   }
 
@@ -360,18 +363,18 @@ padding-top: 10px;
   }
   
   .totals .info-row span {
-    font-size: 12px !important;
+    font-size: 12.5px !important;
   }
 
   /* Footer print signatures & greetings */
   .footer-print { 
     margin-top: 15px !important; 
     padding-top: 6px !important;
-    font-size: 12px !important;
+    font-size: 12.5px !important;
   }
   
   .footer-print p {
-    font-size: 12px !important;
+    font-size: 12.5px !important;
   }
 
   /* Tinatago ang mga interactive control buttons habang nagpiprint */
@@ -418,7 +421,7 @@ padding-top: 10px;
     
     <div class="caption">CLIENT NAME <i class="fas fa-user-circle caption"></i></div>   
     <div class="sub-container"> 
-    <input class="total clientname" id="client" type="text"  placeholder="Client" value="Mark" oninput="result()">
+    <input class="total clientname" id="client" type="text"  placeholder="Client" value="C" oninput="result()">
     </div>
    
     <div class="sub-container">   
@@ -438,9 +441,9 @@ padding-top: 10px;
      <div class="print-container  modal-body">
       <div class="receipt-wrapper">
       <header class="center">
-        <h1>PWX PRINTING SERVICES</h1>
+        <h1>PWX PRINTING SERVICES <i style= "font-size : 1.55rem" class="fa-solid fa-print"></i></h1>
         <p>Sama-Sama St. Manggahan 2, Habay 2, Bacoor Cavite <br>
-        Cel#: (+639) 755-725-109</p>
+        <i style="font-size:12px" class="fa fa-phone"></i> 0975 572 5109</p>
       </header>         
      <div class="info-row">
      <span id="date">N/A</span>
@@ -494,10 +497,11 @@ padding-top: 10px;
     </div>
     <div class="footer-print center">
       <div style="width:30%; border:none;margin-top:20px;margin-bottom:-6px"><img src="sign.png" height="25" width="70"></div>      
-      <div style="width:30%; border-top:0.5px solid #000;margin-top:0px;margin-bottom:10px">Signature:</div>
+      <div style="width:30%; border-top:0.5px solid #000;margin-top:0px;margin-bottom:10px;font-size:12px;">Signature:</div>
       
-        <p>Thank you </p>
-        <p> Email : printpwx@gmail.com</p>
+        <p>Thank you <i class="fa-regular fa-smile"></i></p>
+        <p><i style="margin:0px" class="fa-regular fa-envelope"></i> printpwx@gmail.com <br>
+        <i class="fa-brands fa-bluetooth"></i> printpwx</p>
      
       <button type="button" style="padding:3px ;border-radius:2px; border: 1px solid" class="no-print" data-bs-dismiss="modal">Close</button>
       <button type="button" style="padding:3px; border-radius:2px; border: 1px solid" class="no-print" onclick="window.print()">Print Receipt</button>
