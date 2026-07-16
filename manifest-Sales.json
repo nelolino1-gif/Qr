@@ -1,5 +1,5 @@
 {
-  "name": "PWX Printing Sales",
+  "name": "Sales 2.3 Receipt",
   "short_name": "Sales 2.3",
   "start_url": "SaleV2.3",
   "display": "standalone",
@@ -7,9 +7,16 @@
   "theme_color": "#007bff",
   "icons": [
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/2830/2830283.png",
+      "src": "https://img.icons8.com/fluency/192/printer.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://img.icons8.com/fluency/512/printer.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
