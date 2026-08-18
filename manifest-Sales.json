@@ -1,7 +1,8 @@
 {
   "name": "Sales 2.3 Receipt",
   "short_name": "Sales 2.3",
-  "start_url": "./SaleV2.3",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#dddddd",
   "theme_color": "#007bff",
